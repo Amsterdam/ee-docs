@@ -1,4 +1,10 @@
-# Website
+# Engineering Enablement Docs
+
+This is an example application of Docusaurus. The Markdown files in the `docs` directory are copied from the [amsterdam/development-standards project](https://github.com/Amsterdam/development-standards) as examples.
+
+There are also two `mdx` files created to show off code snippets from an imported test React component and an embedded React Component.
+
+## Docusaurus
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
