@@ -66,16 +66,12 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'documentationSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Documentation',
+          to: '/docs/intro'
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {to: '/blog', label: 'Blog', position: 'left'},
       ],
     },
     footer: {
