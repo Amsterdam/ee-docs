@@ -4,7 +4,7 @@ import {
   splitNavbarItems,
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common/internal';
-import NavbarItem from '@theme/NavbarItem';
+import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import SearchBar from '@theme/SearchBar';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
@@ -19,7 +19,8 @@ import styles from './styles.module.css';
 // so make our own
 type NavbarItemConfig = {
   label: string;
-  to: string;
+  to?: string;
+  href?: string;
   position?: string;
   type?: string;
 };
@@ -37,7 +38,9 @@ export default function NavbarContent(): JSX.Element {
 
   const searchBarItem = items.find((item) => item.type === 'search');
   console.log({ items })
-  const navItems = items.map((item) => <PageMenu.Link href={item.to} key={uuidv4()}>{item.label}</PageMenu.Link>);
+  // const navItems = items.map((item) => <PageMenu.Link href={item.to} key={uuidv4()}>{item.label}</PageMenu.Link>);
+
+  const navItems = items.map((item) => (<li><NavbarNavLink {...item} /></li>))
 
   return (
     <Header
