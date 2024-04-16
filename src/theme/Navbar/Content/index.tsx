@@ -27,18 +27,14 @@ type NavbarItemConfig = {
 
 // TODO eslint
 // TODO prettier
-// TODO documentation as a link reloads the page on click
 // TODO mobile
 // TODO search nav item
 // TODO cleanup imports
-// TODO Change default stylesheet colours to match amsterdam design system?
 export default function NavbarContent(): JSX.Element {
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useThemeConfig().navbar.items as NavbarItemConfig[];
 
   const searchBarItem = items.find((item) => item.type === 'search');
-  console.log({ items })
-  // const navItems = items.map((item) => <PageMenu.Link href={item.to} key={uuidv4()}>{item.label}</PageMenu.Link>);
 
   const navItems = items.map((item) => (<li><NavbarNavLink {...item} /></li>))
 
