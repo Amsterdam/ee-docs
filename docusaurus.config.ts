@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Amsterdam Developers',
+  tagline: 'Engineering enablement',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -15,8 +15,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'amsterdam', // Usually your GitHub org/user name.
+  projectName: 'ee-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -26,7 +26,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'nl'],
   },
 
   presets: [
@@ -56,11 +56,11 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo_voor_social.png',
     navbar: {
-      title: 'My Site',
+      title: 'Amsterdam Developers',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Amsterdam Developers',
         src: 'img/logo.svg',
       },
       items: [
@@ -117,7 +117,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `${new Date().getFullYear()} Gemeente Amsterdam`,
     },
     prism: {
       theme: prismThemes.github,
