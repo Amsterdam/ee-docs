@@ -64,6 +64,7 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        // FYI Position is not implemented in component
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -71,7 +72,6 @@ const config: Config = {
           label: 'Documentation',
           to: '/docs/intro'
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
       ],
     },
     footer: {

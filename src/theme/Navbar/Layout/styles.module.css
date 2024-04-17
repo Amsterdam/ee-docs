@@ -1,0 +1,18 @@
+.navbarHideable {
+  transition: transform var(--ifm-transition-fast) ease;
+}
+
+.navbarHidden {
+  transform: translate3d(0, calc(-100% - 2px), 0);
+}
+
+.navbar {
+  background-color: var(--ifm-navbar-background-color);
+  box-shadow: var(--ifm-navbar-shadow);
+  display: unset;
+  height: unset;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: var(--ifm-z-index-fixed);
+}

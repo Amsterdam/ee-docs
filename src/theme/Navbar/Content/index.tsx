@@ -10,8 +10,9 @@ import SearchBar from '@theme/SearchBar';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
-import { Header, PageMenu } from '@amsterdam/design-system-react';
+import { Grid, Header, PageMenu, Screen } from '@amsterdam/design-system-react';
 import { v4 as uuidv4 } from 'uuid';
+import GitHubIcon from '@site/static/img/github-mark.svg';
 
 import styles from './styles.module.css';
 
@@ -39,9 +40,15 @@ export default function NavbarContent(): JSX.Element {
   const navItems = items.map((item) => (<li><NavbarNavLink {...item} /></li>))
 
   return (
-    <Header
-      links={<PageMenu alignEnd>{navItems}</PageMenu>}
-      title="Developers"
-    />
+    <Screen maxWidth="wide">
+      <Grid>
+        <Grid.Cell span="all">
+          <Header
+            links={<PageMenu alignEnd>{navItems}<a href="https://github.com/Amsterdam/development-standards" target="_blank" rel="noopener noreferrer" className={styles.icon} aria-label="GitHub repository"><GitHubIcon width="24" height="24" preserveAspectRatio="xMinYMin" /></a></PageMenu>}
+            title="Developers"
+          />
+        </Grid.Cell>
+      </Grid>
+    </Screen>
   );
 }
