@@ -7,12 +7,24 @@ Hide color mode toggle in small viewports
   }
 }
 
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
 .icon {
   display: flex;
+  margin-right: .5rem;
 }
 
 .icon:hover {
   svg {
     opacity: 0.8;
+  }
+}
+
+.iconInvert {
+  svg {
+    filter: invert(1);
   }
 }

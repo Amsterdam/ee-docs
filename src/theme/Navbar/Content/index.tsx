@@ -1,5 +1,5 @@
 import React, {type ReactNode} from 'react';
-import {useThemeConfig, ErrorCauseBoundary} from '@docusaurus/theme-common';
+import {useThemeConfig, useColorMode, ErrorCauseBoundary} from '@docusaurus/theme-common';
 import {
   splitNavbarItems,
   useNavbarMobileSidebar,
@@ -15,6 +15,7 @@ import { v4 as uuidv4 } from 'uuid';
 import GitHubIcon from '@site/static/img/github-mark.svg';
 
 import styles from './styles.module.css';
+import clsx from 'clsx';
 
 // Docusaurus type definition for NavbarItemConfig contradicts their own docusaurus.config 🤷
 // so make our own
@@ -32,7 +33,7 @@ type NavbarItemConfig = {
 // TODO search nav item
 // TODO cleanup imports
 export default function NavbarContent(): JSX.Element {
-  const mobileSidebar = useNavbarMobileSidebar();
+  const {colorMode} = useColorMode();
   const items = useThemeConfig().navbar.items as NavbarItemConfig[];
 
   const searchBarItem = items.find((item) => item.type === 'search');
@@ -47,7 +48,10 @@ export default function NavbarContent(): JSX.Element {
             links={
               <PageMenu alignEnd>
                 {navItems}
-                <a href="https://github.com/Amsterdam/development-standards" target="_blank" rel="noopener noreferrer" className={styles.icon} aria-label="GitHub repository"><GitHubIcon width="24" height="24" preserveAspectRatio="xMinYMin" /></a>
+                <div className={styles.buttons}>
+                  <a href="https://github.com/Amsterdam/development-standards" target="_blank" rel="noopener noreferrer" className={colorMode === 'light' ? styles.icon : clsx([styles.icon, styles.iconInvert])} aria-label="GitHub repository"><GitHubIcon width="24" height="24" preserveAspectRatio="xMinYMin" /></a>
+                  <NavbarColorModeToggle />
+                </div>
               </PageMenu>
             }
             menu={<NavbarMobileSidebarToggle />}
