@@ -31,3 +31,14 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+@media screen and (min-width: 36rem) {
+  .ams-header__menu {
+    display: none;
+  }
+}
+
+.navbar__toggle {
+  display: inline-flex;
+  margin: 0;
+}

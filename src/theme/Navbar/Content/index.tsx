@@ -44,7 +44,13 @@ export default function NavbarContent(): JSX.Element {
       <Grid>
         <Grid.Cell span="all">
           <Header
-            links={<PageMenu alignEnd>{navItems}<a href="https://github.com/Amsterdam/development-standards" target="_blank" rel="noopener noreferrer" className={styles.icon} aria-label="GitHub repository"><GitHubIcon width="24" height="24" preserveAspectRatio="xMinYMin" /></a></PageMenu>}
+            links={
+              <PageMenu alignEnd>
+                {navItems}
+                <a href="https://github.com/Amsterdam/development-standards" target="_blank" rel="noopener noreferrer" className={styles.icon} aria-label="GitHub repository"><GitHubIcon width="24" height="24" preserveAspectRatio="xMinYMin" /></a>
+              </PageMenu>
+            }
+            menu={<NavbarMobileSidebarToggle />}
             title="Developers"
           />
         </Grid.Cell>
