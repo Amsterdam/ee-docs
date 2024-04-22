@@ -30,6 +30,10 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  .ams-spotlight--dark-blue {
+    background-color: var(--ifm-navbar-background-color);
+  }
 }
 
 @media screen and (min-width: 36rem) {

@@ -22,20 +22,16 @@ export default function NavbarNavLink({
   const toUrl = useBaseUrl(to);
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
-  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
   const isExternalLink = label && href && !isInternalUrl(href);
 
   // Link content is set through html XOR label
-  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
   const linkContentProps = html
     ? { dangerouslySetInnerHTML: { __html: html } }
     : {
         children: (
           <>
             {label}
-            {/* eslint-disable-next-line @typescript-eslint/strict-boolean-expressions */}
             {isExternalLink && (
-              // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
               <IconExternalLink {...(isDropdownLink && { width: 12, height: 12 })} />
             )}
           </>
@@ -44,7 +40,6 @@ export default function NavbarNavLink({
 
   if (href != null) {
     return (
-      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
       <Link href={prependBaseUrlToHref ? normalizedHref : href} {...props} {...linkContentProps} />
     );
   }
@@ -54,10 +49,8 @@ export default function NavbarNavLink({
       className="amsterdam-page-menu__link"
       to={toUrl}
       isNavLink
-      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/prefer-nullish-coalescing
       {...((activeBasePath || activeBaseRegex) && {
         isActive: (_match, location) =>
-          // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
           activeBaseRegex
             ? isRegexpStringMatch(activeBaseRegex, location.pathname)
             : location.pathname.startsWith(activeBaseUrl),

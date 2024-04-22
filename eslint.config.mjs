@@ -25,7 +25,8 @@ export default [
     files: ['**/*.tsx'],
     rules: {
       ...config.rules,
-      // ...other your custom rules
+      '@typescript-eslint/strict-boolean-expressions': 'off',
+      '@typescript-eslint/prefer-nullish-coalescing': 'off',
     },
   })),
   pluginReactConfig,

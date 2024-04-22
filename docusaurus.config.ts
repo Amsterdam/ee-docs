@@ -55,8 +55,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/logo_voor_social.png',
     navbar: {
       title: 'Amsterdam Developers',
       logo: {
@@ -75,49 +73,21 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Developers',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Documentation',
+              to: '/docs/intro'
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
+              label: 'Vacancies',
+              href: 'https://werkenbij.amsterdam.nl/'
+            }
+          ]
         },
       ],
-      copyright: `${new Date().getFullYear()} Gemeente Amsterdam`,
     },
     prism: {
       theme: prismThemes.github,
