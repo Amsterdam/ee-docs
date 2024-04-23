@@ -18,7 +18,7 @@ const compat = new FlatCompat({
 export default [
   { languageOptions: { globals: globals.browser } },
   {
-    ignores: ['.docusaurus', 'node_modules', 'build'],
+    ignores: ['.docusaurus', 'node_modules', 'build', 'scripts/import.js'],
   },
   ...compat.extends('standard-with-typescript').map((config) => ({
     ...config,

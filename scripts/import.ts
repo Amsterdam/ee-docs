@@ -31,6 +31,7 @@ const cleanupRepoFiles = () => {
       fs.rmSync(path.join(cloneDir, `${dir}/README.md`));
     }
 
+    // TODO test markdown compilation for each file
     fs.renameSync(path.join(cloneDir, dir), path.join(localDir, dir))
   })
 
