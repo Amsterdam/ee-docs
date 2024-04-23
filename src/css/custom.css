@@ -36,6 +36,11 @@
   }
 }
 
+body {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
 @media screen and (min-width: 36rem) {
   .ams-header__menu {
     display: none;

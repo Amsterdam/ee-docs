@@ -7,8 +7,8 @@
 }
 
 .navbar {
-  background-color: var(--ifm-navbar-background-color);
-  box-shadow: var(--ifm-navbar-shadow);
+  background-color: #fff;
+  box-shadow: none;
   display: unset;
   height: unset;
   padding: 0;
