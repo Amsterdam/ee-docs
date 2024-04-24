@@ -30,10 +30,6 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-  .ams-spotlight--dark-blue {
-    background-color: var(--ifm-navbar-background-color);
-  }
 }
 
 body {
@@ -41,38 +37,7 @@ body {
   max-width: 1440px;
 }
 
-@media screen and (min-width: 36rem) {
-  .ams-header__menu {
-    display: none;
-  }
-}
-
 .navbar__toggle {
   display: inline-flex;
   margin: 0;
-}
-
-/* Fix for ams-design-system mobile menu button breakpoint misalignment with docusaurus breakpoints */
-@media screen and (min-width: 36rem) {
-  .ams-header__links {
-    display: none !important;
-  }
-
-  .ams-header__menu {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 997px) {
-  .ams-header__links {
-    display: block !important;
-  }
-
-  .ams-header__menu {
-    display: none;
-  }
-}
-
-.main-wrapper .ams-screen {
-  width: 100%;
 }
