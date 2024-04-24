@@ -51,3 +51,28 @@ body {
   display: inline-flex;
   margin: 0;
 }
+
+/* Fix for ams-design-system mobile menu button breakpoint misalignment with docusaurus breakpoints */
+@media screen and (min-width: 36rem) {
+  .ams-header__links {
+    display: none !important;
+  }
+
+  .ams-header__menu {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 997px) {
+  .ams-header__links {
+    display: block !important;
+  }
+
+  .ams-header__menu {
+    display: none;
+  }
+}
+
+.main-wrapper .ams-screen {
+  width: 100%;
+}

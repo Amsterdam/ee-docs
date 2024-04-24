@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Link from '@docusaurus/Link';
-import { Heading, Paragraph } from '@amsterdam/design-system-react';
+import { Grid, Heading, Paragraph, UnorderedList } from '@amsterdam/design-system-react';
 import styles from './styles.module.css';
 
 interface FeatureItem {
@@ -27,25 +27,29 @@ const featureList: FeatureItem[] = [
 export default function HomepageFeatures(): JSX.Element {
   const list = featureList.map((listItem) => (
     <div key={uuidv4()}>
-      <ul className="text--left">
-        <li>
+      <UnorderedList>
+        <UnorderedList.Item>
           {listItem.to ? (
-            <Link to={listItem.to}>{listItem.title}</Link>
+            <Heading size="level-5">
+              <Link to={listItem.to}>{listItem.title}</Link>
+            </Heading>
           ) : (
-            <span>{listItem.title}</span>
+            <Heading size="level-5">{listItem.title}</Heading>
           )}{' '}
           <Paragraph>{listItem.description}</Paragraph>
-        </li>
-      </ul>
+        </UnorderedList.Item>
+      </UnorderedList>
     </div>
   ));
 
   return (
-    <section className={styles.container}>
-      <div>
-        <Heading size="level-3">Current Standards</Heading>
+    <>
+      <Grid.Cell span={12}>
+        <Heading size="level-4">Current Documented Standards</Heading>
+      </Grid.Cell>
+      <Grid.Cell span={12}>
         <div className={styles.featureList}>{list}</div>
-      </div>
-    </section>
+      </Grid.Cell>
+    </>
   );
 }
