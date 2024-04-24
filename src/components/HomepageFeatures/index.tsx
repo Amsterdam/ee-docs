@@ -1,70 +1,55 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Link from '@docusaurus/Link';
+import { Grid, Heading, Paragraph, UnorderedList } from '@amsterdam/design-system-react';
 import styles from './styles.module.css';
 
-type FeatureItem = {
+interface FeatureItem {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: JSX.Element;
-};
+  to?: string;
+  description: string;
+}
 
-const FeatureList: FeatureItem[] = [
+const featureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    title: 'Accessibility',
+    to: '/docs/frontend/fe-accessibility',
+    description:
+      'In accordance with the Digital Government Act, the municipality of Amsterdam is required to build all its websites and applications in compliance with the Web Content Accessibility Guidelines (WCAG) at levels A and AA.',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    title: 'Documentation',
+    description:
+      'Include documentation in your project that facilitates understanding, usage, and maintenance of your code.',
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
-
 export default function HomepageFeatures(): JSX.Element {
+  const list = featureList.map((listItem) => (
+    <div key={uuidv4()}>
+      <UnorderedList>
+        <UnorderedList.Item>
+          {listItem.to ? (
+            <Heading size="level-5">
+              <Link to={listItem.to}>{listItem.title}</Link>
+            </Heading>
+          ) : (
+            <Heading size="level-5">{listItem.title}</Heading>
+          )}{' '}
+          <Paragraph>{listItem.description}</Paragraph>
+        </UnorderedList.Item>
+      </UnorderedList>
+    </div>
+  ));
+
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <>
+      <Grid.Cell span={12}>
+        <Heading size="level-4">Current Documented Standards</Heading>
+      </Grid.Cell>
+      <Grid.Cell span={12}>
+        <div className={styles.featureList}>{list}</div>
+      </Grid.Cell>
+    </>
   );
 }

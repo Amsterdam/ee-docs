@@ -1,14 +1,20 @@
+import React, { type FunctionComponent } from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
+import { Grid, Paragraph, Screen, UnorderedList } from '@amsterdam/design-system-react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
+import PlainLayout from '../components/PlainLayout/PlainLayout';
+
+// For Design System
+import '@amsterdam/design-system-tokens/dist/index.css';
+import '@amsterdam/design-system-assets/font/index.css';
+import '@amsterdam/design-system-css/dist/index.css';
 
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+function HomepageHeader(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -16,28 +22,38 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
       </div>
     </header>
   );
 }
 
-export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
-    </Layout>
-  );
-}
+const Home: FunctionComponent = () => (
+  <PlainLayout title="Welcome" description="City of Amsterdam technology standards and guidance">
+    <HomepageHeader />
+    <main>
+      <Screen maxWidth="wide">
+        <Grid gapVertical="small" paddingVertical="medium">
+          <Grid.Cell span={12}>
+            <Paragraph>
+              <a href="https://developers.amsterdam" target="_blank" rel="noreferrer">
+                developers.amsterdam
+              </a>{' '}
+              is a new initiative brought to you from Engineering Enablement, Gemeente Amsterdam.
+              The Engineering Enablement team provides and maintains:
+            </Paragraph>
+          </Grid.Cell>
+          <Grid.Cell span={12}>
+            <UnorderedList>
+              <UnorderedList.Item>Reusable software components</UnorderedList.Item>
+              <UnorderedList.Item>Shared standards</UnorderedList.Item>
+              <UnorderedList.Item>Best Practices</UnorderedList.Item>
+            </UnorderedList>
+          </Grid.Cell>
+          <HomepageFeatures />
+        </Grid>
+      </Screen>
+    </main>
+  </PlainLayout>
+);
+
+export default Home;

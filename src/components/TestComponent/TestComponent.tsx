@@ -1,3 +1,4 @@
+/* eslint-disable */
 import PlaceholderImage from '@site/static/img/undraw_docusaurus_mountain.svg'
 
 function TestComponent({ children = undefined, foo = 'bar' }): JSX.Element {
