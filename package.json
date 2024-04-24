@@ -22,8 +22,8 @@
     "@amsterdam/design-system-css": "^0.7.1",
     "@amsterdam/design-system-react": "^0.7.1",
     "@amsterdam/design-system-tokens": "^0.7.1",
-    "@docusaurus/core": "3.1.1",
-    "@docusaurus/preset-classic": "3.1.1",
+    "@docusaurus/core": "^3.2.1",
+    "@docusaurus/preset-classic": "^3.2.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
@@ -34,9 +34,9 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.1.1",
-    "@docusaurus/tsconfig": "3.1.1",
-    "@docusaurus/types": "3.1.1",
+    "@docusaurus/module-type-aliases": "^3.2.1",
+    "@docusaurus/tsconfig": "^3.2.1",
+    "@docusaurus/types": "^3.2.1",
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
     "@types/uuidv4": "^5.0.0",
