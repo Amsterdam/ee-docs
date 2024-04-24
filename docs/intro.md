@@ -1,47 +1,50 @@
 ---
 sidebar_position: 1
 ---
+# Collaborating on standards
 
-# Tutorial Intro
+> This page was last reviewed on April 18th, 2024. It needs to be reviewed again on January 18th, 2025.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## Empowering Contribution: Your Guide to Success
 
-## Getting Started
+We're thrilled you're interested in contributing to our development community! The Engineering Enablement team is dedicated to supporting you throughout your journey. Should you ever feel daunted by the contribution process, don't hesitate to take a breather, and we'll be ready to assist you further. Your involvement is valued, and we're here to help.
 
-Get started by **creating a new site**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Proces
 
-### What you'll need
+Feel free to refine or introduce standards according to your vision – it's a straightforward and positive proces. Just follow these steps:
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+1. Begin by shaping your proposal using [this format](#standard_format). Share your proposal by submitting a pull request in the [the repository development-standards](https://github.com/Amsterdam/development-standards).
+2. Expect a positive collaboration! The Engineering Enablement team will get in touch to refine and enhance your proposal. We'll also appreciate it if you can identify other developers who share a positive view on your proposal for an initial review.
+3. Your proposal will be brought to the Guild for a constructive discussion. Your thoughtful participation in the conversation is warmly encouraged.
+4. If your proposal receives positive acknowledgment, the Engineering Enablement team will tag participating developers in the pull request and give it a positive approval.
+5. Embrace constructive feedback! Developers offering insights will be asked to share their thoughts on Github or contribute positively to the pull request. Whether it's the Engineering Enablement team or yourself, let's work together positively to incorporate feedback until it's a refined piece. Once perfected, the pull request will receive a positive approval.
+6. Celebrate the introduction! The updated or new standard will be published with a positive outlook. After 9 months, the Engineering Enablement team will reach out to those tagged, including you and the proposal approver, to confirm that the standard still holds its positive impact.
 
-## Generate a new site
 
-Generate a new Docusaurus site using the **classic template**.
 
-The classic template will automatically be added to your project after you run the command:
+## Format of standard {#standard_format}
+When drafting standards, aim for brevity and clarity in your language. If you need guidance, don't hesitate to check out [the RFC-editor](https://www.rfc-editor.org/rfc/rfc2119). Here's how we break down our standards:
 
-```bash
-npm init docusaurus@latest my-website classic
-```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+- **Title of standard**
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+- **When due another review**
 
-## Start your site
+- **What is the standard?**
 
-Run the development server:
+- **When and for whom is this standard?**
 
-```bash
-cd my-website
-npm run start
-```
+- **How to apply this standard?**
+<small> (Depending on the standard, this could either represent a set of best practices, serving as an example of how to meet the standard effectively, or it could constitute the sole method of compliance. The determination of whether it is a best practice or the exclusive approach to meeting the standard will be made by the developer community. Please ensure clarity in your description by specifying whether the provided guidance represents a best practice or the mandatory method of meeting the standard. Please provide concrete examples on how to apply the standard.)</small>
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+- **What pitfalls to avoid?***
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+- **Considerations**
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- **Further reading**
+
+- **Acknowledgments**
+
+
+<small>\* Is not mandatory</small>

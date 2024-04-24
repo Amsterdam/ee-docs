@@ -1,3 +1,0 @@
-# Local Development
-
-Intro to topic here...

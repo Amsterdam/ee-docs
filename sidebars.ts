@@ -17,30 +17,23 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Common standards',
       items: [
-        'standards/using-git',
-        'standards/storing-source-code',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Backend',
-      items: [
-        'backend/code-quality',
-        'backend/code-review',
+        'general/code-review',
+        'general/project-documentation',
+        'general/storing-source-code',
+        'general/testing',
+        'general/third-party-dependencies',
+        'general/using-git',
       ]
     },
     {
       type: 'category',
       label: 'Frontend',
       items: [
-        'frontend/code-quality',
-        'frontend/code-review',
-        'frontend/fe-accessibility',
-        'frontend/internal-dependencies',
         'frontend/languages-and-frameworks',
-        'frontend/local-development',
-        'frontend/testing',
+        'frontend/shared-components',
         'frontend/third-party-dependencies',
+        'frontend/accessibility',
+        'frontend/testing',
       ]
     },
   ]

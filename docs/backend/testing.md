@@ -1,3 +1,0 @@
-# Testing
-
-Intro to topic here...
