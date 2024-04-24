@@ -13,7 +13,7 @@ interface FeatureItem {
 const featureList: FeatureItem[] = [
   {
     title: 'Accessibility',
-    to: '/docs/frontend/fe-accessibility',
+    to: '/docs/frontend/accessibility',
     description:
       'In accordance with the Digital Government Act, the municipality of Amsterdam is required to build all its websites and applications in compliance with the Web Content Accessibility Guidelines (WCAG) at levels A and AA.',
   },
