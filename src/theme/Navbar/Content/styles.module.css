@@ -12,6 +12,10 @@ Hide color mode toggle in small viewports
   align-items: center;
 }
 
+[data-theme='dark'] .buttons a {
+  filter: invert(1);
+}
+
 .icon {
   display: flex;
   margin-right: .5rem;
@@ -21,8 +25,4 @@ Hide color mode toggle in small viewports
   svg {
     opacity: 0.8;
   }
-}
-
-.iconInvert svg {
-  filter: invert(1);
 }

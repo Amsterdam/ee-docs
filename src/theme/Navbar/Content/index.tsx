@@ -1,11 +1,10 @@
 import React from 'react';
-import { useThemeConfig, useColorMode } from '@docusaurus/theme-common';
+import { useThemeConfig } from '@docusaurus/theme-common';
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import { Grid, Header, PageMenu, Screen } from '@amsterdam/design-system-react';
 import { v4 as uuidv4 } from 'uuid';
-import clsx from 'clsx';
 import GitHubIcon from '@site/static/img/github-mark.svg';
 
 import styles from './styles.module.css';
@@ -21,7 +20,6 @@ interface NavbarItemConfig {
 }
 
 export default function NavbarContent(): JSX.Element {
-  const { colorMode } = useColorMode();
   const items = useThemeConfig().navbar.items as NavbarItemConfig[];
 
   const navItems = items.map((item) => (
@@ -43,9 +41,7 @@ export default function NavbarContent(): JSX.Element {
                     href="https://github.com/Amsterdam/development-standards"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={
-                      colorMode === 'light' ? styles.icon : clsx([styles.icon, styles.iconInvert])
-                    }
+                    className={styles.icon}
                     aria-label="GitHub repository"
                   >
                     <GitHubIcon width="24" height="24" preserveAspectRatio="xMinYMin" />
