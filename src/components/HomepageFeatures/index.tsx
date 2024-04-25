@@ -2,7 +2,6 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Link from '@docusaurus/Link';
 import { Grid, Heading, Paragraph, UnorderedList } from '@amsterdam/design-system-react';
-import styles from './styles.module.css';
 
 interface FeatureItem {
   title: string;
@@ -48,7 +47,7 @@ export default function HomepageFeatures(): JSX.Element {
         <Heading size="level-4">Current Documented Standards</Heading>
       </Grid.Cell>
       <Grid.Cell span={12}>
-        <div className={styles.featureList}>{list}</div>
+        <div>{list}</div>
       </Grid.Cell>
     </>
   );

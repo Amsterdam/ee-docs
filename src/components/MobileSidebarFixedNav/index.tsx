@@ -16,15 +16,15 @@ const MobileSidebarFixedNav: FunctionComponent = () => {
         href="https://github.com/Amsterdam/development-standards"
         target="_blank"
         rel="noreferrer"
-        className={`menu__link menu__link--sublist ${styles.button}`}
+        className={`menu__link menu__link--sublist ${styles.button} ${styles.github}`}
       >
         <>
-          <GitHubIcon width="24" height="24" className={isLightMode ? '' : styles.invert} />
+          <GitHubIcon width="24" height="24" />
           <span>GitHub</span>
         </>
       </a>
       <button
-        className={`menu__link menu__link--sublist ${styles.button}`}
+        className={`menu__link menu__link--sublist clean-btn ${styles.button}`}
         onClick={() => {
           setColorMode(isLightMode ? 'dark' : 'light');
         }}
