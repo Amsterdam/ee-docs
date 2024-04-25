@@ -1,9 +1,7 @@
-[data-theme='dark'] {
-  .container a {
-    color: var(--ifm-menu-color);
-  }
+[data-theme='dark'] .container a {
+  color: var(--ifm-menu-color);
+}
 
-  .container a:hover {
-    color: var(--ifm-menu-color-active);
-  }
+[data-theme='dark'] .container a:hover {
+  color: var(--ifm-menu-color-active);
 }

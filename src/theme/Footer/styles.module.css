@@ -3,8 +3,6 @@
   gap: '2.5rem';
 }
 
-[data-theme='dark'] {
-  .col a {
-    color: var(--ifm-link-color);
-  }
+[data-theme='dark'] .col a {
+  color: var(--ifm-link-color);
 }
