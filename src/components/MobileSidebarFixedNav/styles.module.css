@@ -4,10 +4,10 @@
   flex-direction: column;
   margin-top: 1.25rem;
   padding-top: 0.75rem;
+}
 
-  span {
-    padding-left: 0.5rem;
-  }
+.container span {
+  padding-left: 0.5rem;
 }
 
 .button {
@@ -16,14 +16,16 @@
   cursor: pointer;
   font-size: 1rem;
   margin-top: 0.25rem;
-
-  &::hover {
-    text-decoration: none;
-    color: var(--ifm-menu-color);
-    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
-  }
 }
 
-.invert {
-  filter: invert(1);
+.button:hover {
+  text-decoration: none;
+  color: var(--ifm-menu-color);
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+[data-theme='dark'] {
+  .github svg {
+    filter: invert(1);
+  }
 }

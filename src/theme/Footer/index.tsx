@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Link from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import type { FooterLinkItem } from '@docusaurus/theme-common';
+import styles from './styles.module.css';
 
 const Footer: FC | null = () => {
   const { footer } = useThemeConfig();
@@ -53,12 +54,7 @@ const Footer: FC | null = () => {
 
     return (
       <Grid.Cell span={3} key={uuidv4()}>
-        <div
-          style={{
-            display: 'grid',
-            gap: '2.5rem',
-          }}
-        >
+        <div className={styles.col}>
           <Heading inverseColor level={2} size="level-4">
             {column.title}
           </Heading>

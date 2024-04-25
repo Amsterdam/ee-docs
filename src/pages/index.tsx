@@ -4,7 +4,7 @@ import { Grid, Paragraph, Screen, UnorderedList } from '@amsterdam/design-system
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
-import PlainLayout from '../components/PlainLayout/PlainLayout';
+import PlainLayout from '@site/src/components/PlainLayout/PlainLayout';
 
 // For Design System
 import '@amsterdam/design-system-tokens/dist/index.css';
@@ -30,7 +30,7 @@ function HomepageHeader(): JSX.Element {
 const Home: FunctionComponent = () => (
   <PlainLayout title="Welcome" description="City of Amsterdam technology standards and guidance">
     <HomepageHeader />
-    <main>
+    <main className={styles.container}>
       <Screen maxWidth="wide">
         <Grid gapVertical="small" paddingVertical="medium">
           <Grid.Cell span={12}>

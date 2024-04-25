@@ -23,8 +23,6 @@ Hide color mode toggle in small viewports
   }
 }
 
-.iconInvert {
-  svg {
-    filter: invert(1);
-  }
+.iconInvert svg {
+  filter: invert(1);
 }
