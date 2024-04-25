@@ -24,8 +24,6 @@
   transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
-[data-theme='dark'] {
-  .github svg {
-    filter: invert(1);
-  }
+[data-theme='dark'] .github svg {
+  filter: invert(1);
 }
