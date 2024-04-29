@@ -12,6 +12,9 @@ import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import type { Props } from '@theme/Layout';
 import styles from './styles.module.css';
+import '@amsterdam/design-system-tokens/dist/index.css';
+import '@amsterdam/design-system-assets/font/index.css';
+import '@amsterdam/design-system-css/dist/index.css';
 
 export default function Layout(props: Props): JSX.Element {
   const {
