@@ -63,8 +63,8 @@ Here are some things to keep it mind when writing tests. For code snippets see e
 - https://circleci.com/blog/snapshot-testing-with-jest/
 - https://www.geeksforgeeks.org/difference-between-unit-testing-and-integration-testing/
 - https://testing-library.com/docs/guiding-principles/
-- Don't test [implementation detail](https://kentcdodds.com/blog/testing-implementation-details)
-- what to test https://kentcdodds.com/blog/write-tests
+- Don't test [implementation details](https://kentcdodds.com/blog/testing-implementation-details)
+- [What to test](https://kentcdodds.com/blog/write-tests)
 - https://www.benmvp.com/blog/react-testing-library-best-practices/
 - https://github.com/patternfly/patternfly-react/wiki/React-Testing-Library-Basics,-Best-Practices,-and-Guidelines
 - [Clean and flexible way to write fixtures](https://michalzalecki.com/fixtures-the-way-to-manage-sample-and-test-data/)

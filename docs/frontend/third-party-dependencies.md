@@ -86,4 +86,4 @@ A collection of third party (React) libraries we recommend using in your fronten
 
 ## Reference
 
-[Third Party Dependency Standard](../general/third-party-dependencies.md)
+[Third Party Dependency Standard](../standards/third-party-dependencies.md)
