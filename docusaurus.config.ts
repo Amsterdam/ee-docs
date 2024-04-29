@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -37,8 +37,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Amsterdam/development-standards/edit/main/',
+          editUrl: 'https://github.com/Amsterdam/development-standards/edit/main/',
         },
         // blog: {
         //   showReadingTime: true,
@@ -72,7 +71,7 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
-          to: '/docs/intro'
+          to: '/docs/intro',
         },
       ],
     },
@@ -83,13 +82,13 @@ const config: Config = {
           items: [
             {
               label: 'Documentation',
-              to: '/docs/intro'
+              to: '/docs/intro',
             },
             {
               label: 'Vacancies',
-              href: 'https://werkenbij.amsterdam.nl/'
-            }
-          ]
+              href: 'https://werkenbij.amsterdam.nl/',
+            },
+          ],
         },
       ],
     },

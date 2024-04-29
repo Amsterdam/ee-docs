@@ -32,8 +32,8 @@ const cleanupRepoFiles = () => {
     }
 
     // TODO test markdown compilation for each file
-    fs.renameSync(path.join(cloneDir, dir), path.join(localDir, dir))
-  })
+    fs.renameSync(path.join(cloneDir, dir), path.join(localDir, dir));
+  });
 
   // Erase repo directory
   fs.rmSync(cloneDir, { recursive: true });
@@ -44,6 +44,7 @@ if (fs.existsSync(localDir)) {
 }
 
 // Clone the latest development-standards repo
-git.clone(remoteUrl, cloneDir)
+git
+  .clone(remoteUrl, cloneDir)
   .then(() => cleanupRepoFiles())
   .catch((err) => console.error('failed: ', err));

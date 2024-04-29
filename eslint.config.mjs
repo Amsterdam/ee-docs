@@ -1,34 +1,16 @@
 import globals from 'globals';
 import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
-import pluginJs from '@eslint/js';
-
-// mimic CommonJS variables -- not needed if using CommonJS
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: pluginJs.configs.recommended,
-});
-
-export default [
+export default tseslint.config(
   { languageOptions: { globals: globals.browser } },
   {
-    ignores: ['.docusaurus', 'node_modules', 'build', 'scripts/import.js'],
+    ignores: ['.docusaurus', 'babel.config.js', 'node_modules', 'build', 'scripts/import.js'],
   },
-  ...compat.extends('standard-with-typescript').map((config) => ({
-    ...config,
-    files: ['**/*.tsx'],
-    rules: {
-      ...config.rules,
-      '@typescript-eslint/strict-boolean-expressions': 'off',
-      '@typescript-eslint/prefer-nullish-coalescing': 'off',
-    },
-  })),
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
   pluginReactConfig,
   {
     settings: {
@@ -38,4 +20,4 @@ export default [
     },
   },
   eslintPluginPrettierRecommended,
-];
+);
