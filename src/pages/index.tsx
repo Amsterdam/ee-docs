@@ -1,8 +1,9 @@
 import React, { type FunctionComponent } from 'react';
 import clsx from 'clsx';
-import { Grid, Paragraph, Screen, UnorderedList } from '@amsterdam/design-system-react';
+import { Grid, Screen } from '@amsterdam/design-system-react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageCallToAction from '@site/src/components/HopepageCallToAction';
 import Heading from '@theme/Heading';
 import PlainLayout from '@site/src/components/PlainLayout/PlainLayout';
 
@@ -33,22 +34,7 @@ const Home: FunctionComponent = () => (
     <main className={styles.container}>
       <Screen maxWidth="wide">
         <Grid gapVertical="small" paddingVertical="medium">
-          <Grid.Cell span={12}>
-            <Paragraph>
-              <a href="https://developers.amsterdam" target="_blank" rel="noreferrer">
-                developers.amsterdam
-              </a>{' '}
-              is a new initiative brought to you from Engineering Enablement, Gemeente Amsterdam.
-              The Engineering Enablement team provides and maintains:
-            </Paragraph>
-          </Grid.Cell>
-          <Grid.Cell span={12}>
-            <UnorderedList>
-              <UnorderedList.Item>Reusable software components</UnorderedList.Item>
-              <UnorderedList.Item>Shared standards</UnorderedList.Item>
-              <UnorderedList.Item>Best Practices</UnorderedList.Item>
-            </UnorderedList>
-          </Grid.Cell>
+          <HomepageCallToAction />
           <HomepageFeatures />
         </Grid>
       </Screen>
