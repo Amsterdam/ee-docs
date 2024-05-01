@@ -22,17 +22,20 @@ const cleanupOldFiles = () => {
 // Sort and cleanup the cloned repository files
 const cleanupRepoFiles = () => {
   const dirs = ['backend', 'cloud', 'frontend', 'standards'];
+  const renameDirs: { [key: string]: string } = { standards: 'general' };
 
   // For each directory remove the README and move the directory up a level
   dirs.forEach((dir) => {
     const readmePath = path.join(cloneDir, `${dir}/README.md`);
 
+    // We don't want any README.md files
     if (fs.existsSync(readmePath)) {
       fs.rmSync(path.join(cloneDir, `${dir}/README.md`));
     }
 
     // TODO test markdown compilation for each file
-    fs.renameSync(path.join(cloneDir, dir), path.join(localDir, dir));
+    const targetDir = renameDirs[dir] ?? dir;
+    fs.renameSync(path.join(cloneDir, dir), path.join(localDir, targetDir));
   });
 
   // Erase repo directory
