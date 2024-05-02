@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { Grid, Screen } from '@amsterdam/design-system-react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import HomepageCallToAction from '@site/src/components/HopepageCallToAction';
+import HomepageCallToAction from '@site/src/components/HomepageCallToAction';
 import Heading from '@theme/Heading';
 import PlainLayout from '@site/src/components/PlainLayout/PlainLayout';
 
