@@ -10,7 +10,7 @@ This repository strives to offer a comprehensive overview of the standards prese
 
 ## How to use this repo?
 
-Within the `docs/general` directory, you will find descriptions of standards that apply regardless of whether you identify as a back- or front-end developer. In the `backend` and `frontend` directories, you can locate standards specifically tailored for each respective group of developers.
+Within the `docs/general` directory, you will find descriptions of standards that apply regardless of whether you identify as a back- or frontend developer. In the `backend` and `frontend` directories, you can locate standards specifically tailored for each respective group of developers.
 
 If a standard is labeled as a recommendation, it indicates that it is not widely embraced by our developer community.
 

@@ -1,3 +1,0 @@
-
-- style guides (linting, etc)
-

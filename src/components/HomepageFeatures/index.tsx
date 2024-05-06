@@ -22,54 +22,53 @@ const featureList: FeatureItem[] = [
     description:
       'Include documentation in your project that facilitates understanding, usage, and maintenance of your code.',
   },
-  {
-    title: 'Code Reviews (Not yet formatted to meet the required standard.)',
-    to: '/docs/general/code-review',
-    description: 'Code reviews are required before merging to main',
-  },
+  // {
+  //   title: 'Code Reviews (Not yet formatted to meet the required standard.)',
+  //   to: '/docs/general/code-review',
+  //   description: 'Code reviews are required before merging to main',
+  // },
   {
     title: 'Storing source code (Not yet formatted to meet the required standard.)',
     to: '/docs/general/storing-source-code',
     description: 'We use Git to store our source code. ',
   },
-  {
-    title: 'Testing (Not yet formatted to meet the required standard.)',
-    to: '/docs/general/testing',
-    description: 'A summation of libraries used by the developers of the city of Amsterdam',
-  },
-  {
-    title: 'Third party dependencies (Not yet formatted to meet the required standard.)',
-    to: '/docs/general/third-party-dependencies',
-    description: 'A guideline on how to choose',
-  },
+  // {
+  //   title: 'Testing (Not yet formatted to meet the required standard.)',
+  //   to: '/docs/general/testing',
+  //   description: 'A summation of libraries used by the developers of the city of Amsterdam',
+  // },
+  // {
+  //   title: 'Third party dependencies (Not yet formatted to meet the required standard.)',
+  //   to: '/docs/general/third-party-dependencies',
+  //   description: 'A guideline on how to choose',
+  // },
   {
     title: 'Using Git (Not yet formatted to meet the required standard.)',
     to: '/docs/general/using-git',
     description: 'Our policy how to use Git',
   },
   {
-    title: 'Languages and Frameworks (Not yet formatted to meet the required standard.)',
+    title: 'Frontend - Languages and Frameworks (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/languages-and-frameworks',
     description:
       'For all frontend projects within de Municipality of Amsterdam we choose to work with React and its ecosystem.',
   },
   {
-    title: 'Shared components (Not yet formatted to meet the required standard.)',
+    title: 'Frontend - Shared components (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/shared-components',
     description:
       'A list of components that our being used by the developers of the city of Amsterdam',
   },
   {
-    title:
-      ' Third party dependencies for Front-End (Not yet formatted to meet the required standard.)',
+    title: 'Frontend - Third party dependencies (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/third-party-dependencies',
     description:
       ' A list of recommended packages and set guidelines for choosing a package which is not on the list.',
   },
   {
-    title: 'Testing for Front-end (Not yet formatted to meet the required standard.)',
+    title: 'Frontend - Testing (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/testing',
-    description: 'A guideline to testing for front-enders.',
+    description: 'A guideline to testing for frontenders.',
   },
 ];
 
