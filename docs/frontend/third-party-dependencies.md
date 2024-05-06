@@ -4,7 +4,7 @@ It is common practice utilizing third-party libraries for our projects. Choosing
 
 ## Guidelines for choosing a third party package.
 
-When choosing a NPM package for your project please check the [recommended packages](#-list-of-recommended-packages) list first. This is a curated list recommended by the frontend developer community of the Gemeente Amsterdam.
+When choosing a NPM package for your project please check the [recommended packages](#list-of-recommended-packages) list first. This is a curated list recommended by the frontend developer community of the Gemeente Amsterdam.
 
 If the packages in the list do not fit your requirements you can pick a non-recommended package. When do so, follow these guidelines.
 
@@ -84,3 +84,4 @@ A collection of third party (React) libraries we recommend using in your fronten
 ## Managing dependencies
 
 > _To Be Defined_
+

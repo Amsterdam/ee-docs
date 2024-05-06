@@ -19,7 +19,6 @@ const sidebars: SidebarsConfig = {
       items: [
         // 'general/code-review',
         // 'general/project-documentation',
-        'general/introducing-new-or-changes-to-existing-standards',
         'general/project-documentation',
         'general/readme-default',
         'general/storing-source-code',
