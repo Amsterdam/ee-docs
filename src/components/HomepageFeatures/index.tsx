@@ -28,9 +28,10 @@ const featureList: FeatureItem[] = [
   //   description: 'Code reviews are required before merging to main',
   // },
   {
-    title: 'Storing source code (Not yet formatted to meet the required standard.)',
+    title: 'Storing source code',
     to: '/docs/general/storing-source-code',
-    description: 'We use Git to store our source code. ',
+    description:
+      'All projects must have their repository on GitHub in the account of the city of Amsterdam. You must use Git to store your code on GitHub and you must enable some branch protection rules.',
   },
   // {
   //   title: 'Testing (Not yet formatted to meet the required standard.)',

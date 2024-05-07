@@ -1,44 +1,43 @@
-# Storing source code
-Also see [using git](using-git.md).
+# Store your project in GitHub
+> This page was last reviewed May 7th 2024. It needs to be reviewed again on February 7th, 2025.
 
-We use Git to store our source code. Git is a version control system of which Github is one of the largest providers of Git. Azure Repos and GitLab are other examples of provders. 
+## How to store projects on GitHub?
+All projects must have their repository on GitHub in the account of the city of Amsterdam and should be public,
+see the section "Public or private" for allowed exemptions.
+You must use Git to store your code on GitHub.
+Secure your repo by enabling these branch protection rules:
+- Require a pull request before merging
+  - Require approvals
+    - The required number of approvals before merging is at least 1
 
-Using Git has multiple benefits:
-- It allows us to be transparent when storing code publicly. 
-- It makes collaboration easy.
-- It provides version control, allowing us to track all changes to the repository. 
+## When and for whom is this standard?
+This standard applies to front-end and back-end developers.<br/>
+This standard must be applied to all new repositories of the city of Amsterdam (new since May 2024).
 
-## Where to store your code
-The following guidelines can be used to determine where and how to store your code:
+## Public or private {#status}
+Infra-as-code logic must always be stored in a private repository.
+This improves transparency and reusability,
+but protects us from exposing security implications that could benefit potential bad actors.
 
-### Github vs Azure Repos
-1. **Infra-as-code** that is used to deploy infrastructure and/or applications to our Azure Public Cloud is always stored in Azure Repos, close to the pipelines that deploy the infra and/or applications.
-    > The Cloudplatform (the team responsible for the Azure Cloud) requires infrastructure code to be private and stored on Azure Repos, allowing them to enforce authorization rules. 
+## Recommendations
+- Send an e-mail to the Datapunt team to get access to the Amsterdam organisation in GitHub. Your e-mail must include the following:
+  - your GitHub username
+  - your first and last name
+  - the team responsible for the project
+  - and your Product Owner needs to be included in het CC. 
+- Don't store data in your repository unless it's testing data.
 
-    Note: this will change soon, when all infra-as-code will be stored in the private Github organization in our new Github Enterprise environment.
+## What pitfalls to avoid?
+- Don't store the following files on GitHub whether the repository is public or not: 
+  - Private keys, secrets, usernames or other credentials.
+  - Personally identifiable data. Report a data breach immediately if done so. Just removing the data will not erase it completely. The data will still be available through the history. Assume the data is publicly known as soon as you've published it. Bots are scanning repositories continuously looking for secrets. 
+- Don't disable the branch protection policies when they're inconvenient. Ask other developers outside your team to approve pull requests if no team members are available.  
 
-2. **All other code** should be stored in Github (https://www.github.com/amsterdam). 
-    > By storing all other code in Github we improve the discoverability of our projects and it will improve transparancy for projects that should be public. 
+## Further reading
+- [The GitHub documentation](https://docs.github.com/en/get-started) is a good source of information.
 
-### Public vs private
-The main rule is simple: repositories should be public, unless they can't be. This improves transparancy and reusability.
+## Acknowledgments
+Many thanks to [Hee Chan van der Haar](https://github.com/hcvdhaar), [Benny van de Hoogen](https://github.com/bennyvdhoogen) and [Sirée Koolen-Wijkstra](https://github.com/SireeKoolenWijkstra)
 
-TODO: define when projects can't be public. 
-
-### Getting access to Github
-There is an Amsterdam organization in Github: https://www.github.com/amsterdam. To get access to this organization send an email to `datapunt@amsterdam.nl`. State your github username, teamname, first/lastname and include your product owner. 
-
-Repositories should always be created in the Amsterdam organization, never in your personal account. 
-
-## Files that never go into Git
-Certain files should never be stored in Git, regardless of whether or not the repository is public or not. For example:
-- Private keys, secrets, usernames or other credentials.
-- Personally identifiable data.
-- Usually any other data should not go into a repository either, unless its testing data.
-
-If you accidentally push private data to the repository report a dataleak immediately. Even if you remove the content directly, there are bots scanning repositories continuously on published secrets, so it might have been picked up already. Also, simply removing something from the repository will not remove it completely; the content will still be available through the history.
-
-## Basic Git files
-Each repository should include a set of basic files:
-- README.md: a basic introduction on the repositories purpose and how to use it. 
-- LICENSE.md: a license file describing the terms under which the code is available to be used or modified. This should be EUPL-1.2 for code and CC0 for documentation.
+## Further reading
+-  Want to know more about the Fork and Pull model? We recommend you read [the GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/about-collaborative-development-models#fork-and-pull-model).
