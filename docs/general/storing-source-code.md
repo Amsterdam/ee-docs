@@ -11,12 +11,12 @@ Secure your repo by enabling these branch protection rules:
     - The required number of approvals before merging is at least 1
 
 ## When and for whom is this standard?
-This standard applies to front-end and back-end developers.<br/>
+This standard applies to all developers.<br/>
 This standard must be applied to all new repositories of the city of Amsterdam (new since May 2024).
 
 ## Public or private {#status}
 Infra-as-code logic must always be stored in a private repository.
-This improves transparency and reusability,
+This improves transparency and reusability, 
 but protects us from exposing security implications that could benefit potential bad actors.
 
 ## Recommendations
@@ -24,8 +24,8 @@ but protects us from exposing security implications that could benefit potential
   - your GitHub username
   - your first and last name
   - the team responsible for the project
-  - and your Product Owner needs to be included in het CC. 
-- Don't store data in your repository unless it's testing data.
+  - and your Product Owner needs to be included in the CC. 
+- Don't store data in your repository unless it's testing data. Data used with tests must always be anonymised
 
 ## What pitfalls to avoid?
 - Don't store the following files on GitHub whether the repository is public or not: 
