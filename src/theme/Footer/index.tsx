@@ -6,6 +6,7 @@ import {
   Icon,
   LinkList,
   PageMenu,
+  Paragraph,
   VisuallyHidden,
 } from '@amsterdam/design-system-react';
 import { ChevronRightIcon } from '@amsterdam/design-system-react-icons';
@@ -53,7 +54,7 @@ const Footer: FC | null = () => {
     });
 
     return (
-      <Grid.Cell span={3} key={uuidv4()}>
+      <Grid.Cell span={{ narrow: 4, medium: 8, wide: 7 }} key={uuidv4()}>
         <div className={styles.col}>
           <Heading inverseColor level={2} size="level-4">
             {column.title}
@@ -70,14 +71,21 @@ const Footer: FC | null = () => {
         <VisuallyHidden>
           <Heading>Colofon</Heading>
         </VisuallyHidden>
-        <Grid gapVertical="large" paddingVertical="medium">
+        <Grid gapVertical="large" paddingVertical="medium" className={styles.grid}>
           {columns}
+          <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>
+            <div className={styles.col}>
+              <Paragraph inverseColor>
+                <Link to="/">
+                  <strong>developers.amsterdam</strong>
+                </Link>{' '}
+                is a new initiative brought to you from Engineering Enablement, Gemeente Amsterdam
+              </Paragraph>
+            </div>
+          </Grid.Cell>
         </Grid>
       </AmsFooter.Top>
       <AmsFooter.Bottom>
-        <VisuallyHidden>
-          <Heading level={2}>Over deze website</Heading>
-        </VisuallyHidden>
         <Grid paddingVertical="small">
           <Grid.Cell span="all">
             <PageMenu>
