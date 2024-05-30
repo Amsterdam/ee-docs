@@ -8,7 +8,6 @@ Include documentation in your project that facilitates understanding, usage, and
 This standard applies to front-end and back-end developers.<br/>
 This standard must be applied to all new repositories of the city of Amsterdam (new since May 2024).
 
-
 ## What is required to document?
 Project documentation must include the following:
 - [ ] the main idea of the application
@@ -26,11 +25,8 @@ Documentation is not a one-time task. Regularly review and update documentation 
 ## Considerations
 - [ ] Decide the target audience. Tailor the documentation accordingly, providing explanations that are appropriate for the intended audience.
 
-
-
 ## Further reading
 -  [The blog post](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) about Architecture Decision Records by Michael Nygard.
-
 
 ## Acknowledgements
 Many thanks to [Hee Chan van der Haar](https://github.com/hcvdhaar) and [Sirée Koolen-Wijkstra](https://github.com/SireeKoolenWijkstra)
