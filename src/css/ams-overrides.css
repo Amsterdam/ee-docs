@@ -1,0 +1,45 @@
+/* Fix for ams-design-system mobile menu button breakpoint misalignment with docusaurus breakpoints */
+@media screen and (min-width: 36rem) {
+  .ams-header__links {
+    display: none !important;
+  }
+
+  .ams-header__menu {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 997px) {
+  .ams-header__links {
+    display: block !important;
+  }
+
+  .ams-header__menu {
+    display: none;
+  }
+}
+
+.main-wrapper .ams-screen {
+  width: 100%;
+}
+
+[data-theme='dark'] .ams-spotlight--dark-blue {
+  background-color: var(--ifm-navbar-background-color);
+}
+
+[data-theme='dark'] .ams-heading {
+  color: #fff;
+}
+
+[data-theme='dark'] .ams-header__menu-button {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%23ffffff' fill-rule='evenodd' d='M0 3.238h32V7.81H0V3.238zm0 10.476h32v4.572H0v-4.572zM0 24.19h32v4.572H0V24.19z'/></svg>");
+  color: #fff;
+}
+
+[data-theme='dark'] .ams-page-menu__link {
+  color: var(--ifm-link-color);
+}
+
+[data-theme='dark'] .ams-page-menu__link:hover {
+  color: var(--ifm-link-color);
+}

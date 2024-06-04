@@ -1,0 +1,22 @@
+.grid div:last-of-type {
+  order: -1;
+}
+
+@media (min-width: 997px) {
+  .grid div:last-of-type {
+    order: unset;
+  }
+}
+
+.col {
+  display: 'grid';
+  gap: '2.5rem';
+}
+
+.col a {
+  color: #fff;
+}
+
+[data-theme='dark'] .col a {
+  color: var(--ifm-link-color);
+}

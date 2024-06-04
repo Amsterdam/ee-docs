@@ -1,70 +1,99 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Link from '@docusaurus/Link';
+import { Grid, Heading, Paragraph, UnorderedList } from '@amsterdam/design-system-react';
 
-type FeatureItem = {
+interface FeatureItem {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: JSX.Element;
-};
+  to: string;
+  description: string;
+}
 
-const FeatureList: FeatureItem[] = [
+const featureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    title: 'Accessibility',
+    to: '/docs/frontend/accessibility',
+    description:
+      'In accordance with the Digital Government Act, the municipality of Amsterdam is required to build all its websites and applications in compliance with the Web Content Accessibility Guidelines (WCAG) at levels A and AA.',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    title: 'Documentation',
+    to: '/docs/general/project-documentation',
+    description:
+      'Include documentation in your project that facilitates understanding, usage, and maintenance of your code.',
+  },
+  // {
+  //   title: 'Code Reviews (Not yet formatted to meet the required standard.)',
+  //   to: '/docs/general/code-review',
+  //   description: 'Code reviews are required before merging to main',
+  // },
+  {
+    title: 'Storing source code (Not yet formatted to meet the required standard.)',
+    to: '/docs/general/storing-source-code',
+    description: 'We use Git to store our source code. ',
+  },
+  // {
+  //   title: 'Testing (Not yet formatted to meet the required standard.)',
+  //   to: '/docs/general/testing',
+  //   description: 'A summation of libraries used by the developers of the city of Amsterdam',
+  // },
+  // {
+  //   title: 'Third party dependencies (Not yet formatted to meet the required standard.)',
+  //   to: '/docs/general/third-party-dependencies',
+  //   description: 'A guideline on how to choose',
+  // },
+  {
+    title: 'Using Git (Not yet formatted to meet the required standard.)',
+    to: '/docs/general/using-git',
+    description: 'Our policy how to use Git',
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    title: 'Frontend - Languages and Frameworks (Not yet formatted to meet the required standard.)',
+    to: '/docs/frontend/languages-and-frameworks',
+    description:
+      'For all frontend projects within de Municipality of Amsterdam we choose to work with React and its ecosystem.',
+  },
+  {
+    title: 'Frontend - Shared components (Not yet formatted to meet the required standard.)',
+    to: '/docs/frontend/shared-components',
+    description:
+      'A list of components that our being used by the developers of the city of Amsterdam',
+  },
+  {
+    title: 'Frontend - Third party dependencies (Not yet formatted to meet the required standard.)',
+    to: '/docs/frontend/third-party-dependencies',
+    description:
+      ' A list of recommended packages and set guidelines for choosing a package which is not on the list.',
+  },
+  {
+    title: 'Frontend - Testing (Not yet formatted to meet the required standard.)',
+    to: '/docs/frontend/testing',
+    description: 'A guideline to testing for frontenders.',
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
-
 export default function HomepageFeatures(): JSX.Element {
+  const list = featureList.map((listItem) => (
+    <div key={uuidv4()}>
+      <UnorderedList>
+        <UnorderedList.Item>
+          <Heading size="level-5">
+            <Link to={listItem.to}>{listItem.title}</Link>
+          </Heading>
+          <Paragraph>{listItem.description}</Paragraph>
+        </UnorderedList.Item>
+      </UnorderedList>
+    </div>
+  ));
+
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <>
+      <Grid.Cell span={12}>
+        <Heading size="level-4">Current Documented Standards</Heading>
+      </Grid.Cell>
+      <Grid.Cell span={12}>
+        <div>{list}</div>
+      </Grid.Cell>
+    </>
   );
 }
