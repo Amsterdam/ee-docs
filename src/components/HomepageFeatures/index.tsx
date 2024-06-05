@@ -28,7 +28,7 @@ const featureList: FeatureItem[] = [
   //   description: 'Code reviews are required before merging to main',
   // },
   {
-    title: 'Storing source code (Not yet formatted to meet the required standard.)',
+    title: 'Storing source code',
     to: '/docs/general/storing-source-code',
     description: 'We use Git to store our source code. ',
   },
@@ -43,7 +43,7 @@ const featureList: FeatureItem[] = [
   //   description: 'A guideline on how to choose',
   // },
   {
-    title: 'Using Git (Not yet formatted to meet the required standard.)',
+    title: 'Using Git',
     to: '/docs/general/using-git',
     description: 'Our policy how to use Git',
   },
