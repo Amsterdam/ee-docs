@@ -2,7 +2,7 @@ import { simpleGit, SimpleGit, CleanOptions } from 'simple-git';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const remoteUrl = 'https://github.com/Amsterdam/development-standards';
+const remoteUrl = 'git@github.com:Amsterdam/development-standards.git';
 const localDir = 'docs';
 const cloneDir = path.join(localDir, 'latest');
 
@@ -27,7 +27,7 @@ async function cloneAndCheckout(repoUrl: string, branchName = 'main'): Promise<v
 
 // Cleanup previously cloned files from development-standards repo
 const cleanupOldFiles = () => {
-  const excludeFiles = ['intro.md'];
+  const excludeFiles = ['intro.md', 'projects'];
 
   fs.readdirSync(localDir).forEach((file) => {
     if (!excludeFiles.includes(file)) {
