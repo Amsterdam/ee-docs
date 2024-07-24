@@ -15,7 +15,7 @@
     "typecheck": "tsc",
     "lint": "npx eslint ./",
     "prepare": "husky",
-    "import-docs": "npx tsc scripts/import.ts && node scripts/import.js"
+    "import-docs": "npx tsc -p ./tsconfig.node.json && node scripts/import.mjs"
   },
   "dependencies": {
     "@amsterdam/design-system-assets": "^0.2.0",
@@ -24,13 +24,18 @@
     "@amsterdam/design-system-tokens": "^0.7.1",
     "@docusaurus/core": "^3.4.0",
     "@docusaurus/preset-classic": "^3.4.0",
+    "@mdx-js/mdx": "^3.0.1",
     "@mdx-js/react": "^3.0.0",
+    "@tsconfig/node20": "^20.1.4",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
     "raw-loader": "^4.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "remark": "^15.0.1",
+    "remark-mdx": "^3.0.1",
     "simple-git": "^3.24.0",
+    "unified": "^11.0.5",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
