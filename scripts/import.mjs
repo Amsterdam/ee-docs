@@ -5,13 +5,17 @@ import * as path from 'path';
 import { compile } from '@mdx-js/mdx';
 import { remark } from 'remark';
 import remarkMdx from 'remark-mdx';
+import { VFile } from 'vfile';
+import { reporter } from 'vfile-reporter';
 // TODO cleanup function naming
 // TODO replace fs with fs promises where possible/logical
 // TODO output invalid files with reason
+// TODO comment
 // TODO tests
 const remoteUrl = 'git@github.com:Amsterdam/development-standards.git';
 const localDir = 'docs';
 const cloneDir = path.join(localDir, 'latest');
+const invalidFiles = [];
 async function cloneAndCheckout(repoUrl, branchName = 'main') {
     const git = simpleGit().clean(CleanOptions.DRY_RUN);
     try {
@@ -22,94 +26,85 @@ async function cloneAndCheckout(repoUrl, branchName = 'main') {
             // Change to the desired branch
             await git.checkout(branchName);
         }
-        await cleanupImportedFiles();
-        console.log('\x1b[36m', 'Docs imported!');
     }
     catch (error) {
         console.error('Error occurred:', error);
     }
 }
-// Cleanup previously cloned files from development-standards repo
-// const cleanupOldFiles = () => {
-//   const excludeFiles = ['intro.md', 'projects'];
-//   fs.readdirSync(localDir).forEach((file) => {
-//     if (!excludeFiles.includes(file)) {
-//       const filePath = path.join(localDir, file);
-//       fs.rmSync(filePath, { recursive: true });
-//     }
-//   });
-// };
 const validateFile = async (filePath) => {
+    const fileContent = await fsPromises.readFile(filePath, 'utf-8');
+    const vfile = new VFile({ path: filePath, contents: fileContent });
     try {
-        const fileContent = await fsPromises.readFile(filePath, 'utf-8');
         const processor = remark().use(remarkMdx);
-        await processor.process(fileContent);
+        await processor.process(vfile);
         await compile(fileContent);
-        return true;
+        return { valid: true };
     }
     catch (error) {
+        console.log('original error', error);
+        const vfileError = error;
+        console.log('vfileError error', vfileError.message);
         // TODO return error msg
-        return false;
-        console.log(`Error validating Markdown/MDX file ${filePath}:`, error.message);
-        console.log(error);
+        const formattedError = reporter([
+            vfileError.vfile || new VFile({ path: filePath, message: vfileError.message }),
+        ]);
+        console.error(formattedError);
+        // console.log(`Error validating Markdown/MDX file ${filePath}:`, (error as Error).message);
+        // console.log({ message: (error as Error).message });
+        // console.log({ reason: error.reason,  });
+        // console.log(error);
+        return { valid: false, error: undefined };
     }
 };
 // https://mdxjs.com/playground/
+// Returns an array of the valid markdown filenames
 const validateFiles = async (dir) => {
-    const processed = {
-        valid: [],
-        invalid: [],
-    };
+    const processed = [];
     const srcDir = path.join(cloneDir, dir);
     if (fs.existsSync(srcDir)) {
         // Get files from directory and loop through them
         const fileNames = await fsPromises.readdir(srcDir);
         for (const fileName of fileNames) {
             const srcFilePath = path.join(srcDir, fileName);
-            const isFileValid = await validateFile(srcFilePath);
-            if (isFileValid) {
+            const { valid, error } = await validateFile(srcFilePath);
+            if (valid) {
                 // console.log('valid', srcFile);
-                processed.valid.push(fileName);
+                processed.push(fileName);
             }
             else {
-                processed.invalid.push(fileName);
+                invalidFiles.push({ [fileName]: error });
             }
         }
     }
     return processed;
 };
-// Sort and cleanup the cloned repository files
-const cleanupImportedFiles = async () => {
+//
+const saveImportedDocs = async () => {
+    // The directories in the `development-standards` repo that we are interested in
     const dirs = ['backend', 'cloud', 'frontend', 'general'];
     // This is currently empty but present in case a directory name requires changing on import
     // For example {general: 'common'} will rename the `general` dir to `common`
     const renameDirs = {};
-    // Collect any invalid files to output at the end
-    let skippedFiles = [];
     for (const dir of dirs) {
-        const files = await validateFiles(dir);
+        const validFiles = await validateFiles(dir);
         // Copy each valid file
-        for (const file of files.valid) {
-            // Create dir if it doesn't exist
+        for (const file of validFiles) {
             const targetDir = renameDirs[dir]
                 ? path.join(localDir, renameDirs[dir])
                 : path.join(localDir, dir);
+            // Create dir if it doesn't exist
             if (!fs.existsSync(targetDir)) {
                 fs.mkdirSync(targetDir);
             }
             await fsPromises.rename(path.join(cloneDir, dir, file), path.join(targetDir, file));
         }
-        // TODO log invalid file(s)
-        skippedFiles = [...skippedFiles, ...files.invalid];
-    }
-    if (skippedFiles) {
-        console.log('The following files were skipped due to invalid content', skippedFiles);
     }
     // Erase repo directory
     fs.rmSync(cloneDir, { recursive: true });
 };
-// if (fs.existsSync(localDir)) {
-//   cleanupOldFiles();
-// }
 // Clone the latest development-standards repo
-cloneAndCheckout(remoteUrl, 'feature/md-validation');
+cloneAndCheckout(remoteUrl, 'feature/md-validation')
+    .then(async () => {
+    await saveImportedDocs();
+})
+    .then(() => console.log('\x1b[36m', 'Docs imported!'));
