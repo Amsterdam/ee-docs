@@ -9,14 +9,13 @@ import { VFile } from 'vfile';
 import { reporter } from 'vfile-reporter';
 import { VFileMessage } from 'vfile-message';
 
-// TODO cleanup function naming
 // TODO replace fs with fs promises where possible/logical
-// TODO comment
 // TODO tests
 const remoteUrl = 'git@github.com:Amsterdam/development-standards.git';
 const localDir = 'docs';
 const cloneDir = path.join(localDir, 'latest');
 
+// Any files that fail validation will be logged here
 const invalidFiles: { [key: string]: string } = {};
 
 async function cloneAndCheckout(repoUrl: string, branchName = 'main'): Promise<void> {
@@ -24,7 +23,7 @@ async function cloneAndCheckout(repoUrl: string, branchName = 'main'): Promise<v
 
   try {
     // Clone the repository and change the current directory otherwise simple-git
-    // commands will run on this application's git config
+    // commands will run based on this application's git config
     await git.clone(repoUrl, cloneDir).cwd({ path: cloneDir });
 
     if (branchName !== 'main') {
@@ -38,10 +37,16 @@ async function cloneAndCheckout(repoUrl: string, branchName = 'main'): Promise<v
 
 interface FileValidationReport {
   valid: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   error?: string | null | undefined;
 }
 
+/**
+ * Check that a file passes the markdown + mdx validation
+ * @see https://mdxjs.com/playground/ for an in-browser validation alternative
+ *
+ * @param filePath string
+ * @returns FileValidationReport
+ */
 const validateFile = async (filePath: string): Promise<FileValidationReport> => {
   const fileContent = await fsPromises.readFile(filePath, 'utf-8');
   const vfile = new VFile({ path: filePath, contents: fileContent });
@@ -54,6 +59,7 @@ const validateFile = async (filePath: string): Promise<FileValidationReport> => 
 
     return { valid: true };
   } catch (error) {
+    // Use vfile to create a human readable error report
     const vfileError = error as VFileMessage;
     vfile.message(vfileError.message, vfileError.place);
 
@@ -61,8 +67,12 @@ const validateFile = async (filePath: string): Promise<FileValidationReport> => 
   }
 };
 
-// https://mdxjs.com/playground/
-// Returns an array of the valid markdown filenames
+/**
+ * Get the valid markdown filenames and distinguish any invalid files
+ *
+ * @param dir string
+ * @returns string[] of valid markdown filenames
+ */
 const validateFiles = async (dir: string): Promise<string[]> => {
   const processed: string[] = [];
   const srcDir = path.join(cloneDir, dir);
@@ -86,6 +96,9 @@ const validateFiles = async (dir: string): Promise<string[]> => {
   return processed;
 };
 
+/**
+ * Process the imported repository markdown files and save accordingly
+ */
 const saveImportedDocs = async () => {
   // The directories in the `development-standards` repo that we are interested in
   const dirs = ['backend', 'cloud', 'frontend', 'general'];
