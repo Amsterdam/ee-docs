@@ -15,7 +15,7 @@ import { reporter } from 'vfile-reporter';
 const remoteUrl = 'git@github.com:Amsterdam/development-standards.git';
 const localDir = 'docs';
 const cloneDir = path.join(localDir, 'latest');
-const invalidFiles = [];
+const invalidFiles = {};
 async function cloneAndCheckout(repoUrl, branchName = 'main') {
     const git = simpleGit().clean(CleanOptions.DRY_RUN);
     try {
@@ -41,19 +41,9 @@ const validateFile = async (filePath) => {
         return { valid: true };
     }
     catch (error) {
-        console.log('original error', error);
         const vfileError = error;
-        console.log('vfileError error', vfileError.message);
-        // TODO return error msg
-        const formattedError = reporter([
-            vfileError.vfile || new VFile({ path: filePath, message: vfileError.message }),
-        ]);
-        console.error(formattedError);
-        // console.log(`Error validating Markdown/MDX file ${filePath}:`, (error as Error).message);
-        // console.log({ message: (error as Error).message });
-        // console.log({ reason: error.reason,  });
-        // console.log(error);
-        return { valid: false, error: undefined };
+        vfile.message(vfileError.message, vfileError.place);
+        return { valid: false, error: reporter([vfile]) };
     }
 };
 // https://mdxjs.com/playground/
@@ -68,17 +58,15 @@ const validateFiles = async (dir) => {
             const srcFilePath = path.join(srcDir, fileName);
             const { valid, error } = await validateFile(srcFilePath);
             if (valid) {
-                // console.log('valid', srcFile);
                 processed.push(fileName);
             }
-            else {
-                invalidFiles.push({ [fileName]: error });
+            else if (error) {
+                invalidFiles[fileName] = error;
             }
         }
     }
     return processed;
 };
-//
 const saveImportedDocs = async () => {
     // The directories in the `development-standards` repo that we are interested in
     const dirs = ['backend', 'cloud', 'frontend', 'general'];
@@ -102,9 +90,18 @@ const saveImportedDocs = async () => {
     // Erase repo directory
     fs.rmSync(cloneDir, { recursive: true });
 };
+const outputResults = () => {
+    if (invalidFiles) {
+        console.error('⛔ The following documents were skipped due to invalid markup:\n');
+        for (const value of Object.values(invalidFiles)) {
+            console.error(value);
+        }
+    }
+    console.log('\x1b[36m', '✅ Docs imported!', '\x1b[0m');
+};
 // Clone the latest development-standards repo
 cloneAndCheckout(remoteUrl, 'feature/md-validation')
     .then(async () => {
     await saveImportedDocs();
 })
-    .then(() => console.log('\x1b[36m', 'Docs imported!'));
+    .then(outputResults);
