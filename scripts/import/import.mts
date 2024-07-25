@@ -15,7 +15,8 @@ const cloneDir = path.join(localDir, 'latest');
 // Any files that fail validation will be logged here
 const invalidFiles: { [key: string]: string } = {};
 
-async function cloneAndCheckout(repoUrl: string, branchName = 'main'): Promise<void> {
+// export async function cloneAndCheckout(repoUrl: string, branchName = 'main'): Promise<void> {
+export const cloneAndCheckout = async (repoUrl: string, branchName = 'main'): Promise<void> => {
   const git: SimpleGit = simpleGit().clean(CleanOptions.DRY_RUN);
 
   try {
@@ -30,7 +31,7 @@ async function cloneAndCheckout(repoUrl: string, branchName = 'main'): Promise<v
   } catch (error) {
     console.error('Error occurred:', error);
   }
-}
+};
 
 interface FileValidationReport {
   valid: boolean;
@@ -138,9 +139,13 @@ const outputResults = () => {
   console.log('\x1b[36m', '✅ Docs imported!', '\x1b[0m');
 };
 
-// Clone the latest development-standards repo
-cloneAndCheckout(remoteUrl, 'feature/md-validation')
-  .then(async () => {
-    await saveImportedDocs();
-  })
-  .then(outputResults);
+export async function app() {
+  // Clone the latest development-standards repo
+  await cloneAndCheckout(remoteUrl, 'feature/md-validation')
+    .then(async () => {
+      await saveImportedDocs();
+    })
+    .then(outputResults);
+}
+
+app().catch(console.error);

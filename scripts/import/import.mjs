@@ -1,13 +1,7 @@
 import { simpleGit, CleanOptions } from 'simple-git';
 import * as fs from 'fs';
 import * as path from 'path';
-import { compile } from '@mdx-js/mdx';
-import { remark } from 'remark';
-import remarkMdx from 'remark-mdx';
-import { VFile } from 'vfile';
-import { reporter } from 'vfile-reporter';
-// TODO replace fs with fs promises where possible/logical
-// TODO tests
+import validateFile from './validateFile.js';
 const remoteUrl = 'git@github.com:Amsterdam/development-standards.git';
 const localDir = 'docs';
 const cloneDir = path.join(localDir, 'latest');
@@ -28,29 +22,32 @@ async function cloneAndCheckout(repoUrl, branchName = 'main') {
         console.error('Error occurred:', error);
     }
 }
-/**
- * Check that a file passes the markdown + mdx validation
- * @see https://mdxjs.com/playground/ for an in-browser validation alternative
- *
- * @param filePath string
- * @returns FileValidationReport
- */
-const validateFile = async (filePath) => {
-    const fileContent = await fs.promises.readFile(filePath, 'utf-8');
-    const vfile = new VFile({ path: filePath, contents: fileContent });
-    try {
-        const processor = remark().use(remarkMdx);
-        await processor.process(vfile);
-        await compile(fileContent);
-        return { valid: true };
-    }
-    catch (error) {
-        // Use vfile to create a human readable error report
-        const vfileError = error;
-        vfile.message(vfileError.message, vfileError.place);
-        return { valid: false, error: reporter([vfile]) };
-    }
-};
+// interface FileValidationReport {
+//   valid: boolean;
+//   error?: string | null | undefined;
+// }
+// /**
+//  * Check that a file passes the markdown + mdx validation
+//  * @see https://mdxjs.com/playground/ for an in-browser validation alternative
+//  *
+//  * @param filePath string
+//  * @returns FileValidationReport
+//  */
+// const validateFile = async (filePath: string): Promise<FileValidationReport> => {
+//   const fileContent = await fs.promises.readFile(filePath, 'utf-8');
+//   const vfile = new VFile({ path: filePath, contents: fileContent });
+//   try {
+//     const processor = remark().use(remarkMdx);
+//     await processor.process(vfile);
+//     await compile(fileContent);
+//     return { valid: true };
+//   } catch (error) {
+//     // Use vfile to create a human readable error report
+//     const vfileError = error as VFileMessage;
+//     vfile.message(vfileError.message, vfileError.place);
+//     return { valid: false, error: reporter([vfile]) };
+//   }
+// };
 /**
  * Get the valid markdown filenames and distinguish any invalid files
  *
@@ -111,9 +108,12 @@ const outputResults = () => {
     }
     console.log('\x1b[36m', '✅ Docs imported!', '\x1b[0m');
 };
-// Clone the latest development-standards repo
-cloneAndCheckout(remoteUrl, 'feature/md-validation')
-    .then(async () => {
-    await saveImportedDocs();
-})
-    .then(outputResults);
+export async function app() {
+    // Clone the latest development-standards repo
+    await cloneAndCheckout(remoteUrl, 'feature/md-validation')
+        .then(async () => {
+        await saveImportedDocs();
+    })
+        .then(outputResults);
+}
+app().catch(console.error);

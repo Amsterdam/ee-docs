@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "files": [
-    "scripts/import.mts"
+    "scripts/import/import.mts"
   ]
 }

@@ -12,10 +12,11 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
+    "test": "vitest",
     "typecheck": "tsc",
     "lint": "npx eslint ./",
     "prepare": "husky",
-    "import-docs": "npx tsc -p ./tsconfig.node.json && node scripts/import.mjs"
+    "import-docs": "npx tsc -p ./tsconfig.node.json && node scripts/import/import.mjs"
   },
   "dependencies": {
     "@amsterdam/design-system-assets": "^0.2.0",
@@ -61,7 +62,9 @@
     "lint-staged": "^15.2.2",
     "prettier": "3.2.5",
     "typescript": "^5.4.5",
-    "typescript-eslint": "^7.7.1"
+    "typescript-eslint": "^7.7.1",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^2.0.4"
   },
   "browserslist": {
     "production": [
