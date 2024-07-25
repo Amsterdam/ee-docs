@@ -1,6 +1,5 @@
 import { simpleGit, CleanOptions, SimpleGit } from 'simple-git';
 import * as fs from 'fs';
-import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import { compile } from '@mdx-js/mdx';
 import { remark } from 'remark';
@@ -9,8 +8,6 @@ import { VFile } from 'vfile';
 import { reporter } from 'vfile-reporter';
 import { VFileMessage } from 'vfile-message';
 
-// TODO replace fs with fs promises where possible/logical
-// TODO tests
 const remoteUrl = 'git@github.com:Amsterdam/development-standards.git';
 const localDir = 'docs';
 const cloneDir = path.join(localDir, 'latest');
@@ -48,7 +45,7 @@ interface FileValidationReport {
  * @returns FileValidationReport
  */
 const validateFile = async (filePath: string): Promise<FileValidationReport> => {
-  const fileContent = await fsPromises.readFile(filePath, 'utf-8');
+  const fileContent = await fs.promises.readFile(filePath, 'utf-8');
   const vfile = new VFile({ path: filePath, contents: fileContent });
 
   try {
@@ -79,7 +76,7 @@ const validateFiles = async (dir: string): Promise<string[]> => {
 
   if (fs.existsSync(srcDir)) {
     // Get files from directory and loop through them
-    const fileNames = await fsPromises.readdir(srcDir);
+    const fileNames = await fs.promises.readdir(srcDir);
 
     for (const fileName of fileNames) {
       const srcFilePath = path.join(srcDir, fileName);
@@ -121,7 +118,7 @@ const saveImportedDocs = async () => {
         fs.mkdirSync(targetDir);
       }
 
-      await fsPromises.rename(path.join(cloneDir, dir, file), path.join(targetDir, file));
+      await fs.promises.rename(path.join(cloneDir, dir, file), path.join(targetDir, file));
     }
   }
 
