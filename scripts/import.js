@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var simple_git_1 = require("simple-git");
 var fs = require("fs");
 var path = require("path");
-var remoteUrl = 'https://github.com/Amsterdam/development-standards';
+var remoteUrl = 'git@github.com:Amsterdam/development-standards.git';
 var localDir = 'docs';
 var cloneDir = path.join(localDir, 'latest');
 function cloneAndCheckout(repoUrl_1) {
@@ -79,7 +79,7 @@ function cloneAndCheckout(repoUrl_1) {
 }
 // Cleanup previously cloned files from development-standards repo
 var cleanupOldFiles = function () {
-    var excludeFiles = ['intro.md'];
+    var excludeFiles = ['intro.md', 'projects'];
     fs.readdirSync(localDir).forEach(function (file) {
         if (!excludeFiles.includes(file)) {
             var filePath = path.join(localDir, file);
