@@ -32,6 +32,10 @@ Documentation and various tools that can assist in validation markdown content:
 - <a href="https://mdxjs.com/playground/" target="_blank">MDX Playground</a>
     *Here you can toggle between `Input format` as `MDX` or `markdown` to test Markdown compilation*
 
+### Markdown metadata
+
+Docusaurus uses '[Front matter](https://docusaurus.io/docs/markdown-features#front-matter)' to override common template metadata, for example, page titles, OG meta data and more. A full list is available [here](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
+
 ## Docusaurus
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
