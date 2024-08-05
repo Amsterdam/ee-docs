@@ -20,7 +20,7 @@ If you would like to include additional standards, please refer to the [manual f
 
 ### Markdown rules
 
-This application uses <a href="https://docusaurus.io/" target="_blank">Docusaurus</a>, which creates documentation pages from `.md` and `.mdx` files. Docusaurus compiles each type into a React component. However, if during compilation it encounters invalid markup or markup it is unsure of, the compiler will stop and return an error.
+This application uses <a href="https://docusaurus.io/" target="_blank">Docusaurus</a>, which creates documentation pages from `.md` (Markdown) and `.mdx` (<a href="https://mdxjs.com/" target="_blank">Markdown + JSX</a>) files. Docusaurus compiles each type into a React component. However, if during compilation it encounters invalid markup or markup it is unsure of, the compiler will stop and return an error.
 
 Therefore, it is a requirement that Markdown files are properly formatted otherwise this application can crash. When running the import script in this application, it will attempt to compile each Markdown file to ensure there are no errors present otherwise the file will be skipped.
 
