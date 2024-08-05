@@ -68,7 +68,7 @@ This command generates static content into the `build` directory and can be serv
 npm run import-docs
 ```
 
-This command downloads the latest markdown files from the [development-standards](https://github.com/Amsterdam/development-standards) repository.
+This command downloads the latest markdown files from the [development-standards](https://github.com/Amsterdam/development-standards) repository. By default this will save documentation in the `docs` directory; to customize this you can pass as argument of the desired path after the `import-docs` command.
 
 ### Deployment
 
