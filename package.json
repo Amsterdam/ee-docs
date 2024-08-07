@@ -15,7 +15,7 @@
     "typecheck": "tsc",
     "lint": "npx eslint ./",
     "prepare": "husky",
-    "import-docs": "npx tsc scripts/import.ts && node scripts/import.js"
+    "import-docs": "node ./node_modules/ee-docs-importer"
   },
   "dependencies": {
     "@amsterdam/design-system-assets": "^0.2.0",
@@ -26,11 +26,11 @@
     "@docusaurus/preset-classic": "^3.4.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "ee-docs-importer": "github:amsterdam/ee-docs-importer",
     "prism-react-renderer": "^2.3.0",
     "raw-loader": "^4.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "simple-git": "^3.24.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
