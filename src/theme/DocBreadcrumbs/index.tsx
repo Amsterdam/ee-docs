@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSidebarBreadcrumbs } from '@docusaurus/theme-common/internal';
+import { useSidebarBreadcrumbs } from '@docusaurus/plugin-content-docs/client';
 import { Breadcrumb } from '@amsterdam/design-system-react';
 import styles from './styles.module.css';
 
