@@ -37,6 +37,10 @@ body {
   max-width: 1440px;
 }
 
+.ams-grid_inner {
+  padding: 0px !important
+}
+
 .navbar__toggle {
   display: inline-flex;
   margin: 0;

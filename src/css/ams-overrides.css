@@ -17,10 +17,18 @@
   .ams-header__menu {
     display: none;
   }
+
+  .ams-image_responsive {
+    display: block !important;
+  }
 }
 
 .main-wrapper .ams-screen {
   width: 100%;
+}
+
+.ams-image_responsive {
+  display: none
 }
 
 [data-theme='dark'] .ams-spotlight--dark-blue {

@@ -33,7 +33,7 @@ const Home: FunctionComponent = () => (
     <HomepageHeader />
     <main className={styles.container}>
       <Screen maxWidth="wide">
-        <Grid gapVertical="small" paddingVertical="medium">
+        <Grid paddingVertical="medium">
           <HomepageCallToAction />
           <HomepageFeatures />
         </Grid>
