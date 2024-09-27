@@ -12,7 +12,7 @@ This standard must be applied to all new repositories of the city of Amsterdam (
 Project documentation must include the following:
 - [ ] the main idea of the application
 - [ ] the license [EU-PL v1.2](https://eupl.eu/1.2/en/)
-- [ ] a ReadMe (please follow the guidelines on what to include in a ReadMe [ToDO: reference to where documentation about ReadMes will be])
+- [ ] a ReadMe (please follow [the guidelines](readme-default.md) on what to include in a ReadMe )
 - [ ] all architectural decisions made, use the format Architecture Decision Record (ADR)
 - [ ] a changelog and a future review date
 - [ ] information about what data is processed by the application
