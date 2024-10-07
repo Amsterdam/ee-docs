@@ -6,7 +6,9 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
  - render a sidebar for each doc of that group
  - provide next/previous navigation
 
- The sidebars can be generated from the filesystem, or explicitly defined here.
+ The sidebars can be generated from the filesystem, or explicitly defined here. Please be advised,
+ when adding new docs to a group in the sidebar, a hash collision might happen in the routing to that
+ doc (in route.js). Changing the new name of the new file should solve this.
 
  Create as many sidebars as you want.
  */
@@ -41,7 +43,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Projects',
-      items: ['projects/maps'],
+      items: ['projects/maps', 'projects/sso'],
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure
