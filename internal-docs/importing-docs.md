@@ -8,9 +8,11 @@ The primary documentation is stored in a separate repository [development-standa
 
 To import the latest docs, run the command `npm run import-docs`.
 
-This is the equivalent of `node ./node_modules/ee-docs-importer ./imported-docs`, which uses [ee-docs-importer](https://github.com/Amsterdam/ee-docs-importer/) to copy the latest valid markdown files from [development-standards](https://github.com/Amsterdam/development-standards/) to the `imported-docs` directory.
+This is the equivalent of `node ./node_modules/ee-docs-importer`, which uses [ee-docs-importer](https://github.com/Amsterdam/ee-docs-importer/) to copy the latest **valid** markdown files from [development-standards](https://github.com/Amsterdam/development-standards/) to the `docs` directory.
 
 It copies valid markdown files from [development-standards](https://github.com/Amsterdam/development-standards/) `backend`, `frontend` and `general` directories, as well as the `intro.md` file in the root directory.
+
+Information about the validation rules is available in [Markdown Rules](./markdown-rules.md).
 
 ## Adding docs to the sidebar navigation
 

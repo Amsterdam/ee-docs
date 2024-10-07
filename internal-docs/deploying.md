@@ -4,7 +4,7 @@ Deploying the application is straightforward and uses a Docusaurus command, whic
 
 ## TODOs
 
-In this `ee-docs` application, deployments can be improved with:
+Currently in this `ee-docs` application, deployments could be improved with:
 
 - [ ] release versioning
 - [ ] [deployment automation](https://docusaurus.io/docs/deployment#triggering-deployment-with-github-actions).
@@ -13,12 +13,12 @@ In this `ee-docs` application, deployments can be improved with:
 
 Ensure you are [authenticated with GitHub via command-line](https://docusaurus.io/docs/deployment#deploy)
 
-1. Merge all the latest completed from the `develop` branch to `main`
+1. Merge all the latest completed changes from the `develop` branch to `main`
 2. Run the command `npm run deploy`
 
 ## GitHub authentication options
 
-You can use the following commands to vary the GitHub authentication:
+You can use the following commands to switch between SSH for GitHub authentication:
 
 Using SSH:
 
