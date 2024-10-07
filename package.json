@@ -15,7 +15,7 @@
     "typecheck": "tsc",
     "lint": "npx eslint ./",
     "prepare": "husky",
-    "import-docs": "node ./node_modules/ee-docs-importer ./imported-docs"
+    "import-docs": "node ./node_modules/ee-docs-importer"
   },
   "dependencies": {
     "@amsterdam/design-system-assets": "^0.2.0",

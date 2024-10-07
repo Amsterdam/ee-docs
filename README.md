@@ -22,15 +22,15 @@ If you would like to include additional standards, please refer to the [manual f
 
 ### Docusaurus basic commands
 
-- [Docusaurus basic commands](./docs/docusaurus.md)
+- [Docusaurus basic commands](./internal-docs/docusaurus.md)
 
 ### Generating a release
 
-- [Importing documentation](./docs/importing-docs.md)
-- [Local documentation](./docs/local-docs.md)
-- [Deploying](./docs/deploying.md)
+- [Importing documentation](./internal-docs/importing-docs.md)
+- [Local documentation](./internal-docs/local-docs.md)
+- [Deploying](./internal-docs/deploying.md)
 
 ### Markdown
 
-- [Markdown metadata](./docs/markdown-metadata.md)
-- [Markdown rules](./docs/markdown-rules.md)
+- [Markdown metadata](./internal-docs/markdown-metadata.md)
+- [Markdown rules](./internal-docs/markdown-rules.md)
