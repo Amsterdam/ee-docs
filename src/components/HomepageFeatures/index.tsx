@@ -37,15 +37,21 @@ const featureList: FeatureItem[] = [
   //   to: '/docs/general/testing',
   //   description: 'A summation of libraries used by the developers of the city of Amsterdam',
   // },
-  // {
-  //   title: 'Third party dependencies (Not yet formatted to meet the required standard.)',
-  //   to: '/docs/general/third-party-dependencies',
-  //   description: 'A guideline on how to choose',
-  // },
   {
     title: 'Using Git',
     to: '/docs/general/using-git',
     description: 'Our policy how to use Git',
+  },
+  {
+    title: 'Third party dependencies in general',
+    to: '/docs/general/third-party-dependencies',
+    description: 'A guideline on how to choose',
+  },
+  {
+    title: 'Frontend - Third party dependencies',
+    to: '/docs/frontend/third-party-dependencies',
+    description:
+      ' A list of recommended packages and set guidelines for choosing a package which is not on the list.',
   },
   {
     title: 'Frontend - Languages and Frameworks (Not yet formatted to meet the required standard.)',
@@ -58,12 +64,6 @@ const featureList: FeatureItem[] = [
     to: '/docs/frontend/shared-components',
     description:
       'A list of components that our being used by the developers of the city of Amsterdam',
-  },
-  {
-    title: 'Frontend - Third party dependencies (Not yet formatted to meet the required standard.)',
-    to: '/docs/frontend/third-party-dependencies',
-    description:
-      ' A list of recommended packages and set guidelines for choosing a package which is not on the list.',
   },
   {
     title: 'Frontend - Testing (Not yet formatted to meet the required standard.)',

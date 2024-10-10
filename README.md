@@ -2,7 +2,7 @@
 
 Team responsible: Engineering Enablement team
 
-This is [Docusaurus](https://docusaurus.io/) application. The Markdown files in the `docs` directory are imported from the [amsterdam/development-standards project](https://github.com/Amsterdam/development-standards).
+This is a [Docusaurus](https://docusaurus.io/) application. The Markdown files in the `docs` directory are imported from the [amsterdam/development-standards project](https://github.com/Amsterdam/development-standards).
 
 ## Aims of this repo
 
@@ -16,46 +16,21 @@ If a standard is labeled as a recommendation, it indicates that it is not widely
 
 ## How to contribute to this repo?
 
-If you would like to include additional standards, please refer to the manual for instructions on implementing new standards. (TODO: Create a link to the implementation page of standards.) If you have any other matters to bring to our attention, you can contact us via Slack (#engineering-enablement) or Teams (DV - Engineering Enablement).
+If you would like to include additional standards, please refer to the [manual for instructions on implementing new standards](https://developers.amsterdam/docs/general/project-documentation). If you have any other matters to bring to our attention, you can contact us via Slack (#engineering-enablement) or Teams (DV - Engineering Enablement).
 
-## Docusaurus
+## Project documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+### Docusaurus basic commands
 
-### Installation
+- [Docusaurus basic commands](./internal-docs/docusaurus.md)
 
-```bash
-npm run
-```
+### Generating a release
 
-### Local Development
+- [Importing documentation](./internal-docs/importing-docs.md)
+- [Local documentation](./internal-docs/local-docs.md)
+- [Deploying](./internal-docs/deploying.md)
 
-```bash
-npm run start
-```
+### Markdown
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```bash
-npm run build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true npm run deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- [Markdown metadata](./internal-docs/markdown-metadata.md)
+- [Markdown rules](./internal-docs/markdown-rules.md)

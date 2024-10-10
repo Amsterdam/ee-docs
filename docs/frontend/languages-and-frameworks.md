@@ -1,6 +1,6 @@
 # Languages and Frameworks
 
-For all frontend projects within de Municipality of Amsterdam we choose to work with React and its ecosystem.
+For all frontend projects within the Municipality of Amsterdam we work with [NPM](https://www.npmjs.com/) for dependency management and the React library.
 
 ## Language
 
