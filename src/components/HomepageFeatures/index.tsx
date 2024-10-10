@@ -87,6 +87,7 @@ export default function HomepageFeatures(): JSX.Element {
           <listItem.image width="62" height="62" preserveAspectRatio="xMinYMin" />
         )}
         <Heading size="level-4">
+          {listItem.title}
           <Card.Link href={listItem.to} />
         </Heading>
         <Paragraph size="small">{listItem.description}</Paragraph>
@@ -97,7 +98,9 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <>
       <Grid.Cell span={12}>
-        <Heading size="level-3">Guidelines</Heading>
+        <Heading className="ams-mb--sm" size="level-3">
+          Guidelines
+        </Heading>
 
         <Grid className="ams-grid_inner">{list}</Grid>
       </Grid.Cell>

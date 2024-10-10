@@ -15,7 +15,7 @@ const HomepageCallToAction = ({
       <Overlap>
         <Grid className="ams-grid_inner">
           <Grid.Cell span={7}>
-            <Heading size="level-2">
+            <Heading className="ams-mb--sm" size="level-2">
               {isBallRolling ? "Let's get the ball rollin'" : 'Contribute'}
             </Heading>
             <Paragraph>
