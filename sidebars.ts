@@ -19,15 +19,17 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Common standards',
       items: [
-        // 'general/code-review',
-        // 'general/project-documentation',
         'general/project-documentation',
         'general/readme-default',
         'general/storing-source-code',
-        // 'general/testing',
-        // 'general/third-party-dependencies',
+        'general/third-party-dependencies',
         'general/using-git',
       ],
+    },
+    {
+      type: 'category',
+      label: 'Backend',
+      items: ['backend/docker-usage'],
     },
     {
       type: 'category',
