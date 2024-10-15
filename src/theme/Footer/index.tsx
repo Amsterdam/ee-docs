@@ -7,7 +7,6 @@ import {
   LinkList,
   PageMenu,
   Paragraph,
-  VisuallyHidden,
 } from '@amsterdam/design-system-react';
 import { ChevronRightIcon } from '@amsterdam/design-system-react-icons';
 import { v4 as uuidv4 } from 'uuid';
@@ -57,7 +56,7 @@ const Footer: FC | null = () => {
       <Grid.Cell span={{ narrow: 4, medium: 8, wide: 7 }} key={uuidv4()}>
         <div className={styles.col}>
           <Heading inverseColor level={2} size="level-4">
-            {column.title}
+            {column.title ?? ''}
           </Heading>
           <LinkList>{navItems}</LinkList>
         </div>
@@ -68,9 +67,6 @@ const Footer: FC | null = () => {
   return (
     <AmsFooter>
       <AmsFooter.Top>
-        <VisuallyHidden>
-          <Heading>Colofon</Heading>
-        </VisuallyHidden>
         <Grid gapVertical="large" paddingVertical="medium" className={styles.grid}>
           {columns}
           <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>

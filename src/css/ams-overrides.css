@@ -31,6 +31,21 @@
   display: none
 }
 
+.ams-grid_inner {
+  padding: 0 !important
+}
+
+.intro-link {
+  background-color: var(--ams-color-primary-blue);
+  text-decoration: none !important;
+  padding: 8px 16px;
+}
+
+.intro-link:hover {
+  background-color: var(--ams-color-dark-blue);
+  color: #fff;
+}
+
 [data-theme='dark'] .ams-spotlight--dark-blue {
   background-color: var(--ifm-navbar-background-color);
 }
@@ -52,6 +67,18 @@
   color: var(--ifm-link-color);
 }
 
+<<<<<<< HEAD
 [data-theme='dark'] .ams-breadcrumb__item:not(:last-child):after {
   filter: invert(1);
+=======
+[data-theme='dark'] .intro-link {
+  background-color: #FFFFFF;
+  text-decoration: none !important;
+  color: #000000 !important;;
+  padding: 8px 16px;
+}
+
+[data-theme='dark'] .intro-link:hover {
+  background-color: #E8E8E8;
+>>>>>>> 15b786f (Fix link and distance to footer)
 }
