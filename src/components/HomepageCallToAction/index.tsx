@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grid, Heading, Image, Overlap, Paragraph } from '@amsterdam/design-system-react';
-import ShareButton from '@site/src/theme/Button';
+import { Grid, Heading, Image, Link, Overlap, Paragraph } from '@amsterdam/design-system-react';
 
 interface HomepageCallToActionProps {
   isBallRolling?: boolean;
@@ -24,7 +23,9 @@ const HomepageCallToAction = ({
               encouraged, with resources available to learn how to get involved.
             </Paragraph>
             <br />
-            <ShareButton />
+            <Link href="/docs/intro" className="intro-link" onBackground="dark">
+              Share your input
+            </Link>
           </Grid.Cell>
           {isImageShowing && (
             <Grid.Cell span={5}>
