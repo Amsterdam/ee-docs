@@ -20,10 +20,10 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@amsterdam/design-system-assets": "^0.2.1",
-    "@amsterdam/design-system-css": "^0.11.1",
-    "@amsterdam/design-system-react": "^0.11.1",
-    "@amsterdam/design-system-tokens": "^0.11.0",
+    "@amsterdam/design-system-assets": "^0.2.0",
+    "@amsterdam/design-system-css": "^0.7.1",
+    "@amsterdam/design-system-react": "^0.7.1",
+    "@amsterdam/design-system-tokens": "^0.7.1",
     "@docusaurus/core": "^3.5.2",
     "@docusaurus/preset-classic": "^3.5.2",
     "@mdx-js/react": "^3.0.0",
