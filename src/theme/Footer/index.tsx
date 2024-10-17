@@ -12,11 +12,11 @@ import { ChevronRightIcon } from '@amsterdam/design-system-react-icons';
 import { v4 as uuidv4 } from 'uuid';
 import Link from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
-import type { FooterLinkItem } from '@docusaurus/theme-common';
+import type { FooterLinkItem, MultiColumnFooter } from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 
 const Footer: FC | null = () => {
-  const { footer } = useThemeConfig();
+  const { footer } = useThemeConfig() as { footer: MultiColumnFooter | null };
 
   if (footer == null) {
     return null;
@@ -38,10 +38,9 @@ const Footer: FC | null = () => {
           </Link>
         );
       }
-
       return (
         <LinkList.Link
-          href={item.href}
+          href={item.href ?? '#'}
           target="_blank"
           onBackground="dark"
           size="small"
@@ -56,7 +55,7 @@ const Footer: FC | null = () => {
       <Grid.Cell span={{ narrow: 4, medium: 8, wide: 7 }} key={uuidv4()}>
         <div className={styles.col}>
           <Heading inverseColor level={2} size="level-4">
-            {column.title ?? ''}
+            {column.title}
           </Heading>
           <LinkList>{navItems}</LinkList>
         </div>
