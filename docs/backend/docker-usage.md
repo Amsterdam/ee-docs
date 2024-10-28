@@ -1,4 +1,4 @@
-﻿# Docker Standard for Internal Application Development and Deployment
+﻿# Docker usage
 > This page was last reviewed 10th October 2024. It needs to be reviewed again on the 10th April 2025.
 ## What is the standard for Docker?
 Use Docker for containerization in the development, testing, and production of applications within the Municipality. Developers must use Dockerfiles that meet the minimum requirements outlined below. Dockerfiles are stored in the application repository in **GitHub**, while the compiled Docker images are stored in **Azure Container Registry (ACR)**.
