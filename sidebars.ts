@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
         'general/project-documentation',
         'general/readme-default',
         'general/storing-source-code',
+        'general/testing',
         'general/third-party-dependencies',
         'general/using-git',
       ],
