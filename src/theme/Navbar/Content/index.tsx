@@ -3,9 +3,9 @@ import { useThemeConfig } from '@docusaurus/theme-common';
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
-import { Grid, Header, Icon, PageMenu, Screen } from '@amsterdam/design-system-react';
-import { SearchIcon } from '@amsterdam/design-system-react-icons';
+import { Grid, PageMenu, Screen } from '@amsterdam/design-system-react';
 import { v4 as uuidv4 } from 'uuid';
+import Header from '@site/src/components/DesignSystem/Header';
 import GitHubIcon from '@site/static/img/github-mark.svg';
 
 import styles from './styles.module.css';
@@ -36,12 +36,6 @@ export default function NavbarContent(): JSX.Element {
           <Header
             links={
               <PageMenu alignEnd>
-                <li>
-                  <button type="button" className={styles.searchButton}>
-                    Zoeken
-                    <Icon svg={SearchIcon} size="level-6" />
-                  </button>
-                </li>
                 {navItems}
                 <div className={styles.buttons}>
                   <a
