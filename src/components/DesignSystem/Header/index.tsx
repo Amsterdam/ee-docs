@@ -7,6 +7,7 @@ import React, { forwardRef } from 'react';
 import { Heading, Logo, LogoBrand } from '@amsterdam/design-system-react';
 import type { ForwardedRef, HTMLAttributes, ReactNode } from 'react';
 import SearchBar from '@theme/SearchBar';
+import styles from './styles.module.css';
 
 export type HeaderProps = {
   /** The name of the application. */
@@ -44,9 +45,16 @@ export const Header = forwardRef(
             <span className="ams-visually-hidden">{logoLinkTitle}</span>
             <Logo brand={logoBrand} />
           </a>
-          <SearchBar />
+
           {links && <div className="ams-header__links">{links}</div>}
-          {menu && <div className="ams-header__menu">{menu}</div>}
+          {menu && (
+            <div className="ams-header__menu">
+              <div className={styles.mobileMenuInner}>
+                <SearchBar />
+                {menu}
+              </div>
+            </div>
+          )}
           {appName && (
             <div className="ams-header__app-name">
               <Heading level={1} size="level-3" className="ams-header__app-name-heading">

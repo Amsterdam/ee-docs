@@ -7,6 +7,7 @@ import { Grid, PageMenu, Screen } from '@amsterdam/design-system-react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '@site/src/components/DesignSystem/Header';
 import GitHubIcon from '@site/static/img/github-mark.svg';
+import SearchBar from '@theme/SearchBar';
 
 import styles from './styles.module.css';
 
@@ -36,6 +37,7 @@ export default function NavbarContent(): JSX.Element {
           <Header
             links={
               <PageMenu alignEnd>
+                <SearchBar />
                 {navItems}
                 <div className={styles.buttons}>
                   <a
