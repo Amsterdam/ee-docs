@@ -5,6 +5,7 @@
   color: var(--ifm-link-color);
   cursor: pointer;
   display: flex;
+  font-family: inherit;
   font-size: 1rem;
   padding: 0;
   transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
