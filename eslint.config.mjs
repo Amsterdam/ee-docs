@@ -13,6 +13,7 @@ export default tseslint.config(
   ...tseslint.configs.recommended,
   pluginReactConfig,
   {
+    extends: ['plugin:react/jsx-runtime'],
     settings: {
       react: {
         version: 'detect',
