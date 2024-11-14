@@ -165,7 +165,7 @@ function DocSearch({ contextualSearch, externalUrlRegex, ...props }: DocSearchPr
 
   const resultsFooterComponent: DocSearchProps['resultsFooterComponent'] = useMemo(
     () =>
-      // eslint-disable-next-line react/no-unstable-nested-components
+      // eslint-disable-next-line react/no-unstable-nested-components, react/display-name
       (footerProps: Omit<ResultsFooterProps, 'onClose'>): JSX.Element => (
         <ResultsFooter {...footerProps} onClose={closeModal} />
       ),
