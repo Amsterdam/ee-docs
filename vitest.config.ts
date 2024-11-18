@@ -17,7 +17,11 @@ function resolveWithExtensions(basePath: string): string | null {
   return null;
 }
 
-// Custom plugin to handle @theme/ alias with fallback
+/**
+ * Some theme components are 'swizzled' so are imported from the `src/theme` directory.
+ * However, unswizzled component files are imported from `node_modules/@docusaurus/
+ * theme-classic`. This plugin will map these imports accordingly in tests.
+ */
 function ThemeAliasPlugin() {
   return {
     name: 'vite-plugin-theme-alias',
@@ -56,7 +60,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        // @docusaurus/Noop likes to be difficult
+        // @docusaurus/Noop is a little special
         find: '@docusaurus/Noop',
         replacement: path.resolve(__dirname, './test/__mocks__/noop.ts'),
       },
