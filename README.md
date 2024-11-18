@@ -35,3 +35,7 @@ If you would like to include additional standards, please refer to the [manual f
 
 - [Markdown metadata](./internal-docs/markdown-metadata.md)
 - [Markdown rules](./internal-docs/markdown-rules.md)
+
+### Seach
+
+- [Search overview](./internal-docs/search.md)

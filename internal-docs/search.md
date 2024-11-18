@@ -118,4 +118,4 @@ new Crawler({
 
 A lot of these simpler options can also be configured through the `Setup / Configuration` page.
 
-**Note that we have edited the return from `recordExtractor` in line 42, changing `lvl1: ['header h1', 'article h1'],` to `lvl1: ['article h1'],` otherwise the indexer will also index the word `Developers` from the global header title.**
+**Note the return from `recordExtractor` in line 42 has been edited, changing `lvl1: ['header h1', 'article h1'],` to `lvl1: ['article h1'],` otherwise the indexer will also index the word `Developers` from the global header title.**
