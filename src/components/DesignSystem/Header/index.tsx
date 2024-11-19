@@ -1,5 +1,7 @@
 /**
- * Forked because we need to place the search button next to the menu button and handle it responsively to avoid rebuilding the mobile sidebar to include seach on mobile
+ * This component is forked because we need to place the search button next
+ * to the menu button and handle it responsively to avoid rebuilding the
+ * Docusaurus mobile sidebar to include seach on mobile
  *
  */
 import clsx from 'clsx';

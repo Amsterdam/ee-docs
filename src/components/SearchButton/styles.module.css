@@ -22,7 +22,6 @@
 .text {
   display: none;
 
-  /* TODO move 36rem to variable? */
   @media screen and (min-width: 997px) {
     display: inline;
   }
