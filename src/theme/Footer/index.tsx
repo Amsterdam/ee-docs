@@ -67,7 +67,7 @@ const Footer: FC | null = () => {
           {columns}
           <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>
             <div className={styles.col}>
-              <Paragraph inverseColor className="ams-mt--md">
+              <Paragraph inverseColor>
                 <Link to="/">
                   <strong>developers.amsterdam</strong>
                 </Link>{' '}
