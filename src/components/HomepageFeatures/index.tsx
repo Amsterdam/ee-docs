@@ -6,7 +6,7 @@ interface FeatureItem {
   title: string;
   to: string;
   description: string;
-  image: string | React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  image?: string | React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 const featureList: FeatureItem[] = [
@@ -24,22 +24,35 @@ const featureList: FeatureItem[] = [
     description:
       'Include documentation in your project that facilitates understanding, usage, and maintenance of your code.',
   },
-  // {
-  //   title: 'Code Reviews (Not yet formatted to meet the required standard.)',
-  //   to: '/docs/general/code-review',
-  //   description: 'Code reviews are required before merging to main',
-  // },
+  {
+    title: 'Code Reviews (Not yet formatted to meet the required standard.)',
+    to: '/docs/general/code-review',
+    description: 'Code reviews are required before merging to main',
+  },
   {
     image: 'img/Git.svg',
     title: 'Storing source code',
     to: '/docs/general/storing-source-code',
     description: 'We use Git to store our source code. ',
   },
+<<<<<<< HEAD
   // {
   //   title: 'Testing (Not yet formatted to meet the required standard.)',
   //   to: '/docs/general/testing',
   //   description: 'A summation of libraries used by the developers of the city of Amsterdam',
   // },
+=======
+  {
+    title: 'Testing (Not yet formatted to meet the required standard.)',
+    to: '/docs/general/testing',
+    description: 'A summation of libraries used by the developers of the city of Amsterdam',
+  },
+  {
+    title: 'Third party dependencies (Not yet formatted to meet the required standard.)',
+    to: '/docs/general/third-party-dependencies',
+    description: 'A guideline on how to choose',
+  },
+>>>>>>> a05c0ea (WIP can not get the image right)
   {
     image: GitHubIcon,
     title: 'Using Git',
@@ -78,32 +91,29 @@ const featureList: FeatureItem[] = [
 ];
 
 export default function HomepageFeatures(): JSX.Element {
-  const list = featureList.map((listItem) => (
-    <Grid.Cell key={uuidv4()} span={4}>
-      <Card>
-        {typeof listItem.image === 'string' ? (
-          <Image alt="" src={listItem.image} loading="lazy" />
-        ) : (
-          <listItem.image width="62" height="62" preserveAspectRatio="xMinYMin" />
-        )}
-        <Heading size="level-4">
-          {listItem.title}
-          <Card.Link href={listItem.to} />
-        </Heading>
-        <Paragraph size="small">{listItem.description}</Paragraph>
-      </Card>
-    </Grid.Cell>
-  ));
-
   return (
     <>
-      <Grid.Cell span={12}>
-        <Heading className="ams-mb--sm" size="level-3">
-          Guidelines
-        </Heading>
-
-        <Grid className="ams-grid_inner">{list}</Grid>
-      </Grid.Cell>
+      {featureList.map((listItem) => (
+        <Grid.Cell key={uuidv4()} span={4}>
+          <Card>
+            {listItem.image &&
+              (typeof listItem.image === 'string' ? (
+                <Image alt={listItem.title} src={listItem.image} loading="lazy" />
+              ) : (
+                React.createElement(listItem.image, {
+                  width: 62,
+                  height: 62,
+                  preserveAspectRatio: 'xMinYMin',
+                })
+              ))}
+            <Heading size="level-4">
+              {listItem.title}
+              <Card.Link href={listItem.to} />
+            </Heading>
+            <Paragraph size="small">{listItem.description}</Paragraph>
+          </Card>
+        </Grid.Cell>
+      ))}
     </>
   );
 }
