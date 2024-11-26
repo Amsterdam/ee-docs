@@ -43,3 +43,7 @@
 [data-theme='dark'] .ams-page-menu__link:hover {
   color: var(--ifm-link-color);
 }
+
+[data-theme='dark'] .ams-breadcrumb__item:not(:last-child):after {
+  filter: invert(1);
+}
