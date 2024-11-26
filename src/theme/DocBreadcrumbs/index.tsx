@@ -17,9 +17,9 @@ export default function DocBreadcrumbs(): JSX.Element | null {
         const href = item.type === 'category' && item.linkUnlisted ? undefined : item.href;
 
         return (
-          <Breadcrumb.Item href={!isLast ? href : '#'} key={idx}>
+          <Breadcrumb.Link href={!isLast ? href : '#'} key={idx}>
             {item.label}
-          </Breadcrumb.Item>
+          </Breadcrumb.Link>
         );
       })}
     </Breadcrumb>
