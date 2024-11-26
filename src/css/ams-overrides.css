@@ -20,6 +20,7 @@
 
   .ams-image_responsive {
     display: block !important;
+    border: 1px solid red;
   }
 }
 

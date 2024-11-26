@@ -1,21 +1,14 @@
 import React from 'react';
 import { Grid, Heading, Image, Link, Overlap, Paragraph } from '@amsterdam/design-system-react';
 
-interface HomepageCallToActionProps {
-  isBallRolling?: boolean;
-  isImageShowing?: boolean;
-}
-const HomepageCallToAction = ({
-  isBallRolling = true,
-  isImageShowing = true,
-}: HomepageCallToActionProps) => {
+const HomepageCallToAction = () => {
   return (
     <Grid.Cell span={12}>
       <Overlap>
         <Grid className="ams-grid_inner">
           <Grid.Cell span={7}>
             <Heading className="ams-mb--sm" size="level-2">
-              {isBallRolling ? "Let's get the ball rollin'" : 'Contribute'}
+              Contribute
             </Heading>
             <Paragraph>
               Developers.amsterdam offers an overview of the standards and shared components
@@ -27,16 +20,18 @@ const HomepageCallToAction = ({
               Share your input
             </Link>
           </Grid.Cell>
-          {isImageShowing && (
-            <Grid.Cell span={5}>
-              <Image
-                className="ams-image_responsive"
-                alt=""
-                loading="lazy"
-                src="img/aanzicht_Amsterdam.png"
-              />
-            </Grid.Cell>
-          )}
+          <Grid.Cell span={5}>
+            <Image
+              className="ams-image_responsive"
+              alt=""
+              loading="lazy"
+              sizes=" (max-width: 480px) 100vw, 
+              (max-width: 800px) 50vw, 
+              33vw"
+              srcSet="img/aanzicht_Amsterdam_480w.png 480w, img/aanzicht_Amsterdam_800w.png 800w, img/aanzicht_Amsterdam_1200.png 1200w"
+              src="img/aanzicht_Amsterdam.png"
+            />
+          </Grid.Cell>
         </Grid>
       </Overlap>
     </Grid.Cell>
