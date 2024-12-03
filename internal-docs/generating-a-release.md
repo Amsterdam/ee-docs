@@ -11,3 +11,5 @@ In short:
 * Features and bug fixes should be merged into `develop` with a [Commitizen friendly commit message](https://github.com/Amsterdam/ee-release-it-demo/tree/feature/release-branch-strategy?tab=readme-ov-file#conventional-commits).
 * When generating a new release, a new branch `release/[branch-name]` should be created from `develop`. In GitHub this will trigger the [`Release` action](../.github/workflows/), which will run Release it! Then the branch can be merged to `main`.
 * Don't forget to merge `main` back into `develop` when complete.
+
+The `release/[branch-name]` step is crucial, as you may have other important actions listening to the `main` branch, like deploying or publishing your latest application. If the [`Release` action](../.github/workflows/) were to run on `main`, it would effectively mean your actions are triggered twice, as it generates another commit.
