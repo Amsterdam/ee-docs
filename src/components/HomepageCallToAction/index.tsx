@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Heading, Image, Link, Overlap, Paragraph } from '@amsterdam/design-system-react';
+import styles from './styles.module.css';
 
 const HomepageCallToAction = () => {
   return (
@@ -22,14 +23,14 @@ const HomepageCallToAction = () => {
           </Grid.Cell>
           <Grid.Cell span={5}>
             <Image
-              className="ams-image_responsive"
-              alt=""
-              loading="lazy"
-              sizes=" (max-width: 480px) 100vw, 
-              (max-width: 800px) 50vw, 
+              sizes="(max-width: 480px) 100vw,
+              (max-width: 800px) 50vw,
               33vw"
-              srcSet="img/aanzicht_Amsterdam_480w.png 480w, img/aanzicht_Amsterdam_800w.png 800w, img/aanzicht_Amsterdam_1200.png 1200w"
+              srcSet="img/aanzicht_Amsterdam_480w.png 480w, img/aanzicht_Amsterdam_800w.png 800w, img/aanzicht_Amsterdam_1200w.png 1200w"
+              loading="lazy"
               src="img/aanzicht_Amsterdam.png"
+              className={styles.image}
+              alt=""
             />
           </Grid.Cell>
         </Grid>
