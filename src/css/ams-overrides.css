@@ -18,19 +18,19 @@
     display: none;
   }
 
-  .ams-image_responsive {
+  /* .ams-image_responsive {
     display: block !important;
     border: 1px solid red;
-  }
+  } */
 }
 
 .main-wrapper .ams-screen {
   width: 100%;
 }
 
-.ams-image_responsive {
+/* .ams-image_responsive {
   display: none
-}
+} */
 
 .ams-grid_inner {
   padding: 0 !important
