@@ -28,3 +28,13 @@
     display: inline;
   }
 }
+
+[data-theme='dark'] .button svg {
+  fill: #fff;
+}
+
+@media screen and (min-width: 997px) {
+  [data-theme='dark'] .button svg {
+    fill: var(--ifm-link-color);
+  }
+}

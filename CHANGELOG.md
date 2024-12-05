@@ -1,5 +1,12 @@
 
 
+## [0.1.2](https://github.com/Amsterdam/ee-docs/compare/v0.1.1...v0.1.2) (2024-12-05)
+
+
+### Bug Fixes
+
+* **searchbutton:** fix for mobile search button color ([#75](https://github.com/Amsterdam/ee-docs/issues/75)) ([8e50023](https://github.com/Amsterdam/ee-docs/commit/8e500238c5123039d0a607dbb90035a2fe6a7a41))
+
 ## [0.1.1](https://github.com/Amsterdam/ee-docs/compare/v0.1.0...v0.1.1) (2024-12-05)
 
 
