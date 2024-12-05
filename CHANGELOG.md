@@ -1,5 +1,12 @@
 
 
+## [0.1.3](https://github.com/Amsterdam/ee-docs/compare/v0.1.2...v0.1.3) (2024-12-05)
+
+
+### Bug Fixes
+
+* **monitoring.md:** fix for monitoring link ([#78](https://github.com/Amsterdam/ee-docs/issues/78)) ([76490f1](https://github.com/Amsterdam/ee-docs/commit/76490f1087edc74eb5944450be8494f296e11543))
+
 ## [0.1.2](https://github.com/Amsterdam/ee-docs/compare/v0.1.1...v0.1.2) (2024-12-05)
 
 
