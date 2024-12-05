@@ -18,6 +18,9 @@ export default tseslint.config(
         version: 'detect',
       },
     },
+    rules: {
+      'react/react-in-jsx-scope': 'off',
+    },
   },
   eslintPluginPrettierRecommended,
 );

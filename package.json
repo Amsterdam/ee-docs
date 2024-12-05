@@ -1,6 +1,6 @@
 {
   "name": "docusaurus",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -15,7 +15,9 @@
     "typecheck": "tsc",
     "lint": "npx eslint ./",
     "prepare": "husky",
-    "import-docs": "node ./node_modules/ee-docs-importer"
+    "import-docs": "node ./node_modules/ee-docs-importer",
+    "release": "release-it",
+    "test": "vitest"
   },
   "dependencies": {
     "@amsterdam/design-system-assets": "^0.2.0",
@@ -39,9 +41,18 @@
     "@docusaurus/types": "^3.5.2",
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
     "@types/eslint__js": "^8.42.3",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
@@ -50,11 +61,14 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
+    "happy-dom": "^15.11.4",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "3.2.5",
+    "release-it": "^17.1.1",
     "typescript": "^5.4.5",
-    "typescript-eslint": "^7.7.1"
+    "typescript-eslint": "^7.7.1",
+    "vitest": "^2.1.4"
   },
   "browserslist": {
     "production": [
@@ -75,5 +89,10 @@
     "*.{ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
