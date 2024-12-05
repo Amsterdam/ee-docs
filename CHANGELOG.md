@@ -1,5 +1,12 @@
 
 
+## [0.1.1](https://github.com/Amsterdam/ee-docs/compare/v0.1.0...v0.1.1) (2024-12-05)
+
+
+### Bug Fixes
+
+* **searchbutton:** fix invalid css nested media query in class ([#72](https://github.com/Amsterdam/ee-docs/issues/72)) ([52ca820](https://github.com/Amsterdam/ee-docs/commit/52ca820fecf3a27837b981bc56163adc18541471))
+
 ## 0.1.0 (2024-12-04)
 
 
