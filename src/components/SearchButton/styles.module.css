@@ -21,8 +21,10 @@
 
 .text {
   display: none;
+}
 
-  @media screen and (min-width: 997px) {
+@media (min-width: 997px) {
+  .text {
     display: inline;
   }
 }
