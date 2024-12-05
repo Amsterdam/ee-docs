@@ -45,14 +45,15 @@ The law is applicable to all government websites and applications, including int
 - [ ] Apply the provided CSS snippet and confirm that all elements are still rendered correctly, adhering to WCAG 1.4.12. In Chrome, you can utilize the Stylus plugin for easy implementation.
 
 ```css
-*{
+* {
   line-height: 1.5 !important;
   letter-spacing: 0.12em !important;
   word-spacing: 0.16em !important;
-} p
-  {
+} 
+
+p {
   margin-bottom: 2em !important;
- }
+}
 ```
 
 ### on a mobile app?

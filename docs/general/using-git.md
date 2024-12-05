@@ -3,7 +3,7 @@
 
 ## What is the standard for using Git?
 The city of Amsterdam uses Git to push its code to GitHub.
-The city of Amsterdam maintains minimal requirements for the work flow, branches and commits.    
+The city of Amsterdam maintains minimal requirements for the work flow, branches and commits.
 
 ## When and for whom is this standard applicable?
 This standard applies to all developers.<br/>
@@ -11,23 +11,23 @@ This standard must be applied to all new projects of the city of Amsterdam (new 
 
 ## What is required?
 ### Work flow
-- [ ] Utilise the branch 'main' as a stable production-ready version of your project. Utilise the branch 'develop' as the integration branch for features and bug fixes.
+- [ ] Utilise the branch `main` as a stable production-ready version of your project. Utilise the branch `develop` as the integration branch for features and bug fixes.
 - [ ] Set up and document your team work flow. As part of your work flow you must do the following:
   - [ ] Set `develop` as the default branch and set the branch protection rules as follows:
     - [ ] Enable "Require a pull request before merging".
     - [ ] Enable "Require approvals".
-    - [ ] Set "Required number of approvals before merging" to at least 1. 
+    - [ ] Set "Required number of approvals before merging" to at least 1.
   - [ ]  Create a new branch every time you're implementing a feature, bug fix or other task.
   - [ ] Test before you push.
 
 ### Branches
 - [ ] Branch names must include 
-  - [ ] a prefix, which can be either: 
-    - [ ] feature,
-    - [ ] chore,
-    - [ ] bugfix,
-    - [ ] hotfix or
-    - [ ] docs.
+  - [ ] a prefix, which can be either:
+    - [ ] `feature/branch-name`
+    - [ ] `chore/branch-name`
+    - [ ] `bugfix/branch-name`
+    - [ ] `hotfix/branch-name`
+    - [ ] `docs/branch-name`
   - [ ] a ticket number that references the PBI (product backlog item) if applicable.
   - [ ] a short name to indicate the branch purpose.
 
@@ -58,4 +58,3 @@ please refer to this [blog post](https://initialcommit.com/blog/git-commit-messa
 
 ## Acknowledgements
 Many thanks to [Hee Chan van der Haar](https://github.com/hcvdhaar) and [Sirée Koolen-Wijkstra](https://github.com/SireeKoolenWijkstra)
-

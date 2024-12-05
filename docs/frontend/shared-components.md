@@ -8,4 +8,4 @@ Amsterdam has developed a couple of components that are being used
 
 ## Demos/examples
 
-- For developing with maps, there are demos and examples of common use-cases of maps at [https://maps.developers.amsterdam](https://maps.developers.amsterdam).
+- For developing with maps, there are demos and examples of common use-cases of maps at [maps.developers.amsterdam](https://maps.developers.amsterdam).

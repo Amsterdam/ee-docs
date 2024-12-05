@@ -23,5 +23,6 @@ Maintaining a list of third-party frontend packages is too complex, therefore, w
 
 * [Vite](https://github.com/vitejs/vite) - Next Generation Frontend Tooling
   * [Vite community templates](https://github.com/vitejs/awesome-vite#templates) - Vite based project templates
-* [Webpack](https://github.com/vitejs/vite) - Next Generation Frontend Tooling
 * [esbuild](https://esbuild.github.io/) - Next Generation Frontend Tooling
+
+You may also be interested in [Languages and Frameworks (frontend)](./languages-and-frameworks.md).
