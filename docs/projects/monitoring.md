@@ -8,4 +8,4 @@ This project provides a standard for implementing Application Insights within ou
 
 Please note that the documentation is only visible to developers who have access to the Amsterdam organization in GitHub.
 
-For more details and the full documentation, please visit the official repository via the following link: [Application Insights](https://github.com/Amsterdam/development-standards/tree/main/internal/sso).
+For more details and the full documentation, please visit the official repository via the following link: [Application Insights](https://github.com/Amsterdam/development-standards/tree/main/internal/monitoring).
