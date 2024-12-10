@@ -27,6 +27,7 @@ If you would like to include additional standards, please refer to the [manual f
 
 ### Generating a release
 
+- [Generating a release](./internal-docs/generating-a-release.md)
 - [Importing documentation](./internal-docs/importing-docs.md)
 - [Local documentation](./internal-docs/local-docs.md)
 - [Deploying](./internal-docs/deploying.md)
@@ -35,3 +36,7 @@ If you would like to include additional standards, please refer to the [manual f
 
 - [Markdown metadata](./internal-docs/markdown-metadata.md)
 - [Markdown rules](./internal-docs/markdown-rules.md)
+
+### Seach
+
+- [Search overview](./internal-docs/search.md)

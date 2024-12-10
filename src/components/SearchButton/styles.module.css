@@ -1,0 +1,40 @@
+.button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--ifm-link-color);
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0;
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button svg {
+  margin-left: 8px;
+}
+
+.text {
+  display: none;
+}
+
+@media (min-width: 997px) {
+  .text {
+    display: inline;
+  }
+}
+
+[data-theme='dark'] .button svg {
+  fill: #fff;
+}
+
+@media screen and (min-width: 997px) {
+  [data-theme='dark'] .button svg {
+    fill: var(--ifm-link-color);
+  }
+}

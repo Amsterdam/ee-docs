@@ -13,9 +13,9 @@ For all frontend projects within the Municipality of Amsterdam we work with [NPM
 
 ## React Frameworks
 
-- [next](https://nextjs.org/) - Full stack React Framework build on top of Node JS.
-- [remix](https://remix.run/) - Full stack React Framework using the WEB API.
+- [Next.js](https://nextjs.org/) - Full stack React Framework build on top of Node JS.
+- [Remix](https://remix.run/) - Full stack React Framework using the WEB API.
 
 ## CSS
 
-_To Be Defined_
+- [CSS Modules](https://github.com/css-modules/css-modules)

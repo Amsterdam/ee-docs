@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
         'general/project-documentation',
         'general/readme-default',
         'general/storing-source-code',
+        'general/testing',
         'general/third-party-dependencies',
         'general/using-git',
       ],
@@ -45,7 +46,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Projects',
-      items: ['projects/maps', 'projects/sso'],
+      items: ['projects/monitoring', 'projects/maps', 'projects/sso'],
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure

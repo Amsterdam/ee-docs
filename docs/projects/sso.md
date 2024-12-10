@@ -1,4 +1,8 @@
-# Single Sign-On (SSO)
+---
+custom_edit_url: null
+---
+
+# Single Sign-On
 
 This project provides a standard for implementing Single Sign-On (SSO) within our organization. The documentation outlines guidelines and best practices for securely and efficiently integrating SSO into internal applications. By using SSO, users can access multiple systems with a single set of credentials, improving both user experience and security while simplifying management.
 
