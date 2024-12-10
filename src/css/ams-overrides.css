@@ -17,20 +17,11 @@
   .ams-header__menu {
     display: none;
   }
-
-  /* .ams-image_responsive {
-    display: block !important;
-    border: 1px solid red;
-  } */
 }
 
 .main-wrapper .ams-screen {
   width: 100%;
 }
-
-/* .ams-image_responsive {
-  display: none
-} */
 
 .ams-grid_inner {
   padding: 0 !important
@@ -60,7 +51,9 @@
   color: #fff;
 }
 
-[data-theme='dark'] .ams-page-menu__link {
+[data-theme='dark'] .ams-page-menu__link,
+
+[data-theme='dark'] .ams-image {
   color: var(--ifm-link-color);
 }
 

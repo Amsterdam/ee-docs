@@ -30,7 +30,7 @@ const featureList: FeatureItem[] = [
     description: 'Code reviews are required before merging to main',
   },
   {
-    image: 'img/Git.svg',
+    image: GitHubIcon,
     title: 'Storing source code',
     to: '/docs/general/storing-source-code',
     description: 'We use Git to store our source code. ',
@@ -94,7 +94,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <>
       {featureList.map((listItem) => (
-        <Grid.Cell key={uuidv4()} span={4}>
+        <Grid.Cell key={uuidv4()} span={{ narrow: 8, medium: 6, wide: 4 }}>
           <Card>
             {listItem.image &&
               (typeof listItem.image === 'string' ? (
