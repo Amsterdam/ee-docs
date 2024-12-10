@@ -1,4 +1,3 @@
-npm install @docusaurus/fasternpm install @docusaurus/core@3.6.3 @docusaurus/preset-classic@3.6.3
 # Engineering Enablement Docs
 
 Team responsible: Engineering Enablement team
