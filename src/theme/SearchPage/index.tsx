@@ -4,7 +4,7 @@
  * 2. eslint ignore rule removed `eslint-disable jsx-a11y/no-autofocus`
  */
 
-import React, { useEffect, useReducer, useRef, useState } from 'react';
+import React, { type ReactNode, useEffect, useReducer, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import algoliaSearchHelper from 'algoliasearch-helper';
@@ -135,7 +135,7 @@ type ResultDispatcher =
   | { type: 'update'; value: ResultDispatcherState }
   | { type: 'advance'; value?: undefined };
 
-function SearchPageContent(): JSX.Element {
+function SearchPageContent(): ReactNode {
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
@@ -487,7 +487,7 @@ function SearchPageContent(): JSX.Element {
   );
 }
 
-export default function SearchPage(): JSX.Element {
+export default function SearchPage(): ReactNode {
   return (
     <HtmlClassNameProvider className="search-page-wrapper">
       <SearchPageContent />
