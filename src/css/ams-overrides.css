@@ -53,22 +53,22 @@
 
 [data-theme='dark'] .ams-page-menu__link,
 
-[data-theme='dark'] .ams-image {
+[data-theme='dark'] .ams-card__image {
   filter: invert(1) hue-rotate(180deg) brightness(1.2);
-}
-
-[data-theme='dark'] .dark-mode-github-icon {
-  filter: invert(1) brightness(1.2);
 }
 
 [data-theme='dark'] .ams-page-menu__link:hover {
   color: var(--ifm-link-color);
 }
 
-<<<<<<< HEAD
 [data-theme='dark'] .ams-breadcrumb__item:not(:last-child):after {
   filter: invert(1);
-=======
+}
+
+[data-theme='dark'] .dark-mode-github-icon {
+  filter: invert(1) brightness(1.2);
+}
+
 [data-theme='dark'] .intro-link {
   background-color: #FFFFFF;
   text-decoration: none !important;
@@ -78,5 +78,4 @@
 
 [data-theme='dark'] .intro-link:hover {
   background-color: #E8E8E8;
->>>>>>> 15b786f (Fix link and distance to footer)
 }

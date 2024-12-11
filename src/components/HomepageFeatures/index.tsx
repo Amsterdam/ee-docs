@@ -34,34 +34,17 @@ const featureList: FeatureItem[] = [
       'Include documentation in your project that facilitates understanding, usage, and maintenance of your code.',
   },
   {
-    title: 'Code Reviews (Not yet formatted to meet the required standard.)',
-    to: '/docs/general/code-review',
-    description: 'Code reviews are required before merging to main',
-  },
-  {
     image: SourceControlIcon,
     title: 'Storing source code',
     to: '/docs/general/storing-source-code',
     description: 'We use Git to store our source code. ',
   },
-<<<<<<< HEAD
-  // {
-  //   title: 'Testing (Not yet formatted to meet the required standard.)',
-  //   to: '/docs/general/testing',
-  //   description: 'A summation of libraries used by the developers of the city of Amsterdam',
-  // },
-=======
   {
-    title: 'Testing (Not yet formatted to meet the required standard.)',
+    image: TestingIcon,
+    title: 'Testing',
     to: '/docs/general/testing',
     description: 'A summation of libraries used by the developers of the city of Amsterdam',
   },
-  {
-    title: 'Third party dependencies (Not yet formatted to meet the required standard.)',
-    to: '/docs/general/third-party-dependencies',
-    description: 'A guideline on how to choose',
-  },
->>>>>>> a05c0ea (WIP can not get the image right)
   {
     image: GitHubIcon,
     title: 'Using Git',
@@ -69,21 +52,20 @@ const featureList: FeatureItem[] = [
     description: 'Our policy how to use Git',
   },
   {
-<<<<<<< HEAD
+    image: ThirdPartyIcon,
     title: 'Third party dependencies in general',
     to: '/docs/general/third-party-dependencies',
     description: 'A guideline on how to choose',
   },
   {
+    image: ThirdPartyIcon,
     title: 'Frontend - Third party dependencies',
     to: '/docs/frontend/third-party-dependencies',
     description:
       ' A list of recommended packages and set guidelines for choosing a package which is not on the list.',
   },
   {
-=======
     image: ReactIcon,
->>>>>>> 2e6a3c0 (invert githubicon in dark mode and change colors of other icons)
     title: 'Frontend - Languages and Frameworks (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/languages-and-frameworks',
     description:
@@ -95,22 +77,6 @@ const featureList: FeatureItem[] = [
     to: '/docs/frontend/shared-components',
     description:
       'A list of components that our being used by the developers of the city of Amsterdam',
-  },
-  {
-<<<<<<< HEAD
-=======
-    image: ThirdPartyIcon,
-    title: 'Frontend - Third party dependencies (Not yet formatted to meet the required standard.)',
-    to: '/docs/frontend/third-party-dependencies',
-    description:
-      ' A list of recommended packages and set guidelines for choosing a package which is not on the list.',
-  },
-  {
-    image: TestingIcon,
->>>>>>> 2e6a3c0 (invert githubicon in dark mode and change colors of other icons)
-    title: 'Frontend - Testing (Not yet formatted to meet the required standard.)',
-    to: '/docs/frontend/testing',
-    description: 'A guideline to testing for frontenders.',
   },
 ];
 
@@ -125,7 +91,8 @@ export default function HomepageFeatures(): JSX.Element {
                 width: 62,
                 height: 62,
                 preserveAspectRatio: 'xMinYMin',
-                className: listItem.title === 'Using Git' ? 'dark-mode-github-icon' : '',
+                className:
+                  listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
               })}
             <Heading size="level-4">
               {listItem.title}
