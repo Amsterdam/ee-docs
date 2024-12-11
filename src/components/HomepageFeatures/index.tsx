@@ -4,7 +4,7 @@ import { Card, Grid, Heading, Paragraph } from '@amsterdam/design-system-react';
 
 import DocumentationIcon from '@site/static/img/Documentation.svg';
 import GitHubIcon from '@site/static/img/github-mark.svg';
-import ReactIcon from '@site/static/img/react.svg';
+import ReactIcon from '@site/static/img/React.svg';
 import SharedIcon from '@site/static/img/shared.svg';
 import SourceControlIcon from '@site/static/img/source-control.svg';
 import TestingIcon from '@site/static/img/testing.svg';
