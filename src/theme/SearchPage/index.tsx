@@ -3,8 +3,7 @@
  * 1. default HTML `input` changed to design-system `TextInput` with className change
  * 2. eslint ignore rule removed `eslint-disable jsx-a11y/no-autofocus`
  */
-
-import React, { useEffect, useReducer, useRef, useState } from 'react';
+import React, { type ReactNode, useEffect, useReducer, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import algoliaSearchHelper from 'algoliasearch-helper';
@@ -22,12 +21,12 @@ import {
 } from '@docusaurus/theme-common';
 import { useTitleFormatter } from '@docusaurus/theme-common/internal';
 import Translate, { translate } from '@docusaurus/Translate';
+import { TextInput } from '@amsterdam/design-system-react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {
   useAlgoliaThemeConfig,
   useSearchResultUrlProcessor,
 } from '@docusaurus/theme-search-algolia/client';
-import { TextInput } from '@amsterdam/design-system-react';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -135,7 +134,7 @@ type ResultDispatcher =
   | { type: 'update'; value: ResultDispatcherState }
   | { type: 'advance'; value?: undefined };
 
-function SearchPageContent(): JSX.Element {
+function SearchPageContent(): ReactNode {
   const {
     i18n: { currentLocale },
   } = useDocusaurusContext();
@@ -487,7 +486,7 @@ function SearchPageContent(): JSX.Element {
   );
 }
 
-export default function SearchPage(): JSX.Element {
+export default function SearchPage(): ReactNode {
   return (
     <HtmlClassNameProvider className="search-page-wrapper">
       <SearchPageContent />

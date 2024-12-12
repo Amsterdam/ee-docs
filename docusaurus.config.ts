@@ -127,6 +127,12 @@ const config: Config = {
       // insights: false,
     },
   } satisfies Preset.ThemeConfig,
+
+  // Handle v3.6 @docusaurus/faster
+  // @see https://docusaurus.io/blog/releases/3.6#adoption-strategy
+  future: {
+    experimental_faster: true,
+  },
 };
 
 export default config;
