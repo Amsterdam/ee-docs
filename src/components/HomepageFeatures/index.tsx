@@ -82,26 +82,33 @@ const featureList: FeatureItem[] = [
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <>
-      {featureList.map((listItem) => (
-        <Grid.Cell key={uuidv4()} span={{ narrow: 8, medium: 6, wide: 4 }}>
-          <Card>
-            {listItem.image &&
-              React.createElement(listItem.image, {
-                width: 62,
-                height: 62,
-                preserveAspectRatio: 'xMinYMin',
-                className:
-                  listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
-              })}
-            <Heading size="level-4">
-              {listItem.title}
-              <Card.Link href={listItem.to} />
-            </Heading>
-            <Paragraph size="small">{listItem.description}</Paragraph>
-          </Card>
+    <Grid.Cell span={12}>
+      <Grid className="ams-grid_inner">
+        <Grid.Cell span={12}>
+          <Heading className="ams-mb--sm" size="level-3">
+            Guidelines
+          </Heading>
         </Grid.Cell>
-      ))}
-    </>
+        {featureList.map((listItem) => (
+          <Grid.Cell key={uuidv4()} span={{ narrow: 8, medium: 6, wide: 4 }}>
+            <Card>
+              {listItem.image &&
+                React.createElement(listItem.image, {
+                  width: 62,
+                  height: 62,
+                  preserveAspectRatio: 'xMinYMin',
+                  className:
+                    listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
+                })}
+              <Heading size="level-4">
+                {listItem.title}
+                <Card.Link href={listItem.to} />
+              </Heading>
+              <Paragraph size="small">{listItem.description}</Paragraph>
+            </Card>
+          </Grid.Cell>
+        ))}
+      </Grid>
+    </Grid.Cell>
   );
 }
