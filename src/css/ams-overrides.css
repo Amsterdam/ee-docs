@@ -57,6 +57,10 @@
   filter: invert(1) hue-rotate(180deg) brightness(1.2);
 }
 
+[data-theme='dark'] .ams-card__link {
+  color: #fff;
+}
+
 [data-theme='dark'] .ams-page-menu__link:hover {
   color: var(--ifm-link-color);
 }
