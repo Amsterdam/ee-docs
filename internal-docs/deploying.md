@@ -6,7 +6,6 @@ Deploying the application is straightforward and uses a Docusaurus command, whic
 
 Currently in this `ee-docs` application, deployments could be improved with:
 
-- [ ] release versioning
 - [ ] [deployment automation](https://docusaurus.io/docs/deployment#triggering-deployment-with-github-actions).
 
 ## How to deploy
