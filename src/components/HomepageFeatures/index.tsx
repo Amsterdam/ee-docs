@@ -89,7 +89,7 @@ export default function HomepageFeatures(): JSX.Element {
         </Heading>
       </Grid.Cell>
       {featureList.map((listItem) => (
-        <Grid.Cell key={uuidv4()} span={{ narrow: 8, medium: 6, wide: 4 }}>
+        <Grid.Cell key={uuidv4()} span={{ narrow: 12, medium: 6, wide: 4 }}>
           <Card>
             {listItem.image &&
               React.createElement(listItem.image, {
