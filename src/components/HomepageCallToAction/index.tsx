@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const HomepageCallToAction = () => {
   return (
-    <Grid.Cell span={12}>
+    <Grid.Cell span="all">
       <Overlap>
         <Grid className="ams-grid_inner">
           <Grid.Cell span={7}>

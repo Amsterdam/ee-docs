@@ -61,6 +61,10 @@
   color: #fff;
 }
 
+[data-theme='dark'] .ams-card__link:hover {
+  color: #fff;
+}
+
 [data-theme='dark'] .ams-page-menu__link:hover {
   color: var(--ifm-link-color);
 }
