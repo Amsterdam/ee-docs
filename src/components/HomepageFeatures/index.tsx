@@ -82,7 +82,7 @@ const featureList: FeatureItem[] = [
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <>
+    <Grid paddingBottom="large">
       <Grid.Cell span="all">
         <Heading className="ams-mb--sm" size="level-3">
           Guidelines
@@ -106,6 +106,6 @@ export default function HomepageFeatures(): JSX.Element {
           </Card>
         </Grid.Cell>
       ))}
-    </>
+    </Grid>
   );
 }
