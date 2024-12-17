@@ -37,46 +37,46 @@ const featureList: FeatureItem[] = [
     image: SourceControlIcon,
     title: 'Storing source code',
     to: '/docs/general/storing-source-code',
-    description: 'We use Git to store our source code. ',
+    description: 'We use Git to store our source code.',
   },
   {
     image: TestingIcon,
     title: 'Testing',
     to: '/docs/general/testing',
-    description: 'A summation of libraries used by the developers of the city of Amsterdam',
+    description: 'What to test and how.',
   },
   {
     image: GitHubIcon,
     title: 'Using Git',
     to: '/docs/general/using-git',
-    description: 'Our policy how to use Git',
+    description: 'Our policy how to use Git.',
   },
   {
     image: ThirdPartyIcon,
     title: 'Third party dependencies in general',
     to: '/docs/general/third-party-dependencies',
-    description: 'A guideline on how to choose',
+    description: 'A guideline on how to choose third party frameworks and libraries.',
   },
   {
     image: ThirdPartyIcon,
     title: 'Frontend - Third party dependencies',
     to: '/docs/frontend/third-party-dependencies',
-    description:
-      ' A list of recommended packages and set guidelines for choosing a package which is not on the list.',
+    description: 'A list of recommended packages and set of guidelines for choosing a new package.',
   },
   {
     image: ReactIcon,
     title: 'Frontend - Languages and Frameworks (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/languages-and-frameworks',
     description:
-      'For all frontend projects within de Municipality of Amsterdam we choose to work with React and its ecosystem.',
+      'For frontend applications within the municipality of Amsterdam we choose to work with React and its ecosystem.',
   },
   {
     image: SharedIcon,
-    title: 'Frontend - Shared components (Not yet formatted to meet the required standard.)',
+    title:
+      'Frontend - Shared components and demos (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/shared-components',
     description:
-      'A list of components that our being used by the developers of the city of Amsterdam',
+      'A list of internal components and demos that are used by the developers of the city of Amsterdam.',
   },
 ];
 
