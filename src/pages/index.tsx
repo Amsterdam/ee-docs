@@ -1,6 +1,6 @@
 import React, { type FunctionComponent } from 'react';
 import clsx from 'clsx';
-import { Grid, Screen } from '@amsterdam/design-system-react';
+import { Screen } from '@amsterdam/design-system-react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import HomepageCallToAction from '@site/src/components/HomepageCallToAction';
@@ -33,10 +33,8 @@ const Home: FunctionComponent = () => (
     <HomepageHeader />
     <main className={styles.container}>
       <Screen maxWidth="wide">
-        {/* <Grid paddingTop="medium" paddingBottom="large"> */}
-          <HomepageCallToAction />
-          <HomepageFeatures />
-        {/* </Grid> */}
+        <HomepageCallToAction />
+        <HomepageFeatures />
       </Screen>
     </main>
   </PlainLayout>
