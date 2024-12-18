@@ -27,6 +27,10 @@
   padding: 0 !important
 }
 
+[data-theme='dark'] .ams-screen {
+  background-color: transparent;
+}
+
 [data-theme='dark'] .ams-spotlight--dark-blue {
   background-color: var(--ifm-navbar-background-color);
 }
