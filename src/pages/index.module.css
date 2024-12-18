@@ -20,6 +20,11 @@
   color: #fff;
 }
 
+[data-theme='dark'] .container button {
+  background-color: #ffffff;
+  color: #000000;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
