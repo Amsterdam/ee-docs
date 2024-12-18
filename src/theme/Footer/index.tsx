@@ -39,13 +39,7 @@ const Footer: FC | null = () => {
         );
       }
       return (
-        <LinkList.Link
-          href={item.href ?? '#'}
-          target="_blank"
-          onBackground="dark"
-          size="small"
-          key={uuidv4()}
-        >
+        <LinkList.Link href={item.href} target="_blank" inverseColor size="small" key={uuidv4()}>
           {item.label}
         </LinkList.Link>
       );
@@ -66,6 +60,9 @@ const Footer: FC | null = () => {
   return (
     <AmsFooter>
       <AmsFooter.Top>
+        <Paragraph className="ams-visually-hidden">
+          <Heading>Colofon</Heading>
+        </Paragraph>
         <Grid gapVertical="large" paddingVertical="medium" className={styles.grid}>
           {columns}
           <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>
