@@ -27,17 +27,6 @@
   padding: 0 !important
 }
 
-.intro-link {
-  background-color: var(--ams-color-primary-blue);
-  text-decoration: none !important;
-  padding: 8px 16px;
-}
-
-.intro-link:hover {
-  background-color: var(--ams-color-dark-blue);
-  color: #fff;
-}
-
 [data-theme='dark'] .ams-spotlight--dark-blue {
   background-color: var(--ifm-navbar-background-color);
 }
