@@ -1,12 +1,20 @@
 # Dependencies
 /node_modules
+node_modules/
 
 # Production
 /build
+build/
 
 # Generated files
 .docusaurus
 .cache-loader
+
+# Ignore Husky internal files
+.husky/_/
+
+# Ignore IDE settings
+.idea/
 
 # Misc
 .DS_Store
