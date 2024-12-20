@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Activeer bij een push naar main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Stap 1: Haal de code op
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Stap 2: Stel Node.js in (of een andere runtime die je project vereist)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # Pas aan naar de benodigde Node.js-versie
+
+      # Stap 3: Installeer afhankelijkheden
+      - name: Install dependencies
+        run: npm install
+
+      # Stap 4: Build de website
+      - name: Build the project
+        run: npm run build # Pas aan naar je specifieke build-commando
+
+      # Stap 5: Deploy naar GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Pas aan naar de map waar je build-output staat
