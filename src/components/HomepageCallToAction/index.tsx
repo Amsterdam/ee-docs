@@ -1,11 +1,11 @@
 import React from 'react';
-import { Grid, Heading, Image, Link, Paragraph } from '@amsterdam/design-system-react';
+import { Grid, Heading, Image, Paragraph } from '@amsterdam/design-system-react';
 import styles from './styles.module.css';
 
 const HomepageCallToAction = () => {
   return (
     <Grid paddingTop="medium" paddingBottom="medium">
-      <Grid.Cell span={{ narrow: 12, medium: 12, wide: 7 }}>
+      <Grid.Cell span={{ narrow: 4, medium: 8, wide: 7 }}>
         <Heading className="ams-mb--sm" size="level-2">
           Contribute
         </Heading>
@@ -15,11 +15,11 @@ const HomepageCallToAction = () => {
           with resources available to learn how to get involved.
         </Paragraph>
         <br />
-        <Link href="/docs/intro" className="intro-link" onBackground="dark">
+        <a href="/docs/intro" className={`${styles.link} ams-button ams-button--primary`}>
           Share your input
-        </Link>
+        </a>
       </Grid.Cell>
-      <Grid.Cell span={{ narrow: 12, medium: 12, wide: 5 }}>
+      <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>
         <Image
           sizes="(max-width: 480px) 100vw,
           (max-width: 800px) 50vw,
