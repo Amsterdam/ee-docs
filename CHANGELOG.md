@@ -1,5 +1,13 @@
 
 
+## [0.2.0](https://github.com/Amsterdam/ee-docs/compare/v0.1.4...v0.2.0) (2024-12-23)
+
+
+### Features
+
+* docusaurus updated to 3.6.3 ([#89](https://github.com/Amsterdam/ee-docs/issues/89)) ([e6731ee](https://github.com/Amsterdam/ee-docs/commit/e6731ee10fed130a99eab6e0eef7b7d0519bbc10))
+* **home:** apply new design to homepage ([19904ff](https://github.com/Amsterdam/ee-docs/commit/19904ff016e436752dac3aa63916a778926a00b9))
+
 ## [0.1.4](https://github.com/Amsterdam/ee-docs/compare/v0.1.3...v0.1.4) (2024-12-09)
 
 ## [0.1.3](https://github.com/Amsterdam/ee-docs/compare/v0.1.2...v0.1.3) (2024-12-05)
