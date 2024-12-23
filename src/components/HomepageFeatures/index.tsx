@@ -1,99 +1,111 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import Link from '@docusaurus/Link';
-import { Grid, Heading, Paragraph, UnorderedList } from '@amsterdam/design-system-react';
+import { Card, Grid, Heading, Paragraph } from '@amsterdam/design-system-react';
+
+import DocumentationIcon from '@site/static/img/Documentation.svg';
+import GitHubIcon from '@site/static/img/github-mark.svg';
+import ReactIcon from '@site/static/img/React.svg';
+import SharedIcon from '@site/static/img/shared.svg';
+import SourceControlIcon from '@site/static/img/source-control.svg';
+import TestingIcon from '@site/static/img/testing.svg';
+import ThirdPartyIcon from '@site/static/img/third_party.svg';
+import W3CIcon from '@site/static/img/W3C.svg';
 
 interface FeatureItem {
   title: string;
   to: string;
   description: string;
+  image?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 const featureList: FeatureItem[] = [
   {
+    image: W3CIcon,
     title: 'Accessibility',
     to: '/docs/frontend/accessibility',
     description:
       'In accordance with the Digital Government Act, the municipality of Amsterdam is required to build all its websites and applications in compliance with the Web Content Accessibility Guidelines (WCAG) at levels A and AA.',
   },
   {
+    image: DocumentationIcon,
     title: 'Documentation',
     to: '/docs/general/project-documentation',
     description:
       'Include documentation in your project that facilitates understanding, usage, and maintenance of your code.',
   },
-  // {
-  //   title: 'Code Reviews (Not yet formatted to meet the required standard.)',
-  //   to: '/docs/general/code-review',
-  //   description: 'Code reviews are required before merging to main',
-  // },
   {
+    image: SourceControlIcon,
     title: 'Storing source code',
     to: '/docs/general/storing-source-code',
-    description: 'We use Git to store our source code. ',
+    description: 'We use Git to store our source code.',
   },
-  // {
-  //   title: 'Testing (Not yet formatted to meet the required standard.)',
-  //   to: '/docs/general/testing',
-  //   description: 'A summation of libraries used by the developers of the city of Amsterdam',
-  // },
   {
+    image: TestingIcon,
+    title: 'Testing',
+    to: '/docs/general/testing',
+    description: 'What to test and how.',
+  },
+  {
+    image: GitHubIcon,
     title: 'Using Git',
     to: '/docs/general/using-git',
-    description: 'Our policy how to use Git',
+    description: 'Our policy how to use Git.',
   },
   {
+    image: ThirdPartyIcon,
     title: 'Third party dependencies in general',
     to: '/docs/general/third-party-dependencies',
-    description: 'A guideline on how to choose',
+    description: 'A guideline on how to choose third party frameworks and libraries.',
   },
   {
+    image: ThirdPartyIcon,
     title: 'Frontend - Third party dependencies',
     to: '/docs/frontend/third-party-dependencies',
-    description:
-      ' A list of recommended packages and set guidelines for choosing a package which is not on the list.',
+    description: 'A list of recommended packages and set of guidelines for choosing a new package.',
   },
   {
+    image: ReactIcon,
     title: 'Frontend - Languages and Frameworks (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/languages-and-frameworks',
     description:
-      'For all frontend projects within de Municipality of Amsterdam we choose to work with React and its ecosystem.',
+      'For frontend applications within the municipality of Amsterdam we choose to work with React and its ecosystem.',
   },
   {
-    title: 'Frontend - Shared components (Not yet formatted to meet the required standard.)',
+    image: SharedIcon,
+    title:
+      'Frontend - Shared components and demos (Not yet formatted to meet the required standard.)',
     to: '/docs/frontend/shared-components',
     description:
-      'A list of components that our being used by the developers of the city of Amsterdam',
-  },
-  {
-    title: 'Frontend - Testing (Not yet formatted to meet the required standard.)',
-    to: '/docs/frontend/testing',
-    description: 'A guideline to testing for frontenders.',
+      'A list of internal components and demos that are used by the developers of the city of Amsterdam.',
   },
 ];
 
 export default function HomepageFeatures(): JSX.Element {
-  const list = featureList.map((listItem) => (
-    <div key={uuidv4()}>
-      <UnorderedList>
-        <UnorderedList.Item>
-          <Heading size="level-5">
-            <Link to={listItem.to}>{listItem.title}</Link>
-          </Heading>
-          <Paragraph>{listItem.description}</Paragraph>
-        </UnorderedList.Item>
-      </UnorderedList>
-    </div>
-  ));
-
   return (
-    <>
-      <Grid.Cell span={12}>
-        <Heading size="level-4">Current Documented Standards</Heading>
+    <Grid paddingBottom="large">
+      <Grid.Cell span="all">
+        <Heading className="ams-mb--sm" size="level-3">
+          Guidelines
+        </Heading>
       </Grid.Cell>
-      <Grid.Cell span={12}>
-        <div>{list}</div>
-      </Grid.Cell>
-    </>
+      {featureList.map((listItem) => (
+        <Grid.Cell key={uuidv4()} span={{ narrow: 4, medium: 4, wide: 4 }}>
+          <Card>
+            {listItem.image &&
+              React.createElement(listItem.image, {
+                width: 62,
+                height: 62,
+                preserveAspectRatio: 'xMinYMin',
+                className:
+                  listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
+              })}
+            <Heading size="level-4">
+              <Card.Link href={listItem.to}>{listItem.title}</Card.Link>
+            </Heading>
+            <Paragraph size="small">{listItem.description}</Paragraph>
+          </Card>
+        </Grid.Cell>
+      ))}
+    </Grid>
   );
 }

@@ -7,17 +7,16 @@ import {
   LinkList,
   PageMenu,
   Paragraph,
-  VisuallyHidden,
 } from '@amsterdam/design-system-react';
 import { ChevronRightIcon } from '@amsterdam/design-system-react-icons';
 import { v4 as uuidv4 } from 'uuid';
 import Link from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
-import type { FooterLinkItem } from '@docusaurus/theme-common';
+import type { FooterLinkItem, MultiColumnFooter } from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 
 const Footer: FC | null = () => {
-  const { footer } = useThemeConfig();
+  const { footer } = useThemeConfig() as { footer: MultiColumnFooter | null };
 
   if (footer == null) {
     return null;
@@ -39,15 +38,8 @@ const Footer: FC | null = () => {
           </Link>
         );
       }
-
       return (
-        <LinkList.Link
-          href={item.href}
-          target="_blank"
-          onBackground="dark"
-          size="small"
-          key={uuidv4()}
-        >
+        <LinkList.Link href={item.href} target="_blank" inverseColor size="small" key={uuidv4()}>
           {item.label}
         </LinkList.Link>
       );
@@ -68,9 +60,9 @@ const Footer: FC | null = () => {
   return (
     <AmsFooter>
       <AmsFooter.Top>
-        <VisuallyHidden>
+        <Paragraph className="ams-visually-hidden">
           <Heading>Colofon</Heading>
-        </VisuallyHidden>
+        </Paragraph>
         <Grid gapVertical="large" paddingVertical="medium" className={styles.grid}>
           {columns}
           <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>
