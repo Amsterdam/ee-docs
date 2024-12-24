@@ -78,7 +78,6 @@ const config: Config = {
     footer: {
       links: [
         {
-          title: 'Developers',
           items: [
             {
               label: 'Documentation',
@@ -87,6 +86,10 @@ const config: Config = {
             {
               label: 'Vacancies',
               href: 'https://werkenbij.amsterdam.nl/',
+            },
+            {
+              label: 'Privacy',
+              href: 'https://www.amsterdam.nl/privacy/',
             },
           ],
         },
