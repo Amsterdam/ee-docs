@@ -28,27 +28,35 @@ const Footer: FC | null = () => {
     const navItems = (column.items as FooterLinkItem[]).map((item) => {
       if (item.to) {
         return (
+          <li key={uuidv4()}>
+            <Link
+              to={item.to}
+              className="ams-link-list__link ams-link-list__link--inverse-color ams-link-list__link--small"
+            >
+              <Icon svg={ChevronRightIcon} size="level-6" />
+              {item.label}
+            </Link>
+          </li>
+        );
+      }
+      return (
+        <li key={uuidv4()}>
           <Link
-            to={item.to}
-            className="ams-link-list__link ams-link-list__link--on-background-dark ams-link-list__link--small"
-            key={uuidv4()}
+            href={item.href}
+            target="_blank"
+            className="ams-link-list__link ams-link-list__link--inverse-color ams-link-list__link--small"
           >
             <Icon svg={ChevronRightIcon} size="level-6" />
             {item.label}
           </Link>
-        );
-      }
-      return (
-        <LinkList.Link href={item.href} target="_blank" inverseColor size="small" key={uuidv4()}>
-          {item.label}
-        </LinkList.Link>
+        </li>
       );
     });
 
     return (
       <Grid.Cell span={{ narrow: 4, medium: 8, wide: 7 }} key={uuidv4()}>
         <div className={styles.col}>
-          <Heading inverseColor level={2} size="level-4">
+          <Heading inverseColor level={2} size="level-4" className="ams-mb--xs">
             {column.title}
           </Heading>
           <LinkList>{navItems}</LinkList>
