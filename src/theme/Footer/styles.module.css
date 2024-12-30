@@ -17,6 +17,10 @@
   color: #fff;
 }
 
+.col a:hover {
+  color: #fff;
+}
+
 [data-theme='dark'] .col a {
   color: var(--ifm-link-color);
 }
