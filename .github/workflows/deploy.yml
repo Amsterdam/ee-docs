@@ -3,34 +3,49 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Activeer bij een push naar main
+      - main
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
 jobs:
-  deploy:
+  build:
+    name: Build Docusaurus
     runs-on: ubuntu-latest
-
     steps:
-      # Stap 1: Haal de code op
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Stap 2: Stel Node.js in (of een andere runtime die je project vereist)
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
         with:
-          node-version: 16 # Pas aan naar de benodigde Node.js-versie
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
 
-      # Stap 3: Installeer afhankelijkheden
       - name: Install dependencies
-        run: npm install
+        run: npm install --frozen-lockfile
+      - name: Build website
+        run: npm build
 
-      # Stap 4: Build de website
-      - name: Build the project
-        run: npm run build # Pas aan naar je specifieke build-commando
-
-      # Stap 5: Deploy naar GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Pas aan naar de map waar je build-output staat
+          path: build
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
