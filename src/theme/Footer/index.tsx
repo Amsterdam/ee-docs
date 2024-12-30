@@ -68,9 +68,9 @@ const Footer: FC | null = () => {
   return (
     <AmsFooter>
       <AmsFooter.Top>
-        <Paragraph className="ams-visually-hidden">
-          <Heading>Colofon</Heading>
-        </Paragraph>
+        <Heading className="ams-visually-hidden" inverseColor>
+          Colofon
+        </Heading>
         <Grid gapVertical="large" paddingVertical="medium" className={styles.grid}>
           {columns}
           <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>
