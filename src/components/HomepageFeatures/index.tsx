@@ -10,6 +10,7 @@ import SourceControlIcon from '@site/static/img/source-control.svg';
 import TestingIcon from '@site/static/img/testing.svg';
 import ThirdPartyIcon from '@site/static/img/third_party.svg';
 import W3CIcon from '@site/static/img/W3C.svg';
+import Link from '@docusaurus/Link';
 
 interface FeatureItem {
   title: string;
@@ -100,7 +101,9 @@ export default function HomepageFeatures(): JSX.Element {
                   listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
               })}
             <Heading size="level-4">
-              <Card.Link href={listItem.to}>{listItem.title}</Card.Link>
+              <Link to={listItem.to} className="ams-card__link">
+                {listItem.title}
+              </Link>
             </Heading>
             <Paragraph size="small">{listItem.description}</Paragraph>
           </Card>
