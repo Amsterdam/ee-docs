@@ -21,6 +21,13 @@ interface FeatureItem {
 
 const featureList: FeatureItem[] = [
   {
+    image: SourceControlIcon,
+    title: 'Languages & Frameworks',
+    to: '/docs/general/languages-and-frameworks',
+    description:
+      'An overview of the approved programming languages and frameworks used within the City of Amsterdam.',
+  },
+  {
     image: W3CIcon,
     title: 'Accessibility',
     to: '/docs/frontend/accessibility',
