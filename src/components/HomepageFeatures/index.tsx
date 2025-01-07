@@ -10,6 +10,7 @@ import SourceControlIcon from '@site/static/img/source-control.svg';
 import TestingIcon from '@site/static/img/testing.svg';
 import ThirdPartyIcon from '@site/static/img/third_party.svg';
 import W3CIcon from '@site/static/img/W3C.svg';
+import Link from '@docusaurus/Link';
 
 interface FeatureItem {
   title: string;
@@ -19,6 +20,13 @@ interface FeatureItem {
 }
 
 const featureList: FeatureItem[] = [
+  {
+    image: SourceControlIcon,
+    title: 'Languages & Frameworks',
+    to: '/docs/general/languages-and-frameworks',
+    description:
+      'An overview of the approved programming languages and frameworks used within the City of Amsterdam.',
+  },
   {
     image: W3CIcon,
     title: 'Accessibility',
@@ -100,7 +108,9 @@ export default function HomepageFeatures(): JSX.Element {
                   listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
               })}
             <Heading size="level-4">
-              <Card.Link href={listItem.to}>{listItem.title}</Card.Link>
+              <Link to={listItem.to} className="ams-card__link">
+                {listItem.title}
+              </Link>
             </Heading>
             <Paragraph size="small">{listItem.description}</Paragraph>
           </Card>
