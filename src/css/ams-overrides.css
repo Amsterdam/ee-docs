@@ -70,13 +70,15 @@
   filter: invert(1) brightness(1.2);
 }
 
-[data-theme='dark'] .intro-link {
+[data-theme='dark'] .ams-button--primary {
   background-color: #FFFFFF;
+  box-shadow: none;
   text-decoration: none !important;
   color: #000000 !important;;
   padding: 8px 16px;
 }
 
-[data-theme='dark'] .intro-link:hover {
-  background-color: #E8E8E8;
+[data-theme='dark'] .ams-button--primary:hover {
+  background-color: #E8E8E8 !important;
+  box-shadow: none !important; 
 }
