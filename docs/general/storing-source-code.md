@@ -1,5 +1,5 @@
 # Store your project in GitHub
-> This page was last reviewed August 21st 2025. It needs to be reviewed again on June 21st, 2025.
+> This page was last reviewed January 21st 2025. It needs to be reviewed again on June 21st, 2025.
 
 ## How to store projects on Github?
 - All projects must have their repository on GitHub in the account of the city of Amsterdam and should be public,
