@@ -1,5 +1,5 @@
 # Store your project in GitHub
-> This page was last reviewed August 6th 2024. It needs to be reviewed again on May 6th, 2025.
+> This page was last reviewed August 21st 2025. It needs to be reviewed again on June 21st, 2025.
 
 ## How to store projects on Github?
 - All projects must have their repository on GitHub in the account of the city of Amsterdam and should be public,
@@ -20,11 +20,11 @@ This improves transparency and reusability,
 but protects us from exposing sensitive information that could benefit potential bad actors.
 
 ## Recommendations
-- Send an e-mail to the Datapunt team to get access to the Amsterdam organisation in GitHub. Your e-mail must include the following:
-  - your GitHub username
-  - your first and last name
-  - the team responsible for the project
-  - and your Product Owner needs to be included in the CC. 
+- Send an e-mail to the EE-team to get access to the Amsterdam organisation in GitHub. Your e-mail must include the following:
+  - Your GitHub username
+  - Your first and last name
+  - The team responsible for the project
+  - Include your Product Owner in the CC
 - Don't store data in your repository unless it's testing data. Data used with tests must always be anonymized
 
 ## What pitfalls to avoid?
