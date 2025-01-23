@@ -1,5 +1,20 @@
 
 
+## [0.3.0](https://github.com/Amsterdam/ee-docs/compare/v0.2.0...v0.3.0) (2025-01-23)
+
+
+### Features
+
+* **storing-source-code.md:** updated the git workflow ([#109](https://github.com/Amsterdam/ee-docs/issues/109)) ([34b16f1](https://github.com/Amsterdam/ee-docs/commit/34b16f1ab5b1452ae7675276a00499d4e3514ba3))
+
+
+### Bug Fixes
+
+* **.gitignore:** add build back to gitignore ([8e784c1](https://github.com/Amsterdam/ee-docs/commit/8e784c17bc950c0458dc3139baee28d02268cf86))
+* **deploy.yml:** fix for build command ([45a5cbc](https://github.com/Amsterdam/ee-docs/commit/45a5cbc98054e6c4f7379dba4614ceb1896e7470))
+* **footer:** resolve footer linklist hover styling in dark mode ([#97](https://github.com/Amsterdam/ee-docs/issues/97)) ([9404c02](https://github.com/Amsterdam/ee-docs/commit/9404c020b759c04b24c6f02a883ba56e21b01def))
+* **homepagefeatures:** replace cards anchor with router link ([#99](https://github.com/Amsterdam/ee-docs/issues/99)) ([f0b5614](https://github.com/Amsterdam/ee-docs/commit/f0b56147949a906e65c1a77db43a24f4a801ce92))
+
 ## [0.2.1](https://github.com/Amsterdam/ee-docs/compare/v0.2.0...v0.2.1) (2025-01-07)
 
 
