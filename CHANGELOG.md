@@ -1,5 +1,12 @@
 
 
+## [0.3.0](https://github.com/Amsterdam/ee-docs/compare/v0.2.1...v0.3.0) (2025-01-23)
+
+
+### Features
+
+* **storing-source-code.md:** updated the git workflow ([#109](https://github.com/Amsterdam/ee-docs/issues/109)) ([34b16f1](https://github.com/Amsterdam/ee-docs/commit/34b16f1ab5b1452ae7675276a00499d4e3514ba3))
+
 ## [0.2.1](https://github.com/Amsterdam/ee-docs/compare/v0.2.0...v0.2.1) (2025-01-07)
 
 
