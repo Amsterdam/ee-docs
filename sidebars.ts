@@ -20,12 +20,13 @@ const sidebars: SidebarsConfig = {
       label: 'Common standards',
       items: [
         'general/project-documentation',
+        'general/languages-and-frameworks',
         'general/readme-default',
+        'general/secure-coding',
         'general/storing-source-code',
         'general/testing',
         'general/third-party-dependencies',
         'general/using-git',
-        'general/languages-and-frameworks',
       ],
     },
     {
