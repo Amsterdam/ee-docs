@@ -1,5 +1,12 @@
 
 
+## [0.4.0](https://github.com/Amsterdam/ee-docs/compare/v0.3.0...v0.4.0) (2025-02-04)
+
+
+### Features
+
+* **secure-coding.md:** secure coding docs imported and published ([#115](https://github.com/Amsterdam/ee-docs/issues/115)) ([4a9ef6e](https://github.com/Amsterdam/ee-docs/commit/4a9ef6ec3b5101b8d9f94ec0d801876d90607eb5))
+
 ## [0.3.0](https://github.com/Amsterdam/ee-docs/compare/v0.2.1...v0.3.0) (2025-01-23)
 
 
