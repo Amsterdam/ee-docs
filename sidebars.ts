@@ -39,7 +39,6 @@ const sidebars: SidebarsConfig = {
       label: 'Frontend',
       items: [
         'frontend/accessibility',
-        'frontend/languages-and-frameworks',
         'frontend/shared-components',
         'frontend/testing',
         'frontend/third-party-dependencies',
