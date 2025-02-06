@@ -32,7 +32,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Backend',
-      items: ['backend/docker-usage'],
+      items: ['backend/docker-usage', 'projects/secure-mail-relay'],
     },
     {
       type: 'category',
@@ -47,7 +47,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Projects',
-      items: ['projects/monitoring', 'projects/maps', 'projects/sso', 'projects/secure-mail-relay'],
+      items: ['projects/monitoring', 'projects/maps', 'projects/sso'],
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure
