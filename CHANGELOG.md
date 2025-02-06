@@ -1,5 +1,12 @@
 
 
+## [0.5.0](https://github.com/Amsterdam/ee-docs/compare/v0.4.0...v0.5.0) (2025-02-06)
+
+
+### Features
+
+* **secure-mail-relay.md:** reference doc for secure mail relay ([#120](https://github.com/Amsterdam/ee-docs/issues/120)) ([982178d](https://github.com/Amsterdam/ee-docs/commit/982178d16a562eeee40b2521ef52ee753ffabf81))
+
 ## [0.4.0](https://github.com/Amsterdam/ee-docs/compare/v0.3.0...v0.4.0) (2025-02-04)
 
 

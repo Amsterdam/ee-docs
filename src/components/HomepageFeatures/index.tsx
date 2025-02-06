@@ -9,7 +9,6 @@ import SharedIcon from '@site/static/img/shared.svg';
 import SourceControlIcon from '@site/static/img/source-control.svg';
 import TestingIcon from '@site/static/img/testing.svg';
 import ThirdPartyIcon from '@site/static/img/third_party.svg';
-import W3CIcon from '@site/static/img/W3C.svg';
 import Link from '@docusaurus/Link';
 
 interface FeatureItem {
@@ -21,18 +20,17 @@ interface FeatureItem {
 
 const featureList: FeatureItem[] = [
   {
-    image: SourceControlIcon,
+    image: ReactIcon,
     title: 'Languages & Frameworks',
     to: '/docs/general/languages-and-frameworks',
     description:
       'An overview of the approved programming languages and frameworks used within the City of Amsterdam.',
   },
   {
-    image: W3CIcon,
-    title: 'Accessibility',
-    to: '/docs/frontend/accessibility',
-    description:
-      'In accordance with the Digital Government Act, the municipality of Amsterdam is required to build all its websites and applications in compliance with the Web Content Accessibility Guidelines (WCAG) at levels A and AA.',
+    image: SharedIcon,
+    title: 'Secure coding',
+    to: '/docs/general/secure-coding',
+    description: 'Code must be developed in accordance with the security-by-design principle.',
   },
   {
     image: DocumentationIcon,
@@ -61,30 +59,9 @@ const featureList: FeatureItem[] = [
   },
   {
     image: ThirdPartyIcon,
-    title: 'Third party dependencies in general',
+    title: 'Third party dependencies',
     to: '/docs/general/third-party-dependencies',
     description: 'A guideline on how to choose third party frameworks and libraries.',
-  },
-  {
-    image: ThirdPartyIcon,
-    title: 'Frontend - Third party dependencies',
-    to: '/docs/frontend/third-party-dependencies',
-    description: 'A list of recommended packages and set of guidelines for choosing a new package.',
-  },
-  {
-    image: ReactIcon,
-    title: 'Frontend - Languages and Frameworks (Not yet formatted to meet the required standard.)',
-    to: '/docs/frontend/languages-and-frameworks',
-    description:
-      'For frontend applications within the municipality of Amsterdam we choose to work with React and its ecosystem.',
-  },
-  {
-    image: SharedIcon,
-    title:
-      'Frontend - Shared components and demos (Not yet formatted to meet the required standard.)',
-    to: '/docs/frontend/shared-components',
-    description:
-      'A list of internal components and demos that are used by the developers of the city of Amsterdam.',
   },
 ];
 

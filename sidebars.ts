@@ -32,14 +32,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Backend',
-      items: ['backend/docker-usage'],
+      items: ['backend/docker-usage', 'projects/secure-mail-relay'],
     },
     {
       type: 'category',
       label: 'Frontend',
       items: [
         'frontend/accessibility',
-        'frontend/languages-and-frameworks',
         'frontend/shared-components',
         'frontend/testing',
         'frontend/third-party-dependencies',
