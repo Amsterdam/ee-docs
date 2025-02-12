@@ -1,7 +1,6 @@
 /**
  * Changes to this file
  * 1. default HTML `input` changed to design-system `TextInput` with className change
- * 2. eslint ignore rule removed `eslint-disable jsx-a11y/no-autofocus`
  */
 import React, { type ReactNode, useEffect, useReducer, useRef, useState } from 'react';
 import clsx from 'clsx';
