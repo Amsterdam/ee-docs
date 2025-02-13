@@ -1,13 +1,12 @@
 /**
  * Changes to this file
  * 1. default HTML `input` changed to design-system `TextInput` with className change
- * 2. eslint ignore rule removed `eslint-disable jsx-a11y/no-autofocus`
  */
 import React, { type ReactNode, useEffect, useReducer, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import algoliaSearchHelper from 'algoliasearch-helper';
-import algoliaSearch from 'algoliasearch/lite';
+import { liteClient } from 'algoliasearch/lite';
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Head from '@docusaurus/Head';
@@ -197,7 +196,7 @@ function SearchPageContent(): ReactNode {
   // respect settings from the theme config for facets
   const disjunctiveFacets = contextualSearch ? ['language', 'docusaurus_tag'] : [];
 
-  const algoliaClient = algoliaSearch(appId, apiKey);
+  const algoliaClient = liteClient(appId, apiKey);
   const algoliaHelper = algoliaSearchHelper(algoliaClient, indexName, {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore: why errors happens after upgrading to TS 5.5 ?
