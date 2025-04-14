@@ -1,10 +1,10 @@
 # Accessibility
 
-> This page was last reviewed 6th March 2024. It needs to be reviewed again on the 6th December 2024.
+> This page was last reviewed on 6 February 2025. It needs to be reviewed again on 6 November 2025.
 
 ## What is the standard for accessibility?
 
-In accordance with the Digital Government Act, the municipality of Amsterdam is required to build all its websites and applications in compliance with the Web Content Accessibility Guidelines (WCAG) at levels A and AA.
+In accordance with the Digital Government Act, the municipality of Amsterdam is required to build all its websites and applications in compliance with the Web Content Accessibility Guidelines (WCAG) 2.1 at AA level.
 
 ## When and for whom is this standard applicable?
 
@@ -20,14 +20,15 @@ The law is applicable to all government websites and applications, including int
   - [ ] zooming in at 200%
   - [ ] verify that all links feature descriptive link text
 - [ ] Evaluate the usability of your application by
-  - [ ] testing a workflow on your application without the use of a keyboard. Employ screen readers, such as [JAWS](https://accessibility.psu.edu/screenreaders/jawscommands/) or [VoiceOver](https://support.apple.com/guide/voiceover-guide/welcome/web).
-    - [ ] confirm the page's order is logical
-    - [ ] verify all content is accessible to the screen reader
-  - [ ] testing a workflow on your application without the use of a mouse  Employ keyboard shortcuts
-    - [ ] check if the focus ring remains consistently visible
-- [ ] Ensure all videos are captioned
-- [ ] Ensure all audio is described as needed
-- [ ] Ensure all audio-only files are transcribed
+  - [ ] testing a workflow on your application without the use of a keyboard or mouse. Employ screen readers, such as [JAWS](https://accessibility.psu.edu/screenreaders/jawscommands/) or [VoiceOver](https://support.apple.com/guide/voiceover-guide/welcome/web).
+    - [ ] ensure logical page order
+    - [ ] confirm screen reader compatibility
+ Employ keyboard shortcuts
+    - [ ] check focus ring visibility when navigating
+- [ ] Ensure all multimedia has alternatives:
+  - [ ] videos must have captions
+  - [ ] audio must have descriptions
+  - [ ] audio-only content must be transcribed
 
 ### on a web application?
 
@@ -94,6 +95,7 @@ Testing accessibility thoroughly can be challenging. Consider collaborating with
 
 - [Testing for Accessibility](https://accessibility.psu.edu/testing/protocol/)
 - [Praktische toegankelijkheidstips](https://www.digitoegankelijk.nl/aan-de-slag/tips)
+- [WCAG rules and regulation](https://wcag.nl/kennis/wet-en-regelgeving/)
 
 ## Acknowledgments
 
