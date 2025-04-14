@@ -1,5 +1,12 @@
 
 
+## [0.5.1](https://github.com/Amsterdam/ee-docs/compare/v0.5.0...v0.5.1) (2025-04-14)
+
+
+### Bug Fixes
+
+* **searchpage:** update swizzled search template to resolve build errors ([#126](https://github.com/Amsterdam/ee-docs/issues/126)) ([c504890](https://github.com/Amsterdam/ee-docs/commit/c504890f74e65cc176ccceedf449c05dba8d4d39))
+
 ## [0.5.0](https://github.com/Amsterdam/ee-docs/compare/v0.4.0...v0.5.0) (2025-02-06)
 
 
