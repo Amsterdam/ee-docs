@@ -1,6 +1,6 @@
 # Languages & Frameworks for Software Development
 
-> This page was last reviewed October 10th 2024. It needs to be reviewed again on April the 10th 2025.
+> This page was last reviewed on 10th April. It needs to be reviewed again on 10th January 2026.
 
 ## What is the standard?
 
@@ -19,7 +19,7 @@ New frontend applications are developed using **[TypeScript](https://www.typescr
 
 - UI logic is implemented with **[React](https://react.dev/)** in combination with the **[Amsterdam Design System](https://designsystem.amsterdam/)**.
 - CSS is implemented using **[CSS modules](https://github.com/css-modules/css-modules)**.
-- Full application development is implemented with **[Next.js](https://nextjs.org/)** or **[Remix](https://remix.run/)**.
+- Full application development is implemented with **[Next.js](https://nextjs.org/)** or **[React Router (Framework)](https://reactrouter.com/)**.
 
 ### Mobile Applications
 
