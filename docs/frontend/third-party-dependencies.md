@@ -1,6 +1,6 @@
 # Third Party Dependencies
 
-> This page was last reviewed on September 19th, 2024. It needs to be reviewed again on June 19th, 2025.
+> This page was last reviewed on July 8th, 2025. It needs to be reviewed again on April 8th, 2026.
 
 Guidelines for choosing a third party package can be found in the [general third party dependencies documentation page](../general/third-party-dependencies.md).
 
