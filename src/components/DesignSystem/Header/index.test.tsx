@@ -2,6 +2,18 @@ import { render, screen } from '@testing-library/react';
 import { createRef } from 'react';
 import { Header } from './index';
 
+vi.mock('@theme/Navbar/ColorModeToggle', () => ({
+  default: () => <div data-testid="mock-color-toggle" />,
+}));
+
+// Certain docusaurus components are impossible to test thanks to the weird docusaurus import setup
+vi.mock('@theme/Navbar/MobileSidebar/Toggle', () => ({
+  default: () => <div data-testid="mock-mobile-sidebar-toggle" />,
+}));
+vi.mock('@theme/SearchBar', () => ({
+  default: () => <div data-testid="mock-search-bar" />,
+}));
+
 describe('Header', () => {
   it('renders', () => {
     render(<Header />);
@@ -12,21 +24,13 @@ describe('Header', () => {
     expect(component).toBeVisible();
   });
 
-  it('renders a design system BEM class name', () => {
-    render(<Header />);
-
-    const component = screen.getByRole('banner');
-
-    expect(component).toHaveClass('ams-header');
-  });
-
   it('renders an additional class name', () => {
     render(<Header className="extra" />);
 
     const component = screen.getByRole('banner');
 
     expect(component).toHaveClass('extra');
-    expect(component).toHaveClass('ams-header');
+    expect(component).toHaveClass('ams-page-header');
   });
 
   it('supports ForwardRef in React', () => {
@@ -42,44 +46,35 @@ describe('Header', () => {
   it('renders with a logo link', () => {
     render(<Header logoLink="/home" />);
 
-    const logoLink = screen.getByRole('link');
+    const logoLink = screen.getAllByRole('link')[0];
 
     expect(logoLink).toHaveAttribute('href', '/home');
   });
 
-  it('renders with a logo link title', () => {
-    render(<Header logoLinkTitle="Go to homepage" />);
-
-    const logoLinkTitle = screen.getByRole('link', { name: 'Go to homepage' });
-
-    expect(logoLinkTitle).toHaveTextContent('Go to homepage');
-  });
-
   it('renders an application name', () => {
-    render(<Header appName="Application name" />);
+    const { container } = render(<Header />);
 
-    const heading = screen.getByRole('heading', {
-      name: 'Application name',
-      level: 1,
-    });
-
-    expect(heading).toBeInTheDocument();
+    const heading = (container as HTMLDivElement).querySelector('.ams-page-header__brand-name');
+    expect(heading).toHaveTextContent('Developers');
   });
 
   it('renders with links', () => {
-    const { container } = render(<Header links={<div>Test content</div>} />);
+    render(
+      <Header
+        menuItems={[
+          <div data-testid="mock-link-example" key="0">
+            test
+          </div>,
+        ]}
+      />,
+    );
 
-    const menu = container.querySelector('.ams-header__links');
-
-    expect(menu).toBeInTheDocument();
-    expect(menu).toHaveTextContent('Test content');
+    expect(screen.getByTestId('mock-link-example')).toBeInTheDocument();
   });
 
   it('renders with menu button', () => {
-    render(<Header menu={<button>Menu Button</button>} />);
+    render(<Header />);
 
-    const menu = screen.getByRole('button');
-
-    expect(menu).toBeInTheDocument();
+    expect(screen.getByTestId('mock-mobile-sidebar-toggle')).toBeInTheDocument();
   });
 });

@@ -49,8 +49,6 @@ export type HeaderProps = {
   logoLink?: string;
   /** The accessible text for the link on the logo. */
   logoLinkTitle?: string;
-  /** A button to toggle the visibility of a Mega Menu. */
-  menu?: ReactNode;
 
   /** A slot for the menu items. Use PageHeader.MenuLink here. */
   menuItems?: ReactNode;
@@ -64,12 +62,10 @@ export const Header = forwardRef(
       logoBrand = 'amsterdam',
       logoLink = '/',
       logoLinkTitle = 'Ga naar de homepage',
-      menu,
       ...restProps
     }: HeaderProps,
     ref: ForwardedRef<HTMLElement>,
   ) => {
-    console.log({ menu });
     return (
       <>
         <header {...restProps} className={clsx('ams-page-header', className)} ref={ref}>
