@@ -84,11 +84,11 @@ export default function HomepageFeatures(): JSX.Element {
                 className:
                   listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
               })}
-            <Heading level={4} size="level-4">
+            <Card.Heading level={2}>
               <Link to={listItem.to} className="ams-card__link">
                 {listItem.title}
               </Link>
-            </Heading>
+            </Card.Heading>
             <Paragraph size="small">{listItem.description}</Paragraph>
           </Card>
         </Grid.Cell>

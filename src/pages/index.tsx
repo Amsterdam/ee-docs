@@ -12,10 +12,10 @@ import styles from './index.module.css';
 
 const Home: FunctionComponent = () => (
   <PlainLayout title="Welcome" description="City of Amsterdam technology standards and guidance">
-    <main className={styles.container}>
+    <div className={styles.container}>
       <HomepageCallToAction />
       <HomepageFeatures />
-    </main>
+    </div>
   </PlainLayout>
 );
 

@@ -8,8 +8,11 @@
 
 .navbar {
   box-shadow: none;
-  padding: 0;
   height: unset;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 /* Hacky fix to make design-system work with Docusaurus larger max-width */

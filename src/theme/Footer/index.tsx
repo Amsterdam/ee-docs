@@ -63,7 +63,7 @@ const Footer: FC | null = () => {
   });
 
   return (
-    <PageFooter>
+    <PageFooter className={styles.root}>
       <PageFooter.Spotlight>
         <Heading className="ams-visually-hidden" color="inverse" level={1}>
           Colofon

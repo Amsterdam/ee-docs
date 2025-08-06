@@ -2,11 +2,7 @@
   align-items: center;
   background: transparent;
   border: 0;
-  color: var(--ifm-link-color);
   cursor: pointer;
-  /* display: flex; */
-  /* font-family: inherit; */
-  /* font-size: 1rem; */
   padding: 0;
   transition: none;
 }
@@ -33,8 +29,3 @@
   fill: #fff;
 }
 
-@media screen and (min-width: 997px) {
-  [data-theme='dark'] .button svg {
-    fill: var(--ifm-link-color);
-  }
-}

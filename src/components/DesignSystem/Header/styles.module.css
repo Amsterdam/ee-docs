@@ -11,6 +11,14 @@
   inline-size: 1.5rem;
 }
 
+[data-theme='dark'] .mobile :global(.ams-icon-button) {
+  background: none;
+}
+
+[data-theme='dark'] .mobile :global(.ams-icon) svg {
+  fill: #fff;
+}
+
 .buttons {
   display: none;
   align-items: center;
