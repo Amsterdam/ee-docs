@@ -2,3 +2,30 @@
   display: flex;
   justify-content: end;
 }
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+[data-theme='dark'] .buttons a svg {
+  filter: invert(1);
+}
+
+.icon {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  margin-right: .5rem;
+  width: 2rem;
+}
+
+.icon:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .icon:hover {
+  background: var(--ifm-color-emphasis-200);
+}

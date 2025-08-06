@@ -361,7 +361,7 @@ function SearchPageContent(): ReactNode {
             <TextInput
               type="search"
               name="q"
-              className="ams-mb--xs"
+              className="ams-mb-xs"
               placeholder={translate({
                 id: 'theme.SearchPage.inputPlaceholder',
                 message: 'Type your search here',

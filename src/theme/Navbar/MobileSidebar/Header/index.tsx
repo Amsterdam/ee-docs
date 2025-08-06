@@ -14,8 +14,7 @@ export default function NavbarMobileSidebarHeader(): JSX.Element {
       <NavbarLogo />
       <IconButton
         label="Sluiten"
-        contrastColor={colorMode === 'dark'}
-        inverseColor={colorMode === 'dark'}
+        color={colorMode === 'dark' ? 'inverse' : undefined}
         aria-label={translate({
           id: 'theme.docs.sidebar.closeSidebarButtonAriaLabel',
           message: 'Close navigation bar',

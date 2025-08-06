@@ -67,9 +67,9 @@ const featureList: FeatureItem[] = [
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <Grid paddingBottom="large">
+    <Grid paddingBottom="2x-large">
       <Grid.Cell span="all">
-        <Heading className="ams-mb--sm" size="level-3">
+        <Heading className="ams-mb-sm" level={3} size="level-3">
           Guidelines
         </Heading>
       </Grid.Cell>
@@ -84,7 +84,7 @@ export default function HomepageFeatures(): JSX.Element {
                 className:
                   listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
               })}
-            <Heading size="level-4">
+            <Heading level={4} size="level-4">
               <Link to={listItem.to} className="ams-card__link">
                 {listItem.title}
               </Link>
