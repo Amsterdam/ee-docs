@@ -20,3 +20,7 @@
 .navbar :global(.ams-page-header) {
   padding-inline: 0;
 }
+
+.navbar :global(.navbar-sidebar) {
+  z-index: calc(var(--ifm-z-index-fixed) + 1);;
+}

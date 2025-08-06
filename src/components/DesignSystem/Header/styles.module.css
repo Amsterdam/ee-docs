@@ -1,11 +1,29 @@
-.mobileMenuInner {
+.mobile {
   display: flex;
-  justify-content: end;
+  align-items: center;
+}
+
+.mobile :global(.ams-page-header__menu-link) {
+  display: inline-flex;
+}
+
+.mobile :global(.ams-icon) svg {
+  inline-size: 1.5rem;
 }
 
 .buttons {
-  display: flex;
+  display: none;
   align-items: center;
+}
+
+@media (min-width: 997px) {
+  .mobile {
+    display: none;
+  }
+
+  .buttons {
+    display: flex;
+  }
 }
 
 [data-theme='dark'] .buttons a svg {

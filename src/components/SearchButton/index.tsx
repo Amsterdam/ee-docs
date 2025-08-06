@@ -8,7 +8,7 @@ const SearchButton = forwardRef<HTMLButtonElement, DocSearchButtonProps>(
   ({ onTouchStart, onFocus, onMouseOver, onClick }, ref) => (
     <button
       type="button"
-      className={styles.button}
+      className={`ams-page-header__menu-link ${styles.button}`}
       onTouchStart={onTouchStart}
       onFocus={onFocus}
       onMouseOver={onMouseOver}

@@ -9,6 +9,7 @@ import React, { forwardRef } from 'react';
 import { Logo, LogoBrand } from '@amsterdam/design-system-react';
 import type { ForwardedRef, HTMLAttributes, ReactNode } from 'react';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
+import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import styles from './styles.module.css';
 import GitHubIcon from '@site/static/img/github-mark.svg';
 import SearchBar from '@theme/SearchBar';
@@ -94,7 +95,9 @@ export const Header = forwardRef(
               <LogoLinkContent brandName="Developers" logoBrand={logoBrand} />
             </div>
             <ul className="ams-page-header__menu">
-              <SearchBar />
+              <li className="ams-page-header__menu-item">
+                <SearchBar />
+              </li>
               {menuItems}
               <div className={styles.buttons}>
                 <a
@@ -107,6 +110,10 @@ export const Header = forwardRef(
                   <GitHubIcon width="24" height="24" preserveAspectRatio="xMinYMin" />
                 </a>
                 <NavbarColorModeToggle />
+              </div>
+              <div className={styles.mobile}>
+                <SearchBar />
+                <NavbarMobileSidebarToggle />
               </div>
             </ul>
           </nav>
