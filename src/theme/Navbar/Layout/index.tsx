@@ -25,7 +25,7 @@ export default function NavbarLayout({ children }: Props): JSX.Element {
   const mobileSidebar = useNavbarMobileSidebar();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
   return (
-    <nav
+    <div
       ref={navbarRef}
       aria-label={translate({
         id: 'theme.NavBar.navAriaLabel',
@@ -47,6 +47,6 @@ export default function NavbarLayout({ children }: Props): JSX.Element {
       {children}
       <NavbarBackdrop onClick={mobileSidebar.toggle} />
       <NavbarMobileSidebar />
-    </nav>
+    </div>
   );
 }

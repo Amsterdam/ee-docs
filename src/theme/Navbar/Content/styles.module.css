@@ -7,7 +7,7 @@ Hide color mode toggle in small viewports
   }
 }
 
-.buttons {
+/* .buttons {
   display: flex;
   align-items: center;
 }
@@ -32,4 +32,4 @@ Hide color mode toggle in small viewports
 
 [data-theme='dark'] .icon:hover {
   background: var(--ifm-color-emphasis-200);
-}
+} */
