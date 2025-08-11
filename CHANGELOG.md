@@ -1,5 +1,12 @@
 
 
+## [0.5.3](https://github.com/Amsterdam/ee-docs/compare/v0.5.2...v0.5.3) (2025-08-11)
+
+
+### Bug Fixes
+
+* prevent search modal jump ([#150](https://github.com/Amsterdam/ee-docs/issues/150)) ([b667239](https://github.com/Amsterdam/ee-docs/commit/b667239470ee7f542a6d8b3005bdbe360daa52ad))
+
 ## [0.5.2](https://github.com/Amsterdam/ee-docs/compare/v0.5.1...v0.5.2) (2025-07-08)
 
 ## [0.5.1](https://github.com/Amsterdam/ee-docs/compare/v0.5.0...v0.5.1) (2025-04-14)
