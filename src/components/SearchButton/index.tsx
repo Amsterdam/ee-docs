@@ -16,7 +16,7 @@ const SearchButton = forwardRef<HTMLButtonElement, DocSearchButtonProps>(
       ref={ref}
     >
       <span className={styles.text}>Zoeken</span>
-      <Icon svg={SearchIcon} size="heading-6" />
+      <Icon svg={SearchIcon} size="heading-5" />
     </button>
   ),
 );

@@ -68,7 +68,7 @@ const Footer: FC | null = () => {
         <Heading className="ams-visually-hidden" color="inverse" level={1}>
           Colofon
         </Heading>
-        <Grid gapVertical="large" paddingVertical="large" className={styles.grid}>
+        <Grid gapVertical="2x-large" paddingVertical="x-large" className={styles.grid}>
           {columns}
           <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>
             <div className={styles.col}>
