@@ -131,6 +131,7 @@ const config: Config = {
   // Handle v3.6 @docusaurus/faster
   // @see https://docusaurus.io/blog/releases/3.6#adoption-strategy
   future: {
+    v4: true,
     experimental_faster: true,
   },
 };
