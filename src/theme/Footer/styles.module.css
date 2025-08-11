@@ -2,10 +2,6 @@
   background: var(--ams-color-highlight-purple);
 }
 
-[data-theme='dark'] .root :global(.ams-page-footer__menu-link) {
-  color: #fff;
-}
-
 .grid div:last-of-type {
   order: -1;
 }
@@ -27,8 +23,4 @@
 
 .col a:hover {
   color: #fff;
-}
-
-[data-theme='dark'] .col a {
-  color: var(--ifm-link-color);
 }
