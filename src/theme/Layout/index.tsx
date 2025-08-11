@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';
 import { useKeyboardNavigation } from '@docusaurus/theme-common/internal';
-import { Grid, Screen } from '@amsterdam/design-system-react';
+import { Grid, Page } from '@amsterdam/design-system-react';
 import SkipToContent from '@theme/SkipToContent';
 import AnnouncementBar from '@theme/AnnouncementBar';
 import Navbar from '@theme/Navbar';
@@ -39,7 +39,7 @@ export default function Layout(props: Props): JSX.Element {
         id={SkipToContentFallbackId}
         className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
       >
-        <Screen maxWidth="wide">
+        <Page>
           <Grid>
             <Grid.Cell span="all">
               <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
@@ -47,7 +47,7 @@ export default function Layout(props: Props): JSX.Element {
               </ErrorBoundary>
             </Grid.Cell>
           </Grid>
-        </Screen>
+        </Page>
       </div>
 
       {!noFooter && <Footer />}

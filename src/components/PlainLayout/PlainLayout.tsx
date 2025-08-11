@@ -13,6 +13,7 @@ import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import type { Props } from '@theme/Layout';
 import styles from '../../theme/Layout/styles.module.css';
+import { Page } from '@amsterdam/design-system-react';
 
 export default function Layout(props: Props): JSX.Element {
   const {
@@ -30,22 +31,24 @@ export default function Layout(props: Props): JSX.Element {
     <LayoutProvider>
       <PageMetadata title={title} description={description} />
 
-      <SkipToContent />
+      <Page>
+        <SkipToContent />
 
-      <AnnouncementBar />
+        <AnnouncementBar />
 
-      <Navbar />
+        <Navbar />
 
-      <div
-        id={SkipToContentFallbackId}
-        className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
-      >
-        <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
-          {children}
-        </ErrorBoundary>
-      </div>
+        <main
+          id={SkipToContentFallbackId}
+          className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
+        >
+          <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
+            {children}
+          </ErrorBoundary>
+        </main>
 
-      {!noFooter && <Footer />}
+        {!noFooter && <Footer />}
+      </Page>
     </LayoutProvider>
   );
 }

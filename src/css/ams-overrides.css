@@ -1,24 +1,5 @@
+/* There is also 2 overrides in src/theme/Navbar/Layout/styles.module.css */
 /* Fix for ams-design-system mobile menu button breakpoint misalignment with docusaurus breakpoints */
-@media screen and (min-width: 36rem) {
-  .ams-header__links {
-    display: none !important;
-  }
-
-  .ams-header__menu {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 997px) {
-  .ams-header__links {
-    display: block !important;
-  }
-
-  .ams-header__menu {
-    display: none;
-  }
-}
-
 .main-wrapper .ams-screen {
   width: 100%;
 }
@@ -27,7 +8,7 @@
   padding: 0 !important
 }
 
-[data-theme='dark'] .ams-screen {
+[data-theme='dark'] .ams-page {
   background-color: transparent;
 }
 
@@ -35,9 +16,9 @@
   background-color: var(--ifm-navbar-background-color);
 }
 
-[data-theme='dark'] .ams-heading {
+/* [data-theme='dark'] .ams-heading {
   color: #fff;
-}
+} */
 
 [data-theme='dark'] .ams-header__menu-button {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%23ffffff' fill-rule='evenodd' d='M0 3.238h32V7.81H0V3.238zm0 10.476h32v4.572H0v-4.572zM0 24.19h32v4.572H0V24.19z'/></svg>");
@@ -45,13 +26,23 @@
 }
 
 [data-theme='dark'] .ams-page-menu__link,
-
 [data-theme='dark'] .ams-card__image {
   filter: invert(1) hue-rotate(180deg) brightness(1.2);
 }
 
-[data-theme='dark'] .ams-card__link {
+[data-theme='dark'] .ams-card__link,
+[data-theme='dark'] .ams-heading,
+[data-theme='dark'] .ams-page-header__brand-name,
+[data-theme='dark'] .ams-page-header__menu-link {
   color: #fff;
+}
+
+[data-theme='dark'] .ams-page-header__menu-link:hover {
+  color: #fff;
+}
+
+[data-theme='dark'] .ams-page-header__menu-link {
+  color: var(--ifm-link-color);
 }
 
 [data-theme='dark'] .ams-card__link:hover {
@@ -71,7 +62,8 @@
 }
 
 [data-theme='dark'] .ams-button--primary {
-  background-color: #FFFFFF;
+  background-color: #fff;
+  border-color: #fff;
   box-shadow: none;
   text-decoration: none !important;
   color: #000000 !important;;
@@ -79,6 +71,7 @@
 }
 
 [data-theme='dark'] .ams-button--primary:hover {
-  background-color: #E8E8E8 !important;
-  box-shadow: none !important; 
+  background-color: #e8e8e8 !important;
+  border-color: #e8e8e8 !important;
+  box-shadow: none !important;
 }

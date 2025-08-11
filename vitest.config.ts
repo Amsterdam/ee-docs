@@ -8,7 +8,8 @@ function resolveWithExtensions(basePath: string): string | null {
   const extensions = ['.tsx', '.ts', '.js']; // Add any other extensions you need
 
   for (const ext of extensions) {
-    const fullPath = `${basePath}${ext}`;
+    const fullPath = `${basePath}/index${ext}`;
+
     if (fs.existsSync(fullPath)) {
       return fullPath;
     }
@@ -37,14 +38,16 @@ function ThemeAliasPlugin() {
         }
 
         // If not found, fall back to `@docusaurus/theme-classic/src/theme`
-        const fallbackPath = path.resolve(
-          __dirname,
-          'node_modules/@docusaurus/theme-classic/src/theme',
-          aliasPath,
-        );
-        const resolvedFallbackPath = resolveWithExtensions(fallbackPath);
-        if (resolvedFallbackPath) {
-          return resolvedFallbackPath;
+        const fallbackPaths = [
+          path.resolve(__dirname, 'node_modules/@docusaurus/theme-classic/src/theme', aliasPath),
+          path.resolve(__dirname, 'node_modules/@docusaurus/theme-classic/lib/theme', aliasPath),
+        ];
+
+        for (const fallbackPath of fallbackPaths) {
+          const resolvedFallback = resolveWithExtensions(fallbackPath);
+          if (resolvedFallback) {
+            return resolvedFallback;
+          }
         }
 
         // Return null if neither path resolves (Vitest will throw a module not found error)
@@ -60,6 +63,10 @@ export default defineConfig({
   resolve: {
     alias: [
       {
+        find: '@site',
+        replacement: path.resolve(__dirname),
+      },
+      {
         // @docusaurus/Noop is a little special
         find: '@docusaurus/Noop',
         replacement: path.resolve(__dirname, './test/__mocks__/noop.ts'),
@@ -68,6 +75,13 @@ export default defineConfig({
         // Match any import that starts with `@docusaurus/` and map to core client exports
         find: /^@docusaurus\/(BrowserOnly|ComponentCreator|constants|ExecutionEnvironment|Head|Interpolate|isInternalUrl|Link|renderRoutes|router|Translate|use.*)/,
         replacement: '@docusaurus/core/src/client/exports/$1',
+      },
+      {
+        find: '@docusaurus/useDocusaurusContext',
+        replacement: path.resolve(
+          __dirname,
+          'node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js',
+        ),
       },
     ],
   },

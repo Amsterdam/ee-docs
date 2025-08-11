@@ -1,3 +1,11 @@
+[data-theme='dark'] .root div:first-of-type {
+  background: var(--ams-color-highlight-purple);
+}
+
+[data-theme='dark'] .root :global(.ams-page-footer__menu-link) {
+  color: #fff;
+}
+
 .grid div:last-of-type {
   order: -1;
 }
