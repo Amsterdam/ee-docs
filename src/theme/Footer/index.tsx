@@ -1,14 +1,13 @@
 import React, { type FC } from 'react';
 import {
-  Footer as AmsFooter,
   Grid,
   Heading,
   Icon,
   LinkList,
-  PageMenu,
+  PageFooter,
   Paragraph,
 } from '@amsterdam/design-system-react';
-import { ChevronRightIcon } from '@amsterdam/design-system-react-icons';
+import { ChevronForwardIcon } from '@amsterdam/design-system-react-icons';
 import { v4 as uuidv4 } from 'uuid';
 import Link from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
@@ -29,24 +28,22 @@ const Footer: FC | null = () => {
       if (item.to) {
         return (
           <li key={uuidv4()}>
-            <Link
-              to={item.to}
-              className="ams-link-list__link ams-link-list__link--inverse-color ams-link-list__link--small"
-            >
-              <Icon svg={ChevronRightIcon} size="level-6" />
+            <Link to={item.to} className="ams-link-list__link ams-link-list__link--small">
+              <Icon svg={ChevronForwardIcon} size="small" />
               {item.label}
             </Link>
           </li>
         );
       }
+
       return (
         <li key={uuidv4()}>
           <Link
             href={item.href}
             target="_blank"
-            className="ams-link-list__link ams-link-list__link--inverse-color ams-link-list__link--small"
+            className="ams-link-list__link ams-link-list__link--small"
           >
-            <Icon svg={ChevronRightIcon} size="level-6" />
+            <Icon svg={ChevronForwardIcon} size="small" />
             {item.label}
           </Link>
         </li>
@@ -56,7 +53,7 @@ const Footer: FC | null = () => {
     return (
       <Grid.Cell span={{ narrow: 4, medium: 8, wide: 7 }} key={uuidv4()}>
         <div className={styles.col}>
-          <Heading inverseColor level={2} size="level-4" className="ams-mb--xs">
+          <Heading color="inverse" level={2} size="level-4" className="ams-mb-xs">
             {column.title}
           </Heading>
           <LinkList>{navItems}</LinkList>
@@ -66,16 +63,16 @@ const Footer: FC | null = () => {
   });
 
   return (
-    <AmsFooter>
-      <AmsFooter.Top>
-        <Heading className="ams-visually-hidden" inverseColor>
+    <PageFooter className={styles.root}>
+      <PageFooter.Spotlight>
+        <Heading className="ams-visually-hidden" color="inverse" level={1}>
           Colofon
         </Heading>
-        <Grid gapVertical="large" paddingVertical="medium" className={styles.grid}>
+        <Grid gapVertical="2x-large" paddingVertical="x-large" className={styles.grid}>
           {columns}
           <Grid.Cell span={{ narrow: 4, medium: 8, wide: 5 }}>
             <div className={styles.col}>
-              <Paragraph inverseColor>
+              <Paragraph color="inverse">
                 <Link to="/">
                   <strong>developers.amsterdam</strong>
                 </Link>{' '}
@@ -84,19 +81,13 @@ const Footer: FC | null = () => {
             </div>
           </Grid.Cell>
         </Grid>
-      </AmsFooter.Top>
-      <AmsFooter.Bottom>
-        <Grid paddingVertical="small">
-          <Grid.Cell span="all">
-            <PageMenu>
-              <PageMenu.Link href="https://www.amsterdam.nl/privacy/" target="_blank">
-                Privacy
-              </PageMenu.Link>
-            </PageMenu>
-          </Grid.Cell>
-        </Grid>
-      </AmsFooter.Bottom>
-    </AmsFooter>
+      </PageFooter.Spotlight>
+      <PageFooter.Menu>
+        <PageFooter.MenuLink href="https://www.amsterdam.nl/privacy/" target="_blank">
+          Privacy
+        </PageFooter.MenuLink>
+      </PageFooter.Menu>
+    </PageFooter>
   );
 };
 

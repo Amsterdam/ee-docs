@@ -1,24 +1,5 @@
+/* There is also 2 overrides in src/theme/Navbar/Layout/styles.module.css */
 /* Fix for ams-design-system mobile menu button breakpoint misalignment with docusaurus breakpoints */
-@media screen and (min-width: 36rem) {
-  .ams-header__links {
-    display: none !important;
-  }
-
-  .ams-header__menu {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 997px) {
-  .ams-header__links {
-    display: block !important;
-  }
-
-  .ams-header__menu {
-    display: none;
-  }
-}
-
 .main-wrapper .ams-screen {
   width: 100%;
 }
@@ -27,16 +8,18 @@
   padding: 0 !important
 }
 
-[data-theme='dark'] .ams-screen {
+:root {
+  --ifm-color-primary: var(--ams-link-color);
+  --ifm-menu-color-active: var(--ams-link-color);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: var(--ams-color-feedback-info);
+  --ifm-menu-color-active: var(--ams-color-feedback-info);
+}
+
+[data-theme='dark'] .ams-page {
   background-color: transparent;
-}
-
-[data-theme='dark'] .ams-spotlight--dark-blue {
-  background-color: var(--ifm-navbar-background-color);
-}
-
-[data-theme='dark'] .ams-heading {
-  color: #fff;
 }
 
 [data-theme='dark'] .ams-header__menu-button {
@@ -45,21 +28,18 @@
 }
 
 [data-theme='dark'] .ams-page-menu__link,
-
 [data-theme='dark'] .ams-card__image {
   filter: invert(1) hue-rotate(180deg) brightness(1.2);
 }
 
-[data-theme='dark'] .ams-card__link {
-  color: #fff;
-}
-
+[data-theme='dark'] .ams-card__link,
+[data-theme='dark'] .ams-page-header__brand-name,
+[data-theme='dark'] .ams-heading,
+[data-theme='dark'] .ams-page-header__menu-link,
+[data-theme='dark'] .ams-page-header__menu-link:hover,
+[data-theme='dark'] .ams-page-footer__menu a,
 [data-theme='dark'] .ams-card__link:hover {
   color: #fff;
-}
-
-[data-theme='dark'] .ams-page-menu__link:hover {
-  color: var(--ifm-link-color);
 }
 
 [data-theme='dark'] .ams-breadcrumb__item:not(:last-child):after {
@@ -71,7 +51,8 @@
 }
 
 [data-theme='dark'] .ams-button--primary {
-  background-color: #FFFFFF;
+  background-color: #fff;
+  border-color: #fff;
   box-shadow: none;
   text-decoration: none !important;
   color: #000000 !important;;
@@ -79,6 +60,7 @@
 }
 
 [data-theme='dark'] .ams-button--primary:hover {
-  background-color: #E8E8E8 !important;
-  box-shadow: none !important; 
+  background-color: #e8e8e8 !important;
+  border-color: #e8e8e8 !important;
+  box-shadow: none !important;
 }

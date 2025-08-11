@@ -1,6 +1,7 @@
 /**
  * Changes to this file
- * 1. default HTML `input` changed to design-system `TextInput` with className change
+ * 1. `Heading` changed to design-system `Heading`
+ * 2. default HTML `input` changed to design-system `TextInput` with className change
  */
 import React, { type ReactNode, useEffect, useReducer, useRef, useState } from 'react';
 import clsx from 'clsx';
@@ -14,21 +15,20 @@ import Link from '@docusaurus/Link';
 import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
 import {
   HtmlClassNameProvider,
+  PageMetadata,
   useEvent,
   usePluralForm,
   useSearchQueryString,
 } from '@docusaurus/theme-common';
-import { useTitleFormatter } from '@docusaurus/theme-common/internal';
 import Translate, { translate } from '@docusaurus/Translate';
-import { TextInput } from '@amsterdam/design-system-react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {
   useAlgoliaThemeConfig,
   useSearchResultUrlProcessor,
 } from '@docusaurus/theme-search-algolia/client';
 import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import { Heading, TextInput } from '@amsterdam/design-system-react';
 
 // Very simple pluralization: probably good enough for now
 function useDocumentsFoundPlural() {
@@ -133,6 +133,25 @@ type ResultDispatcher =
   | { type: 'update'; value: ResultDispatcherState }
   | { type: 'advance'; value?: undefined };
 
+function getSearchPageTitle(searchQuery: string | undefined): string {
+  return searchQuery
+    ? translate(
+        {
+          id: 'theme.SearchPage.existingResultsTitle',
+          message: 'Search results for "{query}"',
+          description: 'The search page title for non-empty query',
+        },
+        {
+          query: searchQuery,
+        },
+      )
+    : translate({
+        id: 'theme.SearchPage.emptyResultsTitle',
+        message: 'Search the documentation',
+        description: 'The search page title for empty query',
+      });
+}
+
 function SearchPageContent(): ReactNode {
   const {
     i18n: { currentLocale },
@@ -140,12 +159,13 @@ function SearchPageContent(): ReactNode {
   const {
     algolia: { appId, apiKey, indexName, contextualSearch },
   } = useAlgoliaThemeConfig();
-
   const processSearchResultUrl = useSearchResultUrlProcessor();
   const documentsFoundPlural = useDocumentsFoundPlural();
 
   const docsSearchVersionsHelpers = useDocsSearchVersionsHelpers();
   const [searchQuery, setSearchQuery] = useSearchQueryString();
+  const pageTitle = getSearchPageTitle(searchQuery);
+
   const initialSearchResultState: ResultDispatcherState = {
     items: [],
     query: null,
@@ -253,6 +273,7 @@ function SearchPageContent(): ReactNode {
   const observer = useRef(
     ExecutionEnvironment.canUseIntersectionObserver &&
       new IntersectionObserver(
+        // TODO need to fix this React Compiler lint error
         (entries) => {
           const {
             isIntersecting,
@@ -268,24 +289,6 @@ function SearchPageContent(): ReactNode {
         { threshold: 1 },
       ),
   );
-
-  const getTitle = () =>
-    searchQuery
-      ? translate(
-          {
-            id: 'theme.SearchPage.existingResultsTitle',
-            message: 'Search results for "{query}"',
-            description: 'The search page title for non-empty query',
-          },
-          {
-            query: searchQuery,
-          },
-        )
-      : translate({
-          id: 'theme.SearchPage.emptyResultsTitle',
-          message: 'Search the documentation',
-          description: 'The search page title for empty query',
-        });
 
   const makeSearch = useEvent((page: number = 0) => {
     if (contextualSearch) {
@@ -339,8 +342,9 @@ function SearchPageContent(): ReactNode {
 
   return (
     <Layout>
+      <PageMetadata title={pageTitle} />
+
       <Head>
-        <title>{useTitleFormatter(getTitle())}</title>
         {/*
          We should not index search pages
           See https://github.com/facebook/docusaurus/pull/3233
@@ -349,7 +353,9 @@ function SearchPageContent(): ReactNode {
       </Head>
 
       <div className="container margin-vert--lg">
-        <Heading as="h1">{getTitle()}</Heading>
+        <Heading level={1} className="ams-mb-m">
+          {pageTitle}
+        </Heading>
 
         <form className="row" onSubmit={(e) => e.preventDefault()}>
           <div
@@ -359,9 +365,8 @@ function SearchPageContent(): ReactNode {
             })}
           >
             <TextInput
-              type="search"
               name="q"
-              className="ams-mb--xs"
+              className="ams-mb-xs"
               placeholder={translate({
                 id: 'theme.SearchPage.inputPlaceholder',
                 message: 'Type your search here',

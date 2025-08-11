@@ -4,9 +4,9 @@ import styles from './styles.module.css';
 
 const HomepageCallToAction = () => {
   return (
-    <Grid paddingTop="medium" paddingBottom="medium">
+    <Grid paddingTop="large" paddingBottom="large">
       <Grid.Cell span={{ narrow: 4, medium: 8, wide: 7 }}>
-        <Heading className="ams-mb--sm" size="level-2">
+        <Heading className="ams-mb-sm" level={2} size="level-2">
           Contribute
         </Heading>
         <Paragraph>
