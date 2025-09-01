@@ -16,7 +16,7 @@ If a standard is labeled as a recommendation, it indicates that it is not widely
 
 ## How to contribute to this repo?
 
-If you would like to include additional standards, please refer to the [manual for instructions on implementing new standards](https://developers.amsterdam/docs/general/project-documentation). If you have any other matters to bring to our attention, you can contact us via Slack (#engineering-enablement) or Teams (DV - Engineering Enablement).
+If you would like to include additional standards, please refer to the [manual for instructions on implementing new standards](https://developers.amsterdam/docs/general/project-documentation). If you have any other matters to bring to our attention, you can contact us via Slack (#dv-enablement) or Teams (DV - Enablement).
 
 ## Project documentation
 
