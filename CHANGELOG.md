@@ -1,5 +1,7 @@
 
 
+## [0.5.4](https://github.com/Amsterdam/ee-docs/compare/v0.5.3...v0.5.4) (2025-09-01)
+
 ## [0.5.3](https://github.com/Amsterdam/ee-docs/compare/v0.5.2...v0.5.3) (2025-08-11)
 
 
