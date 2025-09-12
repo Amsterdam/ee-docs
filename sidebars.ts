@@ -35,7 +35,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'backend/database',
        	'backend/docker-usage',
-	'backend/handling-access-tokens',
+        'backend/handling-access-tokens',
        	'projects/secure-mail-relay',
       ],
     },
