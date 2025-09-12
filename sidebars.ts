@@ -34,9 +34,9 @@ const sidebars: SidebarsConfig = {
       label: 'Backend',
       items: [
         'backend/database',
-       	'backend/docker-usage',
+        'backend/docker-usage',
         'backend/handling-access-tokens',
-       	'projects/secure-mail-relay',
+        'projects/secure-mail-relay',
       ],
     },
     {
