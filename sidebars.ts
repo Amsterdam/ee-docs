@@ -32,7 +32,12 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Backend',
-      items: ['backend/database', 'backend/docker-usage', 'projects/secure-mail-relay'],
+      items: [
+        'backend/database',
+        'backend/docker-usage',
+        'backend/handling-access-tokens',
+        'projects/secure-mail-relay',
+      ],
     },
     {
       type: 'category',
