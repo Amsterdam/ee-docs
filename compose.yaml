@@ -1,0 +1,10 @@
+services:
+  import:
+    image: amsterdam/ee-docs
+    build:
+      context: .
+      dockerfile: Containerfile
+    volumes:
+      - ".:/app"
+      - "~/.ssh:/root/.ssh:ro"
+    command: ["npm", "run", "import-docs"]
