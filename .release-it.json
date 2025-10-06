@@ -11,17 +11,11 @@
     "release": true,
     "pr": {
       "title": "chore(release): ${version}",
-      "body": "This PR includes the version bump and changelog updates for release ${version}.",
+      "body": "This PR includes the version bump for release ${version}.",
       "base": "main"
     }
   },
   "npm": {
     "publish": false
-  },
-  "plugins": {
-    "@release-it/conventional-changelog": {
-      "preset": "conventionalcommits",
-      "infile": "CHANGELOG.md"
-    }
   }
 }
