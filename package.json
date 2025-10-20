@@ -1,10 +1,10 @@
 {
   "name": "docusaurus",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "docusaurus start --host 0.0.0.0",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -60,7 +60,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
-    "happy-dom": "^15.11.4",
+    "happy-dom": "^20.0.2",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "3.2.5",
