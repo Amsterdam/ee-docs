@@ -137,7 +137,7 @@ const config: Config = {
 
   plugins: [
     async function piwikProAnalytics() {
-      const containerId = 'e63312c0-0efe-4c4f-bba1-3ca1f05374a8';
+      const containerId = '23ca8ede-18ba-44a3-b5c8-d2d32e37e937';
 
       return {
         name: 'docusaurus-plugin-piwik-pro-analytics',
