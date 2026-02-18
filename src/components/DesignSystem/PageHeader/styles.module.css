@@ -1,0 +1,51 @@
+.mobile {
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.mobile :global(.ams-page-header__menu-link) {
+  display: inline-flex;
+}
+
+.mobile :global(.ams-icon) svg {
+  inline-size: 1.5rem;
+}
+
+[data-theme='dark'] .mobile :global(.ams-icon-button) {
+  background: none;
+}
+
+[data-theme='dark'] .mobile :global(.ams-icon) svg {
+  fill: #fff;
+}
+
+.buttons {
+  display: none;
+  align-items: center;
+  pointer-events: auto;
+}
+
+@media (min-width: 997px) {
+  .mobile {
+    display: none;
+  }
+
+  .buttons {
+    display: flex;
+  }
+}
+
+[data-theme='dark'] .buttons a svg {
+  filter: invert(1);
+}
+
+.icon {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  margin-right: .5rem;
+  width: 2rem;
+}

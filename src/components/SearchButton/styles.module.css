@@ -1,18 +1,14 @@
-.button {
-  align-items: center;
+button.button {
   background: transparent;
   border: 0;
+  border-style: none;
   cursor: pointer;
-  padding: 0;
+  padding-inline: 0;
   transition: none;
 }
 
 .button:hover {
   text-decoration: underline;
-}
-
-.button svg {
-  margin-left: 8px;
 }
 
 .text {
@@ -21,7 +17,7 @@
 
 @media (min-width: 997px) {
   .text {
-    display: inline;
+    display: block;
   }
 }
 
