@@ -1,15 +1,16 @@
 import React, { type ReactNode } from 'react';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import { translate } from '@docusaurus/Translate';
-import { IconButton } from '@amsterdam/design-system-react';
+import { Icon } from '@amsterdam/design-system-react';
 import { MenuIcon } from '@amsterdam/design-system-react-icons';
+import styles from './styles.module.css';
 
 export default function MobileSidebarToggle(): ReactNode {
   const { toggle, shown } = useNavbarMobileSidebar();
   return (
-    <IconButton
-      label="Toggle navigation menu"
-      svg={MenuIcon}
+    <button
+      type="button"
+      className={`ams-button ${styles.button}`}
       onClick={toggle}
       aria-label={translate({
         id: 'theme.docs.sidebar.toggleSidebarButtonAriaLabel',
@@ -17,6 +18,8 @@ export default function MobileSidebarToggle(): ReactNode {
         description: 'The ARIA label for hamburger menu button of mobile navigation',
       })}
       aria-expanded={shown}
-    />
+    >
+      <Icon svg={MenuIcon} size="heading-4" />
+    </button>
   );
 }

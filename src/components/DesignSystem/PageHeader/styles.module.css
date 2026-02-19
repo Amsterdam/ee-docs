@@ -1,6 +1,7 @@
 .mobile {
   display: flex;
   align-items: center;
+  column-gap: calc(var(--ams-page-header-menu-column-gap) / 2);
   pointer-events: auto;
 }
 
@@ -33,6 +34,12 @@
 
   .buttons {
     display: flex;
+  }
+}
+
+@media (max-width: 997px) {
+  :global(.ams-page-header__menu-item--fixed) {
+    display: none !important;
   }
 }
 

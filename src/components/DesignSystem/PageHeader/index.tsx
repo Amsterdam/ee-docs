@@ -121,7 +121,7 @@ const PageHeaderRoot = forwardRef(
             </div>
 
             <ul className="ams-page-header__menu">
-              <li className="ams-page-header__menu-item">
+              <li className="ams-page-header__menu-item ams-page-header__menu-item--fixed">
                 <SearchBar />
               </li>
               {menuItems}

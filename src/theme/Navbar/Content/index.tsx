@@ -18,7 +18,7 @@ interface NavbarItemConfig {
 export default function NavbarContent(): JSX.Element {
   const items = useThemeConfig().navbar.items as NavbarItemConfig[];
   const navItems = items.map((item) => (
-    <AmsPageHeader.MenuLink key={uuidv4()} href={item.to} lang="en">
+    <AmsPageHeader.MenuLink key={uuidv4()} href={item.to} lang="en" fixed>
       {item.label}
     </AmsPageHeader.MenuLink>
   ));

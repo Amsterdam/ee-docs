@@ -13,21 +13,3 @@ button.button {
   color: var(--ams-page-header-menu-item-hover-color);
   text-decoration: underline;
 }
-
-[data-theme='dark'] button.button {
-  color: #fff;
-}
-
-.text {
-  display: none;
-}
-
-@media (min-width: 997px) {
-  .button:hover {
-    background-color: transparent;
-  }
-
-  .text {
-    display: block;
-  }
-}
