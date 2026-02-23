@@ -4,21 +4,31 @@ import LogoGrid from './_components/LogoGrid';
 import JavaScriptLogo from '@site/static/img/stack/javascript.svg';
 import TypeScriptLogo from '@site/static/img/stack/typescript.svg';
 import NextJsLogo from '@site/static/img/stack/Next.js_Logo_0.svg';
+import NextJsLogoDark from '@site/static/img/stack/nextjs-logotype-dark.svg';
 import PythonLogo from '@site/static/img/stack/Python-logo-notext.svg';
 import NodeJsLogo from '@site/static/img/stack/nodejsStackedDark.svg';
+import NodeJsLogoDark from '@site/static/img/stack/nodejsStackedLight.svg';
 import DjangoLogo from '@site/static/img/stack/django-logo-negative.svg';
+import ExpressJsLogo from '@site/static/img/stack/expressjs.svg';
+import ExpressJsLogoDark from '@site/static/img/stack/expressjs-dark.svg';
 import FastApiLogo from '@site/static/img/stack/FastAPI_logo.svg';
 import NestJsLogo from '@site/static/img/stack/NestJS-logo-wordmark.svg';
 import PostgresLogo from '@site/static/img/stack/PostgreSQL_logo.3colors.svg';
-import MongoDbLogo from '@site/static/img/stack/MongoDB_Logo.svg';
-import MicrosoftSQLServerLogo from '@site/static/img/stack/microsoft-sql-server-logo.svg';
+import MongoDbLogo from '@site/static/img/stack/MongoDB_SlateBlue.svg';
+import MongoDbLogoDark from '@site/static/img/stack/MongoDB_White.svg';
 import NlxLogo from '@site/static/img/stack/nlx.svg';
 import GraphQLLogo from '@site/static/img/stack/graphql.svg';
 import ApolloGraphQlLogo from '@site/static/img/stack/apollo-graphql.svg';
 import DockerLogo from '@site/static/img/stack/docker-logo-blue.svg';
-import HelmLogo from '@site/static/img/stack/helm.svg';
-import JiraLogo from '@site/static/img/stack/Jira_logo_light.svg';
+import DockerLogoDark from '@site/static/img/stack/docker-logo-white.svg';
+import HelmLogo from '@site/static/img/stack/helm-horizontal-color.svg';
+import HelmLogoDark from '@site/static/img/stack/helm-horizontal-white.svg';
+import JiraLogo from '@site/static/img/stack/Jira_attribution_light.svg';
+import JiraLogoDark from '@site/static/img/stack/Jira_attribution_dark.svg';
 import GitHubLogo from '@site/static/img/stack/GitHub_Lockup_Black.svg';
+import GitHubLogoDark from '@site/static/img/stack/GitHub_Lockup_White.svg';
+import KubernetesLogo from '@site/static/img/stack/kubernetes.svg';
+import KubernetesLogoDark from '@site/static/img/stack/kubernetes-dark.svg';
 
 # Preferred Tech Stack
 
@@ -36,21 +46,30 @@ Some intro text...
 <LogoGrid images={[
   <Image src={useBaseUrl('/img/stack/React_logo_wordmark.png')} alt="React" />,
   <Image src={useBaseUrl('/img/stack/react-native.png')} />,
-  <NextJsLogo title="Next.js" />,
+  {
+    dark: <NextJsLogoDark title="Next.js" />,
+    light: <NextJsLogo title="Next.js" />,
+  },
 ]} />
 
 ## Backend languages
 
 <LogoGrid images={[
   <PythonLogo key="python-logo" title="Python" />,
-  <NodeJsLogo key="nodejs-logo" title="Node.js" />,
+  {
+    dark: <NodeJsLogoDark key="nodejs-logo" title="Node.js" />,
+    light: <NodeJsLogo key="nodejs-logo" title="Node.js" />,
+  },
 ]} />
 
 ## Backend frameworks
 
 <LogoGrid images={[
   <DjangoLogo title="Django" />,
-  <Image src={useBaseUrl('/img/stack/Expressjs.png')} alt="Express" />,
+  {
+    dark: <ExpressJsLogoDark title="Express" />,
+    light: <ExpressJsLogo title="Express" />,
+  },
   <FastApiLogo title="FastAPI" />,
   <NestJsLogo title="Nest" />,
 ]} />
@@ -66,8 +85,14 @@ Some intro text...
 <LogoGrid images={[
   <PostgresLogo title="PostgreSQL" />,
   <Image src={useBaseUrl('/img/stack/azure-cosmos.png')} alt="Azure Cosmos DB" />,
-  <MongoDbLogo title="MongoDB" />,
-  <MicrosoftSQLServerLogo title="Microsoft SQL Server" />,
+  {
+    dark: <MongoDbLogoDark title="MongoDB" />,
+    light: <MongoDbLogo title="MongoDB" />,
+  },
+  {
+    dark: <Image src={useBaseUrl('/img/stack/ms-sql-server-logo-dark.png')} alt="Microsoft SQL Server" />,
+    light: <Image src={useBaseUrl('/img/stack/ms-sql-server-logo.png')} alt="Microsoft SQL Server" />,
+  },
 ]} />
 
 ## API
@@ -82,16 +107,31 @@ Some intro text...
 ## Hosting/System deployment
 
 <LogoGrid images={[
-  <Image src={useBaseUrl('/img/stack/arm.webp')} alt="Azure Resource Manager (ARM) templates" />,
-  <Image src={useBaseUrl('/img/stack/kubernetes.jpg')} alt="Kubernetes" />,
-  <DockerLogo title="Docker" />,
-  <HelmLogo title="Helm" />,
+  <Image src={useBaseUrl('/img/stack/arm.png')} alt="Azure Resource Manager (ARM)" />,
+  {
+    dark: <KubernetesLogoDark title="Kubernetes" />,
+    light: <KubernetesLogo title="Kubernetes" />,
+  },
+  {
+    dark: <DockerLogoDark title="Docker" />,
+    light: <DockerLogo title="Docker" />,
+  },
+  {
+    dark: <HelmLogoDark title="Helm" />,
+    light: <HelmLogo title="Helm" />,
+  },
 ]} />
 
 ## Repo/CICD/Backlog
 
 <LogoGrid images={[
   <Image src={useBaseUrl('/img/stack/Azure-DevOps-Logo.png')} alt="Azure DevOps" />,
-  <JiraLogo title="Jira" />,
-  <GitHubLogo title="GitHub" />,
+  {
+    dark: <JiraLogoDark title="Jira" />,
+    light: <JiraLogo title="Jira" />,
+  },
+  {
+    dark: <GitHubLogoDark title="GitHub" />,
+    light: <GitHubLogo title="GitHub" />,
+  },
 ]} />
