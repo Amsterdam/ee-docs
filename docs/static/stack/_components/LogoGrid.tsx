@@ -2,59 +2,80 @@ import React, { CSSProperties, ReactNode } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import styles from './LogoGrid.module.css';
 
-interface LogoGridProps {
-  images: (ReactNode | { light: ReactNode; dark: ReactNode })[];
-  columns?: number;
-  logoHeight?: number;
+function isThemedLogo(image: unknown): image is ThemedLogo {
+  return typeof image === 'object' && image !== null && 'light' in image && 'dark' in image;
 }
 
-const LogoGrid = ({ images, columns = 5, logoHeight = 40 }: LogoGridProps) => {
+function isSingleLogo(image: unknown): image is SingleLogo {
+  return typeof image === 'object' && image !== null && 'node' in image;
+}
+
+interface LogoConfig {
+  height?: number; // To override max height
+  span?: number; // To override grid column span
+}
+
+interface ThemedLogo extends LogoConfig {
+  light: ReactNode;
+  dark: ReactNode;
+}
+
+interface SingleLogo extends LogoConfig {
+  node: ReactNode;
+}
+
+type LogoItem = ReactNode | ThemedLogo | SingleLogo;
+
+interface LogoGridProps {
+  images: LogoItem[];
+  center?: boolean;
+  minWidth?: number; // minimum grid column width
+  defaultHeight?: number; // fallback logo height
+}
+
+const LogoGrid = ({ images, minWidth = 140, defaultHeight = 48 }: LogoGridProps) => {
   const { colorMode } = useColorMode();
-  const logoElements = images.map((image, index) => {
-    if (!image) return;
-
-    if (
-      Object.prototype.hasOwnProperty.call(image, 'light') &&
-      Object.prototype.hasOwnProperty.call(image, 'dark')
-    ) {
-      if (colorMode === 'dark') {
-        return (
-          <div key={index} className={styles.item}>
-            {image.dark}
-          </div>
-        );
-      }
-
-      return (
-        <div key={index} className={styles.item}>
-          {image.light}
-        </div>
-      );
-    }
-
-    return (
-      <div key={index} className={styles.item}>
-        {image}
-      </div>
-    );
-  });
 
   return (
     <div
       className={styles.root}
       style={
         {
-          '--columns': columns,
-          '--logo-height': `${logoHeight}px`,
+          '--min-width': `${minWidth}px`,
         } as CSSProperties
       }
     >
-      {logoElements}
-      {/* {images.map((image, index) => (
-        <div key={index} className={styles.item}>
-          {image}
-        </div>
-      ))} */}
+      {images.map((image, index) => {
+        let content: ReactNode;
+        let height = defaultHeight;
+        let span = 1;
+
+        if (isThemedLogo(image)) {
+          content = colorMode === 'dark' ? image.dark : image.light;
+          height = image.height ?? defaultHeight;
+          span = image.span ?? 1;
+        } else if (isSingleLogo(image)) {
+          content = image.node;
+          height = image.height ?? defaultHeight;
+          span = image.span ?? 1;
+        } else {
+          content = image;
+        }
+
+        return (
+          <div
+            key={index}
+            className={styles.item}
+            style={{
+              gridColumn: `span ${span}`,
+            }}
+          >
+            <div className={styles.logoInner} style={{ height: `${height}px` }}>
+              {content}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

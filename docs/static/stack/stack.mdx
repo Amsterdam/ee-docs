@@ -33,106 +33,184 @@ import AzureCosmosLogo from '@site/static/img/stack/Azure_Cosmos_DB.svg';
 
 # Preferred Tech Stack
 
-Some intro text...
+This is a visual overview of the city of Amsterdam's primary technology stack. It highlights the main languages, frameworks, data stores, platforms and tooling commonly used in our projects.
 
 ## Frontend languages
 
-<LogoGrid images={[
-  <JavaScriptLogo title="JavaScript" />,
-  <TypeScriptLogo title="TypeScript" />,
-]} />
+<LogoGrid
+  images={[
+    {
+      node: <JavaScriptLogo title="JavaScript" />,
+      height: 75,
+    },
+    {
+      node: <TypeScriptLogo title="TypeScript" />,
+      height: 75,
+    },
+  ]}
+/>
+
+---
 
 ## Frontend libraries/frameworks
 
-<LogoGrid images={[
-  <Image src={useBaseUrl('/img/stack/React_logo_wordmark.png')} alt="React" />,
-  <Image src={useBaseUrl('/img/stack/react-native.png')} />,
-  {
-    dark: <NextJsLogoDark title="Next.js" />,
-    light: <NextJsLogo title="Next.js" />,
-  },
-]} />
+<LogoGrid
+  images={[
+    <Image src={useBaseUrl('/img/stack/React_logo_wordmark.png')} alt="React" />,
+    <Image src={useBaseUrl('/img/stack/react-native.png')} />,
+    {
+      dark: <NextJsLogoDark title="Next.js" />,
+      light: <NextJsLogo title="Next.js" />,
+      height: 36,
+      span: 2,
+    },
+  ]}
+/>
+
+---
 
 ## Backend languages
 
-<LogoGrid images={[
-  <PythonLogo key="python-logo" title="Python" />,
-  {
-    dark: <NodeJsLogoDark key="nodejs-logo" title="Node.js" />,
-    light: <NodeJsLogo key="nodejs-logo" title="Node.js" />,
-  },
-]} />
+<LogoGrid
+  images={[
+    {
+      node: <PythonLogo key="python-logo" title="Python" />,
+      height: 70,
+    },
+    {
+      dark: <NodeJsLogoDark key="nodejs-logo" title="Node.js" />,
+      light: <NodeJsLogo key="nodejs-logo" title="Node.js" />,
+      height: 70,
+    },
+  ]}
+/>
+
+---
 
 ## Backend frameworks
 
-<LogoGrid images={[
-  <DjangoLogo title="Django" />,
-  {
-    dark: <ExpressJsLogoDark title="Express" />,
-    light: <ExpressJsLogo title="Express" />,
-  },
-  <FastApiLogo title="FastAPI" />,
-  <NestJsLogo title="Nest" />,
-]} />
+<LogoGrid
+  images={[
+    <DjangoLogo title="Django" />,
+    {
+      dark: <ExpressJsLogoDark title="Express" />,
+      light: <ExpressJsLogo title="Express" />,
+      height: 30,
+    },
+    {
+      node: <FastApiLogo title="FastAPI" />,
+      height: 30,
+    },
+    <NestJsLogo title="Nest" />,
+  ]}
+/>
+
+---
 
 ## Low Code
 
-<LogoGrid images={[
-  <Image src={useBaseUrl('/img/stack/Mendix-Primary-Logo-RGB-Blue-Large.webp')} title="Mendix" />,
-]} />
+<LogoGrid
+  images={[
+    <Image src={useBaseUrl('/img/stack/Mendix-Primary-Logo-RGB-Blue-Large.webp')} title="Mendix" />,
+  ]}
+/>
+
+---
 
 ## Databases
 
-<LogoGrid images={[
-  <PostgresLogo title="PostgreSQL" />,
-  <AzureCosmosLogo title="Azure Cosmos DB" />,
-  {
-    dark: <MongoDbLogoDark title="MongoDB" />,
-    light: <MongoDbLogo title="MongoDB" />,
-  },
-  {
-    dark: <Image src={useBaseUrl('/img/stack/ms-sql-server-logo-dark.png')} alt="Microsoft SQL Server" />,
-    light: <Image src={useBaseUrl('/img/stack/ms-sql-server-logo.png')} alt="Microsoft SQL Server" />,
-  },
-]} />
+<LogoGrid
+  images={[
+    {
+      node: <PostgresLogo title="PostgreSQL" />,
+      height: 50,
+    },
+    {
+      node: <AzureCosmosLogo title="Azure Cosmos DB" />,
+      height: 70,
+    },
+    {
+      dark: <MongoDbLogoDark title="MongoDB" />,
+      light: <MongoDbLogo title="MongoDB" />,
+    },
+    {
+      dark: <Image src={useBaseUrl('/img/stack/ms-sql-server-logo-dark.png')} alt="Microsoft SQL Server" />,
+      light: <Image src={useBaseUrl('/img/stack/ms-sql-server-logo.png')} alt="Microsoft SQL Server" />,
+      height: 70,
+    },
+  ]}
+/>
+
+---
 
 ## API
 
-<LogoGrid images={[
-  <NlxLogo title="NLX" width="56" height="22" />,
-  <GraphQLLogo title="GraphQL" />,
-  <Image src={useBaseUrl('/img/stack/rest api.jpg')} alt="REST API" />,
-  <ApolloGraphQlLogo title="Apollo Graph QL" />,
-]} />
+<LogoGrid
+  images={[
+    {
+      node: <NlxLogo title="NLX" width="56" height="22" />,
+      height: 30,
+    },
+    {
+      node: <GraphQLLogo title="GraphQL" />,
+      height: 70,
+    },
+    {
+      node: <Image src={useBaseUrl('/img/stack/rest api.jpg')} alt="REST API" />,
+      height: 90
+    },
+    {
+      node: <ApolloGraphQlLogo title="Apollo Graph QL" />,
+      height: 70,
+    },
+  ]}
+/>
+
+---
 
 ## Hosting/System deployment
 
-<LogoGrid images={[
-  <Image src={useBaseUrl('/img/stack/arm.png')} alt="Azure Resource Manager (ARM)" />,
-  {
-    dark: <KubernetesLogoDark title="Kubernetes" />,
-    light: <KubernetesLogo title="Kubernetes" />,
-  },
-  {
-    dark: <DockerLogoDark title="Docker" />,
-    light: <DockerLogo title="Docker" />,
-  },
-  {
-    dark: <HelmLogoDark title="Helm" />,
-    light: <HelmLogo title="Helm" />,
-  },
-]} />
+<LogoGrid
+  images={[
+    {
+      node: <Image src={useBaseUrl('/img/stack/arm.png')} alt="Azure Resource Manager (ARM)" />,
+      height: 90,
+    },
+    {
+      dark: <KubernetesLogoDark title="Kubernetes" />,
+      light: <KubernetesLogo title="Kubernetes" />,
+      height: 50,
+    },
+    {
+      dark: <DockerLogoDark title="Docker" />,
+      light: <DockerLogo title="Docker" />,
+    },
+    {
+      dark: <HelmLogoDark title="Helm" />,
+      light: <HelmLogo title="Helm" />,
+      height: 70,
+    },
+  ]}
+/>
+
+---
 
 ## Repo/CICD/Backlog
 
-<LogoGrid images={[
-  <Image src={useBaseUrl('/img/stack/Azure-DevOps-Logo.png')} alt="Azure DevOps" />,
-  {
-    dark: <JiraLogoDark title="Jira" />,
-    light: <JiraLogo title="Jira" />,
-  },
-  {
-    dark: <GitHubLogoDark title="GitHub" />,
-    light: <GitHubLogo title="GitHub" />,
-  },
-]} />
+<LogoGrid
+  images={[
+    {
+      node: <Image src={useBaseUrl('/img/stack/Azure-DevOps-Logo.png')} alt="Azure DevOps" />,
+      height: 80,
+    },
+    {
+      dark: <JiraLogoDark title="Jira" />,
+      light: <JiraLogo title="Jira" />,
+    },
+    {
+      dark: <GitHubLogoDark title="GitHub" />,
+      light: <GitHubLogo title="GitHub" />,
+      span: 2,
+    },
+  ]}
+/>
