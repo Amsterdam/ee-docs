@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.root + hr {
+  margin: var(--ams-space-xl) 0 var(--ams-space-l);
+}
+
 .item {
   align-items: center;
   display: flex;

@@ -27,7 +27,7 @@ const sidebars: SidebarsConfig = {
         'general/testing',
         'general/third-party-dependencies',
         'general/using-git',
-        'static/stack/stack',
+        'tech-stack/tech-stack',
       ],
     },
     {
