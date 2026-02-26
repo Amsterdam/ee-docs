@@ -19,7 +19,6 @@ import NestJsLogo from '@site/static/img/stack/NestJS-logo-wordmark.svg';
 import PostgresLogo from '@site/static/img/stack/PostgreSQL_logo.3colors.svg';
 import MongoDbLogo from '@site/static/img/stack/MongoDB_SlateBlue.svg';
 import MongoDbLogoDark from '@site/static/img/stack/MongoDB_White.svg';
-import NlxLogo from '@site/static/img/stack/nlx.svg';
 import GraphQLLogo from '@site/static/img/stack/graphql.svg';
 import ApolloGraphQlLogo from '@site/static/img/stack/apollo-graphql.svg';
 import DockerLogo from '@site/static/img/stack/docker-logo-blue.svg';
@@ -46,8 +45,8 @@ export default function PreferredTechStack(): JSX.Element {
         }}
       >
         This is a visual overview of the city of Amsterdam&apos;s primary technology stack. It
-        highlights the main languages, frameworks, data stores, platforms and tooling commonly used
-        in our projects.
+        highlights the main languages, frameworks, data stores, platforms and tooling selected as
+        the standard for development teams in our organization.
       </Paragraph>
       <hr />
       <Heading level={2} className="ams-mb-m">
@@ -56,8 +55,26 @@ export default function PreferredTechStack(): JSX.Element {
 
       <LogoGrid
         images={[
-          { node: <JavaScriptLogo title="JavaScript" />, height: 75 },
-          { node: <TypeScriptLogo title="TypeScript" />, height: 75 },
+          {
+            node: (
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <JavaScriptLogo title="JavaScript" />
+              </a>
+            ),
+            height: 75,
+          },
+          {
+            node: (
+              <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+                <TypeScriptLogo title="TypeScript" />
+              </a>
+            ),
+            height: 75,
+          },
         ]}
       />
 
@@ -68,19 +85,28 @@ export default function PreferredTechStack(): JSX.Element {
 
       <LogoGrid
         images={[
-          <Image
-            src={useBaseUrl('/img/stack/React_logo_wordmark.png')}
-            alt="React"
-            key="react-logo"
-          />,
-          <Image
-            src={useBaseUrl('/img/stack/react-native.png')}
-            alt="React-Native"
-            key="react-native-logo"
-          />,
+          <a href="https://react.dev/" target="_blank" rel="noreferrer" key="react-logo-link">
+            <Image src={useBaseUrl('/img/stack/React_logo_wordmark.png')} alt="React" />
+          </a>,
+          <a
+            href="https://reactnative.dev/"
+            target="_blank"
+            rel="noreferrer"
+            key="react-native-logo-link"
+          >
+            <Image src={useBaseUrl('/img/stack/react-native.png')} alt="React-Native" />
+          </a>,
           {
-            dark: <NextJsLogoDark title="Next.js" />,
-            light: <NextJsLogo title="Next.js" />,
+            dark: (
+              <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+                <NextJsLogoDark title="Next.js" />
+              </a>
+            ),
+            light: (
+              <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+                <NextJsLogo title="Next.js" />
+              </a>
+            ),
             height: 36,
             span: 2,
           },
@@ -95,12 +121,34 @@ export default function PreferredTechStack(): JSX.Element {
       <LogoGrid
         images={[
           {
-            node: <PythonLogo key="python-logo" title="Python" />,
+            node: (
+              <a href="https://www.python.org/" target="_blank" rel="noreferrer">
+                <PythonLogo key="python-logo" title="Python" />
+              </a>
+            ),
             height: 70,
           },
           {
-            dark: <NodeJsLogoDark key="nodejs-logo" title="Node.js" />,
-            light: <NodeJsLogo key="nodejs-logo" title="Node.js" />,
+            dark: (
+              <a
+                href="https://www.nodejs.org/"
+                target="_blank"
+                rel="noreferrer"
+                key="nodejs-logo-link"
+              >
+                <NodeJsLogoDark title="Node.js" />
+              </a>
+            ),
+            light: (
+              <a
+                href="https://www.nodejs.org/"
+                target="_blank"
+                rel="noreferrer"
+                key="nodejs-logo-link"
+              >
+                <NodeJsLogo key="nodejs-logo" title="Node.js" />
+              </a>
+            ),
             height: 70,
           },
         ]}
@@ -113,17 +161,48 @@ export default function PreferredTechStack(): JSX.Element {
 
       <LogoGrid
         images={[
-          <DjangoLogo title="Django" key="django-logo" />,
+          <a
+            href="https://www.djangoproject.com/"
+            target="_blank"
+            rel="noreferrer"
+            key="django-logo-link"
+          >
+            <DjangoLogo title="Django" />
+          </a>,
           {
-            dark: <ExpressJsLogoDark title="Express" />,
-            light: <ExpressJsLogo title="Express" />,
+            dark: (
+              <a
+                href="https://expressjs.com/"
+                target="_blank"
+                rel="noreferrer"
+                key="express-logo-link"
+              >
+                <ExpressJsLogoDark title="Express" />
+              </a>
+            ),
+            light: (
+              <a
+                href="https://expressjs.com/"
+                target="_blank"
+                rel="noreferrer"
+                key="express-logo-link"
+              >
+                <ExpressJsLogo title="Express" />
+              </a>
+            ),
             height: 30,
           },
           {
-            node: <FastApiLogo title="FastAPI" />,
+            node: (
+              <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer">
+                <FastApiLogo title="FastAPI" />
+              </a>
+            ),
             height: 30,
           },
-          <NestJsLogo title="Nest" key="nest-logo" />,
+          <a href="https://nestjs.com/" target="_blank" rel="noreferrer" key="nest-logo-link">
+            <NestJsLogo title="Nest" />
+          </a>,
         ]}
       />
 
@@ -134,11 +213,12 @@ export default function PreferredTechStack(): JSX.Element {
 
       <LogoGrid
         images={[
-          <Image
-            src={useBaseUrl('/img/stack/Mendix-Primary-Logo-RGB-Blue-Large.webp')}
-            alt="Mendix"
-            key="mendix-logo"
-          />,
+          <a href="https://www.mendix.com/" target="_blank" key="mendix-logo-link" rel="noreferrer">
+            <Image
+              src={useBaseUrl('/img/stack/Mendix-Primary-Logo-RGB-Blue-Large.webp')}
+              alt="Mendix"
+            />
+          </a>,
         ]}
       />
 
@@ -150,29 +230,79 @@ export default function PreferredTechStack(): JSX.Element {
       <LogoGrid
         images={[
           {
-            node: <PostgresLogo title="PostgreSQL" />,
+            node: (
+              <a
+                href="https://www.postgresql.org/"
+                target="_blank"
+                rel="noreferrer"
+                key="postgres-logo-link"
+              >
+                <PostgresLogo title="PostgreSQL" />
+              </a>
+            ),
             height: 50,
           },
           {
-            node: <AzureCosmosLogo title="Azure Cosmos DB" />,
+            node: (
+              <a
+                href="https://azure.microsoft.com/en-us/products/cosmos-db"
+                target="_blank"
+                rel="noreferrer"
+                key="azure-cosmos-link"
+              >
+                <AzureCosmosLogo title="Azure Cosmos DB" />
+              </a>
+            ),
             height: 70,
           },
           {
-            dark: <MongoDbLogoDark title="MongoDB" />,
-            light: <MongoDbLogo title="MongoDB" />,
+            dark: (
+              <a
+                href="https://www.mongodb.com/"
+                target="_blank"
+                rel="noreferrer"
+                key="mongodb-logo-link"
+              >
+                <MongoDbLogoDark title="MongoDB" />
+              </a>
+            ),
+            light: (
+              <a
+                href="https://www.mongodb.com/"
+                target="_blank"
+                rel="noreferrer"
+                key="mongodb-logo-link"
+              >
+                <MongoDbLogo title="MongoDB" />
+              </a>
+            ),
           },
           {
             dark: (
-              <Image
-                src={useBaseUrl('/img/stack/ms-sql-server-logo-dark.png')}
-                alt="Microsoft SQL Server"
-              />
+              <a
+                href="https://www.microsoft.com/en-us/sql-server"
+                target="_blank"
+                rel="noreferrer"
+                key="microsoft-sql-server-link"
+              >
+                <Image
+                  src={useBaseUrl('/img/stack/ms-sql-server-logo-dark.png')}
+                  alt="Microsoft SQL Server"
+                />
+              </a>
             ),
             light: (
-              <Image
-                src={useBaseUrl('/img/stack/ms-sql-server-logo.png')}
-                alt="Microsoft SQL Server"
-              />
+              <a
+                href="https://www.microsoft.com/en-us/sql-server"
+                target="_blank"
+                rel="noreferrer"
+                key="microsoft-sql-server-link"
+              >
+                <Image
+                  src={useBaseUrl('/img/stack/ms-sql-server-logo.png')}
+                  alt="Microsoft SQL Server"
+                />
+              </a>
             ),
             height: 70,
           },
@@ -187,19 +317,37 @@ export default function PreferredTechStack(): JSX.Element {
       <LogoGrid
         images={[
           {
-            node: <NlxLogo title="NLX" width="56" height="22" />,
-            height: 30,
-          },
-          {
-            node: <GraphQLLogo title="GraphQL" />,
+            node: (
+              <a href="https://graphql.org/" target="_blank" rel="noreferrer" key="graphql-link">
+                <GraphQLLogo title="GraphQL" />
+              </a>
+            ),
             height: 70,
           },
           {
-            node: <Image src={useBaseUrl('/img/stack/rest api.jpg')} alt="REST API" />,
+            node: (
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Glossary/REST"
+                target="_blank"
+                rel="noreferrer"
+                key="rest-api-link"
+              >
+                <Image src={useBaseUrl('/img/stack/rest api.jpg')} alt="REST API" />
+              </a>
+            ),
             height: 90,
           },
           {
-            node: <ApolloGraphQlLogo title="Apollo Graph QL" />,
+            node: (
+              <a
+                href="https://www.apollographql.com/"
+                target="_blank"
+                rel="noreferrer"
+                key="graphql-link"
+              >
+                <ApolloGraphQlLogo title="Apollo Graph QL" />
+              </a>
+            ),
             height: 70,
           },
         ]}
@@ -214,22 +362,63 @@ export default function PreferredTechStack(): JSX.Element {
         images={[
           {
             node: (
-              <Image src={useBaseUrl('/img/stack/arm.png')} alt="Azure Resource Manager (ARM)" />
+              <a
+                href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/"
+                target="_blank"
+                rel="noreferrer"
+                key="azure-resource-manager-link"
+              >
+                <Image src={useBaseUrl('/img/stack/arm.png')} alt="Azure Resource Manager (ARM)" />
+              </a>
             ),
             height: 90,
           },
           {
-            dark: <KubernetesLogoDark title="Kubernetes" />,
-            light: <KubernetesLogo title="Kubernetes" />,
+            dark: (
+              <a
+                href="https://kubernetes.io/"
+                target="_blank"
+                rel="noreferrer"
+                key="kubernetes-link"
+              >
+                <KubernetesLogoDark title="Kubernetes" />
+              </a>
+            ),
+            light: (
+              <a
+                href="https://kubernetes.io/"
+                target="_blank"
+                rel="noreferrer"
+                key="kubernetes-link"
+              >
+                <KubernetesLogo title="Kubernetes" />
+              </a>
+            ),
             height: 50,
           },
           {
-            dark: <DockerLogoDark title="Docker" />,
-            light: <DockerLogo title="Docker" />,
+            dark: (
+              <a href="https://www.docker.com/" target="_blank" rel="noreferrer" key="docker-link">
+                <DockerLogoDark title="Docker" />
+              </a>
+            ),
+            light: (
+              <a href="https://www.docker.com/" target="_blank" rel="noreferrer" key="docker-link">
+                <DockerLogo title="Docker" />
+              </a>
+            ),
           },
           {
-            dark: <HelmLogoDark title="Helm" />,
-            light: <HelmLogo title="Helm" />,
+            dark: (
+              <a href="https://helm.sh/" target="_blank" rel="noreferrer" key="helm-link">
+                <HelmLogoDark title="Helm" />
+              </a>
+            ),
+            light: (
+              <a href="https://helm.sh/" target="_blank" rel="noreferrer" key="helm-link">
+                <HelmLogo title="Helm" />
+              </a>
+            ),
             height: 70,
           },
         ]}
@@ -243,16 +432,51 @@ export default function PreferredTechStack(): JSX.Element {
       <LogoGrid
         images={[
           {
-            node: <Image src={useBaseUrl('/img/stack/Azure-DevOps-Logo.png')} alt="Azure DevOps" />,
+            node: (
+              <a
+                href="https://azure.microsoft.com/en-us/products/devops"
+                target="_blank"
+                rel="noreferrer"
+                key="azure-devops-link"
+              >
+                <Image src={useBaseUrl('/img/stack/Azure-DevOps-Logo.png')} alt="Azure DevOps" />
+              </a>
+            ),
             height: 80,
           },
           {
-            dark: <JiraLogoDark title="Jira" />,
-            light: <JiraLogo title="Jira" />,
+            dark: (
+              <a
+                href="https://www.atlassian.com/software/jira"
+                target="_blank"
+                rel="noreferrer"
+                key="jira-link"
+              >
+                <JiraLogoDark title="Jira" />
+              </a>
+            ),
+            light: (
+              <a
+                href="https://www.atlassian.com/software/jira"
+                target="_blank"
+                rel="noreferrer"
+                key="jira-link"
+              >
+                <JiraLogo title="Jira" />
+              </a>
+            ),
           },
           {
-            dark: <GitHubLogoDark title="GitHub" />,
-            light: <GitHubLogo title="GitHub" />,
+            dark: (
+              <a href="https://github.com/" target="_blank" rel="noreferrer" key="github-link">
+                <GitHubLogoDark title="GitHub" />
+              </a>
+            ),
+            light: (
+              <a href="https://github.com/" target="_blank" rel="noreferrer" key="github-link">
+                <GitHubLogo title="GitHub" />
+              </a>
+            ),
             span: 2,
           },
         ]}

@@ -16,7 +16,8 @@
   justify-content: center;
 }
 
-.logoInner {
+.logoInner,
+.logoInner > a {
   align-items: center;
   display: flex;
   justify-content: center;
