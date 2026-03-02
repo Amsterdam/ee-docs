@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { createRef } from 'react';
-import { Header } from './index';
+import PageHeader from './index';
 
 vi.mock('@theme/Navbar/ColorModeToggle', () => ({
   default: () => <div data-testid="mock-color-toggle" />,
@@ -14,9 +14,9 @@ vi.mock('@theme/SearchBar', () => ({
   default: () => <div data-testid="mock-search-bar" />,
 }));
 
-describe('Header', () => {
+describe('PageHeader', () => {
   it('renders', () => {
-    render(<Header />);
+    render(<PageHeader />);
 
     const component = screen.getByRole('banner');
 
@@ -25,7 +25,7 @@ describe('Header', () => {
   });
 
   it('renders an additional class name', () => {
-    render(<Header className="extra" />);
+    render(<PageHeader className="extra" />);
 
     const component = screen.getByRole('banner');
 
@@ -36,7 +36,7 @@ describe('Header', () => {
   it('supports ForwardRef in React', () => {
     const ref = createRef<HTMLElement>();
 
-    render(<Header ref={ref} />);
+    render(<PageHeader ref={ref} />);
 
     const component = screen.getByRole('banner');
 
@@ -44,7 +44,7 @@ describe('Header', () => {
   });
 
   it('renders with a logo link', () => {
-    render(<Header logoLink="/home" />);
+    render(<PageHeader logoLink="/home" />);
 
     const logoLink = screen.getAllByRole('link')[0];
 
@@ -52,7 +52,7 @@ describe('Header', () => {
   });
 
   it('renders an application name', () => {
-    const { container } = render(<Header />);
+    const { container } = render(<PageHeader brandName="Developers" />);
 
     const heading = (container as HTMLDivElement).querySelector('.ams-page-header__brand-name');
     expect(heading).toHaveTextContent('Developers');
@@ -60,7 +60,7 @@ describe('Header', () => {
 
   it('renders with links', () => {
     render(
-      <Header
+      <PageHeader
         menuItems={[
           <div data-testid="mock-link-example" key="0">
             test
@@ -73,7 +73,15 @@ describe('Header', () => {
   });
 
   it('renders with menu button', () => {
-    render(<Header />);
+    render(
+      <PageHeader
+        menuItems={[
+          <div data-testid="mock-link-example" key="0">
+            test
+          </div>,
+        ]}
+      />,
+    );
 
     expect(screen.getByTestId('mock-mobile-sidebar-toggle')).toBeInTheDocument();
   });
