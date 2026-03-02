@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'general/project-documentation',
         'general/languages-and-frameworks',
+        'tech-stack/tech-stack',
         'general/readme-default',
         'general/secure-coding',
         'general/storing-source-code',
