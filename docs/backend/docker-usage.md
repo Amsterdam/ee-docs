@@ -1,10 +1,9 @@
 ﻿# Docker usage
-> This page was last reviewed July 8th, 2025. It needs to be reviewed again on April 8th, 2026.
 ## What is the standard for Docker?
 Use Docker for containerization in the development, testing, and production of applications within the Municipality. Developers must use Dockerfiles that meet the minimum requirements outlined below. Dockerfiles are stored in the application repository in **GitHub**, while the compiled Docker images are stored in **Azure Container Registry (ACR)**.
 
 ## When and for whom is this standard applicable?
-This guideline applies to all developers (front-end and back-end), IT administrators, and DevOps teams within the Municipality. It applies to all projects. Projects that started before September 2024 with a different configuration must be adapted to this standard.
+This guideline applies to all developers (front-end and back-end), IT administrators, and DevOps teams within the Municipality. It applies to all projects.
 
 ## What is required when using Docker?
 
@@ -12,7 +11,7 @@ This guideline applies to all developers (front-end and back-end), IT administra
     - [ ] **Base Image**: Use well-known and well-maintained base images and make sure that the version number is the latest, otherwise -2/-3 of the latest version. In addition, it is of high importance that the version number should **never** explicitly state `latest`. The most commonly used images are: Alpine, NGINX, Node.js, PHP, Postgres, Python and Ubuntu.
     - [ ] **Minimal Installations**: Limit the installation of additional packages to what is strictly necessary to keep the image lightweight and secure.
     - [ ] **Version Control**: Explicitly specify the versions of all dependencies to ensure consistency.
-- **Docker Image Storage**: Dockerfiles must be stored in the application repository in **GitHub**. The compiled Docker images must be stored in **ACR**. Only in cases where an image is shared across multiple teams or other municipalities may **Docker Hub** be used.
+- **Docker Image Storage**: Dockerfiles must be stored in the application repository in **GitHub**. The compiled Docker images must be stored in **ACR**. **Docker Hub** is to be used only in approved situations where an image needs to be shared between multiple teams or municipalities.
 
 ## Standard ADO Pipelines
 

@@ -1,5 +1,4 @@
 # Database
-> This page was last reviewed on 27-08-2025. It needs to be reviewed again on 27-05-2026.
 
 The database is quite often at the core of our applications. It is used to store and query data.
 While this data will be structured most of the time, sometimes it is useful to be able to store
