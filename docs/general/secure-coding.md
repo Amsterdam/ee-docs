@@ -1,6 +1,4 @@
 # Secure coding
->
-> This page was last reviewed January 16th 2025. It needs to be reviewed again on October 16th 2025.
 
 ## What is the standard for secure coding?
 
