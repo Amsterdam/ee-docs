@@ -27,6 +27,7 @@ const sidebars: SidebarsConfig = {
         'general/testing',
         'general/third-party-dependencies',
         'general/using-git',
+        'general/github-copilot',
       ],
     },
     {
