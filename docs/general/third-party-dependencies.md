@@ -1,5 +1,7 @@
 # Third Party Dependencies
 
+> This page was last reviewed on July 8th, 2025. It needs to be reviewed again on April 8th, 2026.
+
 Third party dependencies can be introduced via:
 
 * using a dependency management tool (for example, [Composer for PHP](https://getcomposer.org/), [NPM for JavaScript](https://www.npmjs.com/) and [Poetry for Python](https://python-poetry.org/))
