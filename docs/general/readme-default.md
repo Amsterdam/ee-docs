@@ -1,5 +1,7 @@
 # Readme files
 
+> This page was last reviewed on February 3rd, 2025. It needs to be reviewed again on November 3rd, 2025.
+
 ## What is the standard for a README for the city of Amsterdam?
 
 There must be a README.md file for every Github repository of the city of Amsterdam. A README.md should briefly describe the project, its purpose, and provide clear instructions to help developers, contributors, and stakeholders navigate and use the repository effectively.

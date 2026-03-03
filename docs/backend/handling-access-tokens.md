@@ -1,4 +1,5 @@
 # Handling Access Tokens
+> This page was last reviewed on 10-09-2025. It needs to be reviewed again on 10-06-2026.
 
 A common requirement for our applications is that we need to implement authentication. We typically
 do that by implementing OpenId Connect (OIDC) support.

@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 # Collaborating on standards
 
-> This page was last reviewed on October 28th, 2024. It needs to be reviewed again on July 28th, 2025.
+> This page was last reviewed on July 8th, 2025. It needs to be reviewed again on April 8th, 2026.
 
 ## Empowering Contribution: Your Guide to Success
 
