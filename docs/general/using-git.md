@@ -1,5 +1,4 @@
 # Using Git
-> This page was last reviewed 13 February 2025. It needs to be reviewed again on 13 November 2025.
 
 ## What is the standard for using Git?
 The city of Amsterdam uses Git to push its code to GitHub.
