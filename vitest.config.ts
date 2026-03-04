@@ -73,7 +73,7 @@ export default defineConfig({
       },
       {
         // Match any import that starts with `@docusaurus/` and map to core client exports
-        find: /^@docusaurus\/(BrowserOnly|ComponentCreator|constants|ExecutionEnvironment|Head|Interpolate|isInternalUrl|Link|renderRoutes|router|Translate|use.*)/,
+        find: /^@docusaurus\/(BrowserOnly|ComponentCreator|constants|ExecutionEnvironment|Head|Interpolate|isInternalUrl|Link|renderRoutes|router|Translate)/,
         replacement: '@docusaurus/core/src/client/exports/$1',
       },
       {
@@ -82,6 +82,10 @@ export default defineConfig({
           __dirname,
           'node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js',
         ),
+      },
+      {
+        find: '@docusaurus/useBaseUrl',
+        replacement: path.resolve(__dirname, './test/__mocks__/useBaseUrl.js'),
       },
     ],
   },

@@ -1,0 +1,66 @@
+
+- job: 
+  displayName: 'jira webhook'
+  steps:
+  - checkout: self
+  - ${{ if eq(parameters.acc, true) }}: 
+    - task: AzurePowerShell@5
+      inputs:
+        azureSubscription: 'ARM-CCC-OPDR-ont-01'
+        ScriptType: 'InlineScript'
+        Inline: |
+          $resourceGroupName = 'shared-o-rg'
+
+          $KeyVault = Get-AzResource -ResourceGroupName $resourceGroupName | Where-Object {
+              $_.ResourceType -eq "Microsoft.KeyVault/vaults" -and $_.Name -like "shared-o-*"
+          }
+
+          $KeyVaultName = $KeyVault.Name
+
+          $certificates = Get-AzKeyVaultCertificate -VaultName $KeyVaultName
+
+          $currentDate = Get-Date
+
+          $filteredCertificates = $certificates | Where-Object {
+              $_.Expires -gt $currentDate.AddDays(100) -and $_.Expires -lt $currentDate.AddDays(120)
+          }
+
+          Write-Host "The certs to expire:"
+          $filteredCertificates
+
+          Write-Host "Attempting Jira webhook:"
+
+          $jiraWebhookUrl = 'https://api-private.atlassian.com/automation/webhooks/jira/a/f8771ef1-0a37-46ae-b72a-4f2586b482e2/01958f14-e3bc-7725-b7dd-f9a80dbf097b'
+          $jiraWebhookSecret = '57da1cd12db225cbe627ef2d6e4ad497ff54f1db'
+
+          foreach ($certificate in $filteredCertificates) {
+              $expiryDate = Get-Date $certificate.Expires
+              $expiryDate = $expiryDate.ToString("yyyy-MM-dd")
+              $webhookPayload = @{
+                  "data" = @{
+                      "Title" = "het certificaat van $($certificate.Name) ONT verloopt op $($expiryDate)"
+                      "name" = $certificate.Name
+                      "vaultName" = $KeyVaultName
+                      "expiryDate" = $expiryDate
+                  }
+              }
+
+              $headers = @{
+                  "Content-Type" = "application/json"
+                  "X-Automation-Webhook-Token" = $jiraWebhookSecret
+              }
+
+              $jsonPayload = $webhookPayload | ConvertTo-Json
+
+              Write-Host "Payload: $jsonPayload"
+
+              try {
+                  Invoke-RestMethod -Uri $jiraWebhookUrl -Method Post -Headers $headers -Body $jsonPayload
+              } catch {
+                  Write-Host "Error: $_"
+              }
+          }
+
+          Write-Output "Webhooks created for certificates expiring between 30 and 120 days."
+        azurePowerShellVersion: 'LatestVersion'
+ 
