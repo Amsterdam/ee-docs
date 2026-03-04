@@ -1,0 +1,14 @@
+.icon {
+  align-items: center;
+  background: var(--ams-badge-orange-background-color);
+  border-radius: 50%;
+  display: inline-flex;
+  height: 62px;
+  justify-content: center;
+  width: 62px;
+}
+
+.icon svg {
+  height: 32px;
+  width: 32px;
+}

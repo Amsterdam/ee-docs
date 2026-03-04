@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
         'general/github-copilot',
         'general/languages-and-frameworks',
         'general/project-documentation',
+        'tech-stack/tech-stack',
         'general/readme-default',
         'general/secure-coding',
         'general/storing-source-code',
