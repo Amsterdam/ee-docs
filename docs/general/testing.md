@@ -1,7 +1,5 @@
 # Testing
 
-> This page was last reviewed October the 14th August 2024. It needs to be reviewed again on April 14th 2025.
-
 ## What is the standard for testing?
 Every production ready project needs to have unit and integration tests included. Developers are responsible for writing and maintaining these tests. 
 
@@ -13,9 +11,9 @@ This standard applies to all developers.
   - [ ] the baseline for code coverage.
   - [ ] how to integrate the tests in the deployment pipeline.
   - [ ] how to structure test files, mocks and stubs.
-- [ ] Use either Jest or Vitest and React Testing Library as your test framework for front-end projects.  
+- [ ] Use either Jest or Vitest and React Testing Library as your test framework for front-end projects.
 - [ ] Use Django's built-in testing framework for back-end projects using Django and Python.
-- [ ] use either Playwright or Cypress for regression tests. 
+- [ ] use either Playwright or Cypress for regression tests.
 
 ## What to avoid?
 - Don't treat testing as an afterthought. 
@@ -30,7 +28,7 @@ This standard applies to all developers.
 - The Vakgroep requires a minimum code coverage of 80% for new backend projects. For legacy applications this standard applies only to new code or features wherever feasible.
 
 ### End-to-end testing (E2E testing)
-E2E testing is not mandatory. The Vakgroep employs two dedicated testers who can assist in creating and running e2e tests. Your Product Owner would need to contact the Vakgroep to inquire about the possibilities. 
+E2E testing is not mandatory. The Vakgroep employs a dedicated tester who can assist in creating and running e2e tests. Your Product Owner should contact the Vakgroep to explore the available options.
 
 ### Snapshot testing
 Snapshot testing ensures that the UI did not unexpectedly change compared to the previous state of the rendered output. It is recommended to use either [Jest](https://jestjs.io/) or [Vitest](https://vitest.dev/) together with [react-test-renderer](https://npmjs.com/package/react-test-renderer).  

@@ -3,8 +3,6 @@ sidebar_position: 1
 ---
 # Collaborating on standards
 
-> This page was last reviewed on July 8th, 2025. It needs to be reviewed again on April 8th, 2026.
-
 ## Empowering Contribution: Your Guide to Success
 
 We're thrilled you're interested in contributing to our development community! The Engineering Enablement team is dedicated to supporting you throughout your journey. Should you ever feel daunted by the contribution process, don't hesitate to take a breather, and we'll be ready to assist you further. Your involvement is valued, and we're here to help.
