@@ -1,6 +1,9 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Card, Grid, Heading, Paragraph } from '@amsterdam/design-system-react';
+import { PowerPlugWithSocketIcon } from '@amsterdam/design-system-react-icons';
+import Link from '@docusaurus/Link';
+import styles from './HomepageFeatures.module.css';
 
 import DocumentationIcon from '@site/static/img/Documentation.svg';
 import GitHubIcon from '@site/static/img/github-mark.svg';
@@ -9,13 +12,13 @@ import SharedIcon from '@site/static/img/shared.svg';
 import SourceControlIcon from '@site/static/img/source-control.svg';
 import TestingIcon from '@site/static/img/testing.svg';
 import ThirdPartyIcon from '@site/static/img/third_party.svg';
-import Link from '@docusaurus/Link';
 
 interface FeatureItem {
   title: string;
   to: string;
   description: string;
   image?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 const featureList: FeatureItem[] = [
@@ -58,6 +61,12 @@ const featureList: FeatureItem[] = [
     description: 'Our policy how to use Git.',
   },
   {
+    icon: PowerPlugWithSocketIcon,
+    title: 'Preferred Tech Stack',
+    to: '/docs/tech-stack',
+    description: 'A visual overview of our primary technology stack.',
+  },
+  {
     image: ThirdPartyIcon,
     title: 'Third party dependencies',
     to: '/docs/general/third-party-dependencies',
@@ -82,8 +91,15 @@ export default function HomepageFeatures(): JSX.Element {
                 height: 62,
                 preserveAspectRatio: 'xMinYMin',
                 className:
-                  listItem.title === 'Using Git' ? 'dark-mode-github-icon' : 'ams-card__image',
+                  listItem.title === 'Using Git'
+                    ? 'ams-card__image dark-mode-github-icon'
+                    : 'ams-card__image',
               })}
+            {listItem.icon && (
+              <div className={`${styles.icon} ams-card__image`}>
+                <listItem.icon />
+              </div>
+            )}
             <Card.Heading level={2}>
               <Link to={listItem.to} className="ams-card__link">
                 {listItem.title}

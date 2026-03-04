@@ -20,7 +20,9 @@ const sidebars: SidebarsConfig = {
       label: 'Common standards',
       items: [
         'general/project-documentation',
+        'general/github-copilot',
         'general/languages-and-frameworks',
+        'tech-stack/tech-stack',
         'general/readme-default',
         'general/secure-coding',
         'general/storing-source-code',

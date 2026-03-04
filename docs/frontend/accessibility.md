@@ -1,7 +1,5 @@
 # Accessibility
 
-> This page was last reviewed on 6 February 2025. It needs to be reviewed again on 6 November 2025.
-
 ## What is the standard for accessibility?
 
 In accordance with the Digital Government Act, the municipality of Amsterdam is required to build all its websites and applications in compliance with the Web Content Accessibility Guidelines (WCAG) 2.1 at AA level.
