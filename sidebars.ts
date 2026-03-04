@@ -19,15 +19,15 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Common standards',
       items: [
-        'general/project-documentation',
+        'general/github-copilot',
         'general/languages-and-frameworks',
+        'general/project-documentation',
         'general/readme-default',
         'general/secure-coding',
         'general/storing-source-code',
         'general/testing',
         'general/third-party-dependencies',
         'general/using-git',
-        'general/github-copilot',
       ],
     },
     {
