@@ -1,7 +1,5 @@
 # Languages & Frameworks for Software Development
 
-> This page was last reviewed on 10th April. It needs to be reviewed again on 10th January 2026.
-
 ## What is the standard?
 
 ### Backend
