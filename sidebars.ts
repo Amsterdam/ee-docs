@@ -54,7 +54,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Projects',
-      items: ['projects/monitoring', 'projects/maps', 'projects/sso'],
+      items: ['projects/monitoring', 'projects/forms', 'projects/maps', 'projects/sso'],
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure
