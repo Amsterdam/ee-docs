@@ -1,6 +1,6 @@
 {
   "name": "docusaurus",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -36,7 +36,7 @@
     "raw-loader": "^4.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "uuid": "^9.0.1"
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.8.1",
@@ -61,11 +61,11 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
-    "happy-dom": "^20.0.2",
+    "happy-dom": "^20.8.9",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "3.2.5",
-    "release-it": "^19.2.4",
+    "release-it": "^20.0.0",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.7.1",
     "vitest": "^3.1.1"
