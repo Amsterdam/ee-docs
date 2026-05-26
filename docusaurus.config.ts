@@ -137,7 +137,7 @@ const config: Config = {
   // @see https://docusaurus.io/blog/releases/3.6#adoption-strategy
   future: {
     v4: true,
-    experimental_faster: true,
+    faster: true,
   },
 
   plugins: [
