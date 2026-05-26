@@ -16,7 +16,7 @@ We recommend signing your commits, as it enhances both reliability and security.
 This standard applies to all developers.<br/>
 This standard must be applied to all new repositories of the city of Amsterdam (new since May 2024).
 
-## Public or private {#status}
+## Public or private
 Infra-as-code logic must always be stored in a private repository.
 This improves transparency and reusability,
 but protects us from exposing sensitive information that could benefit potential bad actors.
