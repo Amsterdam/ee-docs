@@ -18,6 +18,7 @@ This standard must be applied to all new projects of the city of Amsterdam (new 
     - [ ] Set "Required number of approvals before merging" to at least 1.
   - [ ]  Create a new branch every time you're implementing a feature, bug fix or other task.
   - [ ] Test before you push.
+- [ ] **Jupyter Notebooks vs. Production Code:** Strictly separate experimentation from production. Jupyter Notebooks (`.ipynb`) are permitted for exploration and data analysis. However, before an AI model or data pipeline is deployed, the code MUST be refactored into modular, testable Python scripts (`.py`) that adhere to the standard [Testing](/general/testing.md) and [Code Review](/general/code-review.md) policies.
 
 ### Branches
 - [ ] Branch names must include 

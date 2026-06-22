@@ -1,4 +1,4 @@
-
+- **Jupyter Notebooks (`.ipynb`):** Notebooks should not be submitted for production code reviews due to the difficulty of version control and hidden cell-execution states. Ensure all Data Science and AI code is refactored into modular Python scripts before requesting a review. If a python notebook is uploaded ensure that all outputs are removed to avoid sensitive information leaks.
 - code reviews are required before merging to main
 - provide context 
   - what was changed?
