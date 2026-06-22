@@ -33,6 +33,19 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'AI',
+      items: [
+        'ai/data-governance-and-quality',
+        'ai/model-architecture-and-robustness',
+        'ai/fairness-and-bias-mitigation',
+        'ai/human-oversight-and-operational-boundaries',
+        'ai/ai-cybersecurity',
+        'ai/post-market-monitoring',
+        'ai/transparency-and-disclosures',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Backend',
       items: [
         'backend/database',
@@ -47,7 +60,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'frontend/accessibility',
         'frontend/shared-components',
-        'frontend/testing',
         'frontend/third-party-dependencies',
       ],
     },
