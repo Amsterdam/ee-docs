@@ -19,6 +19,9 @@ const config: Config = {
   projectName: 'ee-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
+  // The anchor checker is noisy for imported docs that still navigate correctly in the browser.
+  // Keep warnings by default, but allow test runs to silence them via env override.
+  onBrokenAnchors: process.env.DOCUSAURUS_BROKEN_ANCHORS === 'ignore' ? 'ignore' : 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

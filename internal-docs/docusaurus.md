@@ -24,6 +24,14 @@ npm run build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+## Accessibility and E2E tests
+
+```bash
+npm run test:a11y
+```
+
+This command builds and serves the site through Playwright's test runner, then runs Axe checks for WCAG 2.1 A and AA violations against representative pages.
+
 ## Deployment
 
 Using SSH:

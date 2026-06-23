@@ -17,7 +17,9 @@
     "prepare": "husky",
     "import-docs": "node ./node_modules/ee-docs-importer",
     "release": "release-it",
-    "test": "vitest"
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "test:a11y": "playwright test e2e/accessibility.spec.ts"
   },
   "dependencies": {
     "@amsterdam/design-system-assets": "^2.0.0",
@@ -44,6 +46,8 @@
     "@docusaurus/types": "^3.10.1",
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.61.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
