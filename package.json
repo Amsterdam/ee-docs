@@ -85,6 +85,9 @@
   "engines": {
     "node": ">=22"
   },
+  "overrides": {
+    "serialize-javascript": "^7.0.0"
+  },
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --fix"
