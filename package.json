@@ -1,6 +1,6 @@
 {
   "name": "docusaurus",
-  "version": "0.5.14",
+  "version": "0.5.15",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -65,7 +65,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "3.2.5",
-    "release-it": "^20.0.0",
+    "release-it": "^20.2.1",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.7.1",
     "vitest": "^4.1.0"
@@ -84,6 +84,9 @@
   },
   "engines": {
     "node": ">=22"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.7"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

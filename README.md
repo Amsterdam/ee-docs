@@ -20,6 +20,11 @@ If you would like to include additional standards, please refer to the [manual f
 
 ## Project documentation
 
+### Dependency overrides
+
+- We currently override `serialize-javascript` to v7 in `package.json` for Node 20+ compatibility.
+- Remove this override when Docusaurus major 4 is released. Reference: [facebook/docusaurus#11801 comment](https://github.com/facebook/docusaurus/issues/11801#issuecomment-4069124243).
+
 ### Docusaurus basic commands
 
 - [Docusaurus basic commands](./internal-docs/docusaurus.md)
