@@ -22,7 +22,7 @@
   "dependencies": {
     "@amsterdam/design-system-assets": "^2.0.0",
     "@amsterdam/design-system-css": "^3.1.0",
-    "@amsterdam/design-system-react": "^3.1.0",
+    "@amsterdam/design-system-react": "^4.4.0",
     "@amsterdam/design-system-react-icons": "^2.0.0",
     "@amsterdam/design-system-tokens": "^3.1.0",
     "@docusaurus/core": "^3.10.1",
