@@ -34,9 +34,9 @@
 }
 
 body {
+  /* Page caps the width at --ams-page-max-inline-size and centres it, so body must not do so too. */
   /* important added to prevent algolia search modal forcing margin-right: 0; on close */
-  margin: 0 auto !important;
-  max-width: 1440px;
+  margin: 0 !important;
 }
 
 html {
