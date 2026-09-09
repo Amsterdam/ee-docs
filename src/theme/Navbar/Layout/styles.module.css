@@ -6,8 +6,14 @@
   transform: translate3d(0, calc(-100% - 2px), 0);
 }
 
+/*
+ * Infima makes .navbar a flex container for its own navbar items, which this site does not render:
+ * it puts the Page Header here instead. A flex item is sized by its content, so the header would
+ * stop short of the right edge and take the menu with it. Block layout lets it fill the width.
+ */
 .navbar {
   box-shadow: none;
+  display: block;
   height: unset;
   padding: 0;
   position: sticky;
