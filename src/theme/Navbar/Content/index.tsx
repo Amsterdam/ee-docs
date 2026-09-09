@@ -25,5 +25,13 @@ export default function NavbarContent(): JSX.Element {
 
   // The Page Header is a direct child of Page in the Design System page anatomy: it brings its own
   // padding, so wrapping it in a Grid Cell would indent it past the content below.
-  return <PageHeader menuItems={navItems} brandName="Developers" />;
+  // navigationLabel and logoLinkTitle default to Dutch; this site is English throughout.
+  return (
+    <PageHeader
+      menuItems={navItems}
+      brandName="Developers"
+      logoLinkTitle="Go to the Developers homepage"
+      navigationLabel="Main menu"
+    />
+  );
 }
