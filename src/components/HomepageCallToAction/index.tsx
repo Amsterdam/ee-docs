@@ -6,7 +6,7 @@ const HomepageCallToAction = () => {
   return (
     <Grid paddingTop="large" paddingBottom="large">
       <Grid.Cell span={{ narrow: 4, medium: 8, wide: 7 }}>
-        <Heading className="ams-mb-sm" level={2} size="level-2">
+        <Heading className="ams-mb-s" level={2} size="level-2">
           Contribute
         </Heading>
         <Paragraph>

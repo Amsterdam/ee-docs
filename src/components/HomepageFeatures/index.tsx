@@ -78,7 +78,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <Grid paddingBottom="2x-large">
       <Grid.Cell span="all">
-        <Heading className="ams-mb-sm" level={3} size="level-3">
+        <Heading className="ams-mb-s" level={3} size="level-3">
           Guidelines
         </Heading>
       </Grid.Cell>
