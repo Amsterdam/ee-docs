@@ -1,0 +1,33 @@
+html,
+body {
+  height: 100%;
+}
+
+/*
+ * Page sets container-type: inline-size. A box with size containment is laid out as if it had no
+ * contents, so it must take its inline size from its parent: if anything makes it size to its
+ * content instead, it collapses to zero width and the page spills out beside it.
+ *
+ * Page also sets margin-inline: auto. Two auto margins on the cross axis stop a flex item from
+ * stretching, which is exactly that content-sized case. So #__docusaurus stays a block container,
+ * Page fills it as a normal block, and Page itself carries the column that keeps the footer down.
+ */
+:global(#__docusaurus) {
+  min-height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainWrapper {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+
+/* Docusaurus-specific utility class */
+:global(.docusaurus-mt-lg) {
+  margin-top: 3rem;
+}
