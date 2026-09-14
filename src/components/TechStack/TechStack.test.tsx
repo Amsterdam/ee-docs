@@ -68,6 +68,6 @@ describe('TechStack', () => {
     render(<TechStack />);
     const paragraph = screen.getByText(/this is a visual overview of the city of Amsterdam/i);
 
-    expect(paragraph).toHaveStyle({ color: 'inherit' });
+    expect(paragraph.attributes.getNamedItem('style').value).toBe('color: inherit;');
   });
 });
