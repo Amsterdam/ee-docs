@@ -12,6 +12,13 @@
   background-color: transparent;
 }
 
+/* Page Header now paints its own background (a new token in Design System v4, fixed white, no dark
+   variant). Transparent lets the sticky navbar's own theme-aware background show through instead,
+   the same way it already does for Page above. */
+[data-theme='dark'] .ams-page-header {
+  background-color: transparent;
+}
+
 [data-theme='dark'] .ams-card__image {
   filter: invert(1) hue-rotate(180deg) brightness(1.2);
 }

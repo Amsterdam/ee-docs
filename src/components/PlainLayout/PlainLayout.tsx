@@ -1,20 +1,19 @@
-// This is kind of annoying but we cannot add props to theme/Layout so duplicate the
-// original layout without the amsterdam-design-sytem grid
 import React from 'react';
 import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
-import { PageMetadata, SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';
-import SkipToContent from '@theme/SkipToContent';
-import AnnouncementBar from '@theme/AnnouncementBar';
-import Navbar from '@theme/Navbar';
-import Footer from '@theme/Footer';
-import LayoutProvider from '@theme/Layout/Provider';
+import { SkipToContentFallbackId, ThemeClassNames } from '@docusaurus/theme-common';
 import ErrorPageContent from '@theme/ErrorPageContent';
 import type { Props } from '@theme/Layout';
-import styles from '../../theme/Layout/styles.module.css';
-import { Page } from '@amsterdam/design-system-react';
+import PageShell from '../PageShell/PageShell';
+import styles from '../PageShell/PageShell.module.css';
 
-export default function Layout(props: Props): JSX.Element {
+/**
+ * The layout for pages that lay out their own grid, such as the homepage.
+ *
+ * Theme Layout wraps its children in a Grid, which is right for doc pages but would nest a Grid
+ * inside a Grid Cell here. Both layouts share the same page anatomy through PageShell.
+ */
+export default function PlainLayout(props: Props): JSX.Element {
   const {
     children,
     noFooter,
@@ -25,27 +24,16 @@ export default function Layout(props: Props): JSX.Element {
   } = props;
 
   return (
-    <LayoutProvider>
-      <PageMetadata title={title} description={description} />
-
-      <Page>
-        <SkipToContent />
-
-        <AnnouncementBar />
-
-        <Navbar />
-
-        <main
-          id={SkipToContentFallbackId}
-          className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
-        >
-          <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
-            {children}
-          </ErrorBoundary>
-        </main>
-
-        {!noFooter && <Footer />}
-      </Page>
-    </LayoutProvider>
+    <PageShell title={title} description={description} noFooter={noFooter}>
+      {/* A main element here: pages using this layout do not render one of their own. */}
+      <main
+        id={SkipToContentFallbackId}
+        className={clsx(ThemeClassNames.wrapper.main, styles.mainWrapper, wrapperClassName)}
+      >
+        <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
+          {children}
+        </ErrorBoundary>
+      </main>
+    </PageShell>
   );
 }
