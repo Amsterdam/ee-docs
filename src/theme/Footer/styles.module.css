@@ -1,7 +1,3 @@
-[data-theme='dark'] .root div:first-of-type {
-  background: var(--ams-color-highlight-purple);
-}
-
 .grid div:last-of-type {
   order: -1;
 }
@@ -12,9 +8,8 @@
   }
 }
 
-.col {
-  display: 'grid';
-  gap: '2.5rem';
+[data-theme='dark'] .root div:first-of-type {
+  background: var(--ams-color-highlight-purple);
 }
 
 .col a {
