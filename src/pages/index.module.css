@@ -9,8 +9,8 @@
 }
 
 [data-theme='dark'] .container button {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #fff;
+  color: #000;
 }
 
 .buttons {

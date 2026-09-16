@@ -13,6 +13,10 @@
   inline-size: 1.5rem;
 }
 
+[data-theme='dark'] .buttons a svg {
+  filter: invert(1);
+}
+
 [data-theme='dark'] .mobile :global(.ams-icon-button) {
   background: none;
 }
@@ -41,10 +45,6 @@
   :global(.ams-page-header__menu-item--fixed) {
     display: none !important;
   }
-}
-
-[data-theme='dark'] .buttons a svg {
-  filter: invert(1);
 }
 
 .icon {
