@@ -47,6 +47,7 @@
 .searchResultItemPath {
   font-size: 0.8rem;
   color: var(--ifm-color-content-secondary);
+
   --ifm-breadcrumb-separator-size-multiplier: 1;
 }
 
