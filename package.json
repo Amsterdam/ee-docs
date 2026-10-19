@@ -96,5 +96,9 @@
     "*.css": [
       "stylelint --fix"
     ]
+  },
+  "allowScripts": {
+    "@swc/core@1.16.18": true,
+    "core-js@3.50.0": true
   }
 }
