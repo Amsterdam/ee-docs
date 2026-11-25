@@ -7,7 +7,7 @@ This standard establishes the requirements for the continuous evaluation of AI m
 This standard applies to MLOps Engineers, AI Engineers, Data Scientists, and Product Owners responsible for maintaining and operating AI systems within the municipality of Amsterdam.
 
 ## What is required?
-This acts as an AI-specific extension to the general [Monitoring standards](https://github.com/Amsterdam/development-standards/tree/main/internal/monitoring/README.md). While standard telemetry tracks uptime and server errors, AI monitoring must track statistical drift and model behavior. The following must be implemented and documented:
+This acts as an AI-specific extension to the general [Monitoring standards](/internal/monitoring/README.md). While standard telemetry tracks uptime and server errors, AI monitoring must track statistical drift and model behavior. The following must be implemented and documented:
 
 ### 1. Drift Detection & Custom Telemetry
 - [ ] **Data & Concept Drift:** Monitor incoming production data for statistical deviations from the original training dataset (Data Drift) and track changes in the relationship between inputs and outputs (Concept Drift).
