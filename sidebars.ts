@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
         'general/project-documentation',
         'general/github-copilot',
         'general/languages-and-frameworks',
+        'general/linting-formatting',
         'tech-stack/tech-stack',
         'general/readme-default',
         'general/secure-coding',
@@ -51,6 +52,7 @@ const sidebars: SidebarsConfig = {
         'backend/database',
         'backend/dependency-management',
         'backend/docker-usage',
+        'backend/docker-hardened-images',
         'backend/handling-access-tokens',
         'projects/secure-mail-relay',
       ],
@@ -60,6 +62,7 @@ const sidebars: SidebarsConfig = {
       label: 'Frontend',
       items: [
         'frontend/accessibility',
+        'frontend/browser-support',
         'frontend/shared-components',
         'frontend/third-party-dependencies',
       ],
