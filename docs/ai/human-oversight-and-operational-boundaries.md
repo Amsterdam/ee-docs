@@ -18,6 +18,7 @@ When transitioning an AI system to production, the following oversight mechanism
   - **Human-in-the-Loop (HitL):** The system only makes recommendations; a human must explicitly approve every decision.
   - **Human-on-the-Loop (HotL):** The system executes decisions autonomously, but a human actively monitors the operation and can intervene at any time.
   - **Human-in-Command (HiC):** The system operates largely autonomously, but humans define the broader constraints, review aggregate outcomes, and can shut the system down.
+- [ ] **Shape the Human-AI Collaboration:** Use the municipality's [Human-in-the-Loop framework](https://humanintheloop.rnd.amsterdam.nl/) (Dutch) to find a suitable form of collaboration between human and AI for your specific context. The framework helps you design effective human oversight, based on the qualities you want to safeguard in the application and the risk level. Document the chosen form(s) of collaboration and the reasoning as part of the system's oversight design.
 - [ ] **Operator Competence:** Define the necessary qualifications, training, and domain expertise required for the human operator to effectively interpret the AI's output and exercise meaningful oversight.
 
 ### 3. Intervention Mechanisms (UX/UI)
